@@ -1,4 +1,4 @@
-# [Next.js website](https://nextjs.org/)
+# [Next.js website](https://nextjs-cn.com/)
 
 The official website for Next.js.
 

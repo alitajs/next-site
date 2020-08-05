@@ -24,7 +24,7 @@ We are excited today to introduce Next.js 9.5, featuring:
 ## Stable Incremental Static Regeneration
 
 Next.js introduced
-[Static Site Generation methods in 9.3](https://nextjs.org/blog/next-9-3#next-gen-static-site-generation-ssg-support)
+[Static Site Generation methods in 9.3](https://nextjs-cn.com/blog/next-9-3#next-gen-static-site-generation-ssg-support)
 with a clear goal in mind: we should
 get [the benefits of static](https://rauchg.com/2020/2019-in-review#static-is-the-new-dynamic) (always
 fast, always
@@ -33,7 +33,7 @@ but with excellent support for dynamic data, which Next.js is known for.
 
 To get the best of both worlds, Next.js introduced **Incremental Static
 Generation**, updating static content after you have already built your site. By
-using the [`fallback: true` option in `getStaticPaths`](https://nextjs.org/docs/basic-features/data-fetching#the-fallback-key-required),
+using the [`fallback: true` option in `getStaticPaths`](https://nextjs-cn.com/docs/basic-features/data-fetching#the-fallback-key-required),
 you can **register** **new static pages** **at _runtime_**.
 
 Next.js can statically pre-render an infinite number of pages this way,
@@ -92,7 +92,7 @@ benefits of static:
   concurrently.
 
 Both incremental features (adding pages and lazily updating them), as well as
-[preview mode](https://nextjs.org/docs/advanced-features/preview-mode), are now
+[preview mode](https://nextjs-cn.com/docs/advanced-features/preview-mode), are now
 stable and already fully supported by both `next start` and the
 [Vercel edge platform](https://vercel.com) out of the box.
 
@@ -118,7 +118,7 @@ incremental static generation capabilities:
   traffic
 
 For more details, check out
-[the `getStaticProps` documentation](https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation).
+[the `getStaticProps` documentation](https://nextjs-cn.com/docs/basic-features/data-fetching#getstaticprops-static-generation).
 
 ## Customizable Base Path
 
@@ -174,7 +174,7 @@ web browser:
 ```
 
 For more details, check out
-[the `basePath` documentation](https://nextjs.org/docs/api-reference/next.config.js/basepath).
+[the `basePath` documentation](https://nextjs-cn.com/docs/api-reference/next.config.js/basepath).
 
 ## Support for Rewrites, Redirects, and Headers
 
@@ -231,7 +231,7 @@ In this case, we first match all paths. If none match we proxy to
 `example.com` which would be the previous project.
 
 To learn more about `rewrites` feature check out the
-[rewrites documentation](https://nextjs.org/docs/api-reference/next.config.js/rewrites).
+[rewrites documentation](https://nextjs-cn.com/docs/api-reference/next.config.js/rewrites).
 
 ### Redirects
 
@@ -263,7 +263,7 @@ module.exports = {
 ```
 
 To learn more about `redirects` feature check out the
-[redirects documentation](https://nextjs.org/docs/api-reference/next.config.js/redirects).
+[redirects documentation](https://nextjs-cn.com/docs/api-reference/next.config.js/redirects).
 
 ### Headers
 
@@ -300,7 +300,7 @@ and
 [`Content-Security-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP).
 
 To learn more about `headers` feature check out the
-[headers documentation](https://nextjs.org/docs/api-reference/next.config.js/headers).
+[headers documentation](https://nextjs-cn.com/docs/api-reference/next.config.js/headers).
 
 ## Optional Trailing Slash in URLs
 
@@ -334,7 +334,7 @@ module.exports = {
 ```
 
 To learn more about the `trailingSlash` feature check out the
-[trailingSlash documentation](https://nextjs.org/docs/api-reference/next.config.js/trailing-slash)
+[trailingSlash documentation](https://nextjs-cn.com/docs/api-reference/next.config.js/trailing-slash)
 
 ## Persistent Caching for Page Bundles
 
@@ -357,7 +357,7 @@ behavior even further by no longer invalidating the browser cache for pages that
 had not been changed.
 
 The introduction of the
-[improved code-splitting strategy in Next.js 9.2](https://nextjs.org/blog/next-9-2#improved-code-splitting-strategy)
+[improved code-splitting strategy in Next.js 9.2](https://nextjs-cn.com/blog/next-9-2#improved-code-splitting-strategy)
 that was developed in collaboration with the Google Chrome team laid some
 groundwork for these improvements to the Next.js page bundle generation.
 
@@ -382,7 +382,7 @@ sets for you.
 ## Fast Refresh Enhancements
 
 We
-[introduced Fast Refresh in Next.js 9.4](https://nextjs.org/blog/next-9-4#fast-refresh),
+[introduced Fast Refresh in Next.js 9.4](https://nextjs-cn.com/blog/next-9-4#fast-refresh),
 a new hot reloading experience that gives you instantaneous feedback on edits
 made to your React components.
 
@@ -400,12 +400,12 @@ tools you need to succeed:
   warning will help you diagnose why the project had to reset component
   state, allowing you to fix it and utilize Fast Refresh to its full potential.
 - **New documentation**: We've
-  [added extensive documentation](https://nextjs.org/docs/basic-features/fast-refresh)
+  [added extensive documentation](https://nextjs-cn.com/docs/basic-features/fast-refresh)
   that explains what Fast Refresh is, how it works, and what to expect! The
   documentation will also teach you how to better leverage Fast Refresh by
   explaining how its error recovery works.
 - **User-code troubleshooting guide**: The new documentation also includes
-  [common troubleshooting steps and tips](https://nextjs.org/docs/basic-features/fast-refresh#tips)
+  [common troubleshooting steps and tips](https://nextjs-cn.com/docs/basic-features/fast-refresh#tips)
   on how to get the most out of Fast Refresh in development.
 
 ## Production React Profiling
@@ -433,7 +433,7 @@ Special thanks to [@TodorTotev](https://github.com/TodorTotev) and
 ## Optional Catch All Routes
 
 Next.js 9.2 added
-[support for catch-all dynamic routes](https://nextjs.org/blog/next-9-2#catch-all-dynamic-routes)
+[support for catch-all dynamic routes](https://nextjs-cn.com/blog/next-9-2#catch-all-dynamic-routes)
 which have been widely adopted by the community for various use cases. Catch-all
 routes give you the flexibility to create highly dynamic routing structures
 powered by Headless CMS, GraphQL APIs, filesystem, etc.
@@ -449,13 +449,13 @@ For example, `pages/blog/[[...slug]].js` will match `/blog`, as well as any
 route underneath it, such as: `/blog/a`, `/blog/a/b/c`, and so on.
 
 Like catch-all routes, `slug` will be provided in the
-[router query object](https://nextjs.org/docs/api-reference/next/router#router-object)
+[router query object](https://nextjs-cn.com/docs/api-reference/next/router#router-object)
 as an array of path parts. So, for the path `/blog/foo/bar`, the query object
 will be `{ slug: ['foo', 'bar'] }`. For the path `/blog`, the query object will
 omit the slug key: `{ }`.
 
 You can
-[learn more about optional catch all routes in our documentation](https://nextjs.org/docs/routing/dynamic-routes#optional-catch-all-routes).
+[learn more about optional catch all routes in our documentation](https://nextjs-cn.com/docs/routing/dynamic-routes#optional-catch-all-routes).
 
 ## Webpack 5 Support (beta)
 
@@ -483,7 +483,7 @@ in your `package.json`:
 ```
 
 The Webpack 5 beta has already been rolled out to
-[nextjs.org](http://nextjs.org) and [vercel.com](http://vercel.com) in
+[nextjs-cn.com](http://nextjs-cn.com) and [vercel.com](http://vercel.com) in
 production. We encourage you to try it out in a progressive manner and report
 back your findings on [GitHub](https://github.com/vercel/next.js/issues/13341).
 
@@ -496,12 +496,12 @@ more tailored to Next.js:
   `webpack-dev-middleware`, instead we now use webpack directly and optimize
   specifically for Next.js projects. This translates into a simpler architecture
   and faster development compilation.
-- [On-demand-entries](https://nextjs.org/blog/next-8#improved-on-demand-entries),
+- [On-demand-entries](https://nextjs-cn.com/blog/next-8#improved-on-demand-entries),
   which is the system Next.js has to allow it to compile on the pages that you
   visit at a given time during development, has also been rewritten and is now
   even more reliable by leveraging new webpack behavior specifically tailored
   for our use case.
-- [React Fast Refresh and the Next.js Error Overlay](https://nextjs.org/blog/next-9-4#fast-refresh)
+- [React Fast Refresh and the Next.js Error Overlay](https://nextjs-cn.com/blog/next-9-4#fast-refresh)
   are now fully compatible with webpack 5
 - Disk caching will be enabled in a future beta release.
 
@@ -518,7 +518,7 @@ If your Next.js project has no custom webpack configuration, no project
 changes will be needed to fully leverage webpack 5.
 
 **Important:** if your project has
-[custom webpack configuration](https://nextjs.org/docs/api-reference/next.config.js/custom-webpack-config),
+[custom webpack configuration](https://nextjs-cn.com/docs/api-reference/next.config.js/custom-webpack-config),
 some changes might be needed to transition to webpack 5. We recommend keeping an
 eye out for our migration instructions or minimize your usage of webpack
 extensions altogether for seamless future upgrades.

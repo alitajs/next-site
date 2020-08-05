@@ -91,7 +91,7 @@ const HeaderFeedback = ({ dryRun, className, open, onClick, email, ...props }) =
         return;
       }
 
-      fetch('https://api.nextjs.org/api/feedback', {
+      fetch('https://api.nextjs-cn.com/api/feedback', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -99,7 +99,7 @@ const HeaderFeedback = ({ dryRun, className, open, onClick, email, ...props }) =
         body: JSON.stringify({
           url:
             window.location.hostname === 'localhost'
-              ? `https://nextjs.org/dev-mode${window.location.pathname}`
+              ? `https://nextjs-cn.com/dev-mode${window.location.pathname}`
               : window.location.toString(),
           note: textAreaRef.current.value,
           email: emailValue || '',

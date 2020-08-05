@@ -18,8 +18,8 @@ function dateSortDesc(a, b) {
 function generate() {
   const feed = new RSS({
     title: 'Next.js Blog',
-    site_url: 'https://nextjs.org',
-    feed_url: 'https://nextjs.org/feed.xml'
+    site_url: 'https://nextjs-cn.com',
+    feed_url: 'https://nextjs-cn.com/feed.xml'
   });
 
   previewItems.sort(dateSortDesc).map(({ meta }) => {

@@ -59,7 +59,7 @@ If you're deploying on a platform that handles compression such as <PlatformLink
 
 Next.js 9 included built-in support for TypeScript. All that's necessary is to rename a single page from `.js` to `.tsx`. Next.js will automatically handle or guide you through any remaining setup.
 
-Next.js also handles type-checking by running `tsc --watch` in parallel to the development process. During development, Next.js has a concept called on-demand entries. This feature only compiles pages that you are actively working on — you can read more about it [here](https://nextjs.org/blog/next-8#improved-on-demand-entries).
+Next.js also handles type-checking by running `tsc --watch` in parallel to the development process. During development, Next.js has a concept called on-demand entries. This feature only compiles pages that you are actively working on — you can read more about it [here](https://nextjs-cn.com/blog/next-8#improved-on-demand-entries).
 
 <Image
   caption="The on-demand entries flow"
@@ -79,7 +79,7 @@ Next.js was released almost 3 years ago, and the framework has grown considerabl
 
 The way that we've been approaching this improvement process has been very much a manual one.
 
-&#8203;<OrgText /> has a few large Next.js applications. For example, <PlatformLink href='/' />, <PlatformLink href='/docs' />, and [https://nextjs.org](https://nextjs.org). We've been [dogfooding](https://en.wikipedia.org/wiki/Eating_your_own_dog_food) Next.js internally at <OrgText /> and improved Next.js based on our experiences.
+&#8203;<OrgText /> has a few large Next.js applications. For example, <PlatformLink href='/' />, <PlatformLink href='/docs' />, and [https://nextjs-cn.com](https://nextjs-cn.com). We've been [dogfooding](https://en.wikipedia.org/wiki/Eating_your_own_dog_food) Next.js internally at <OrgText /> and improved Next.js based on our experiences.
 
 On top of that, we actively engage with the community to gather feedback. Chances are that you have talked to Tim before to provide feedback on how you're using Next.js at your company.
 
@@ -93,7 +93,7 @@ For this reason, we've introduced an anonymous, more automated, approach to coll
 
 This will also allow us to verify if improvements made to the framework are improving the baseline of all applications.
 
-You can read more about telemetry on [nextjs.org/telemetry](https://nextjs.org/telemetry). There you will also find how to optionally opt-out if you don’t want to participate.
+You can read more about telemetry on [nextjs-cn.com/telemetry](https://nextjs-cn.com/telemetry). There you will also find how to optionally opt-out if you don’t want to participate.
 
 ### Build Feedback with Dots Indicating Activity
 
@@ -217,7 +217,7 @@ When we started optimizing Next.js for serverless deployments over a year ago, w
 
 Eventually, the package was a success and did make the production server runtime smaller. However, we came up with an innovative new way to make the runtime even smaller with the Next.js compiler and [static analysis](https://github.com/vercel/node-file-trace).
 
-In doing so, the `next-server` became obsolete and was replaced by the [serverless target](https://nextjs.org/docs#serverless-deployment). This target has a far more optimized output than using the `next-server` package as a replacement for `next`.
+In doing so, the `next-server` became obsolete and was replaced by the [serverless target](https://nextjs-cn.com/docs#serverless-deployment). This target has a far more optimized output than using the `next-server` package as a replacement for `next`.
 
 While this package was obsolete and could not be used directly, we kept it around. This was because it had internals that were shared between packages and moving the code would require a non-trivial amount of effort.
 

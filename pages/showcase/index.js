@@ -18,7 +18,7 @@ function Showcase({ item }) {
       <SocialMeta
         image="/static/twitter-cards/showcase.png"
         title="Showcase | Next.js"
-        url="https://nextjs.org/showcase"
+        url="https://nextjs-cn.com/showcase"
         description={`Meet hundreds of beautiful websites powered by Next.js by ${ORG_NAME}`}
       />
       <Tabs data={categories} anchor>

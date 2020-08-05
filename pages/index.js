@@ -19,7 +19,7 @@ export default function Index() {
       <SocialMeta
         image="/static/twitter-cards/home.jpg"
         title={`Next.js by ${ORG_NAME} - The React Framework`}
-        url="https://nextjs.org"
+        url="https://nextjs-cn.com"
         description={`Production grade React applications that scale. The world’s leading companies use Next.js by ${ORG_NAME} to build static and dynamic websites and web applications.`}
       />
       <SkipNavContent />

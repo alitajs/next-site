@@ -36,7 +36,7 @@ const Hulu = () => {
         title={title}
         description={`Find out how Hulu migrated to Next.js by ${ORG_NAME} and modernized their frontend stack to ship code faster.`}
         image="/static/twitter-cards/hulu.png"
-        url="https://nextjs.org/case-studies/hulu"
+        url="https://nextjs-cn.com/case-studies/hulu"
         keywords="React, Migrate to Next.js, web applications, migration"
       />
       <div className="container">

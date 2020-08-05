@@ -148,7 +148,7 @@ export default function HomePage() {
 
 The second change is that Next.js now supports `.env` loading by default. Allowing you to easily define development and production environment variables.
 
-You can read more about the `.env` loading in the [Environment Variables documentation](https://nextjs.org/docs/basic-features/environment-variables).
+You can read more about the `.env` loading in the [Environment Variables documentation](https://nextjs-cn.com/docs/basic-features/environment-variables).
 
 These new features will simplify using environment variables by following these conventions:
 
@@ -157,7 +157,7 @@ These new features will simplify using environment variables by following these 
 
 ## Improved Built-in Fetch Support
 
-In [Next.js 9.1.7](https://nextjs.org/blog/next-9-1-7#new-built-in-polyfills-fetch-url-and-objectassign) we announced polyfilling of the [`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) API in the browser. Today this polyfilling has been extended to the Node.js environment too.
+In [Next.js 9.1.7](https://nextjs-cn.com/blog/next-9-1-7#new-built-in-polyfills-fetch-url-and-objectassign) we announced polyfilling of the [`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) API in the browser. Today this polyfilling has been extended to the Node.js environment too.
 
 In practice, you no longer have to use any type of server-side fetch polyfill (for example `isomorphic-unfetch` or `node-fetch`) as Next.js will automatically provide `fetch()` in all environments.
 
@@ -216,7 +216,7 @@ function MyApp({ Component, pageProps }) {
 export default MyApp
 ```
 
-To use this method in combination with your analytics service refer to the ["Sending result to Analytics"](https://nextjs.org/docs/advanced-features/measuring-performance#sending-results-to-analytics) section of the docs. If you want to learn more about Core Web Vitals you can refer to [web.dev/vitals](https://web.dev/vitals/).
+To use this method in combination with your analytics service refer to the ["Sending result to Analytics"](https://nextjs-cn.com/docs/advanced-features/measuring-performance#sending-results-to-analytics) section of the docs. If you want to learn more about Core Web Vitals you can refer to [web.dev/vitals](https://web.dev/vitals/).
 
 ## Absolute Imports and Aliases
 
@@ -272,7 +272,7 @@ You must specify `baseUrl` if you specify `paths`. You can learn more about the 
 
 ## Configurable Sass Support
 
-When built-in Sass support was launched in [Next.js 9.3](https://nextjs.org/blog/next-9-3#built-in-sass-support-for-global-stylesheets) we got the feedback that a subset of users wanted to configure the sass compiler. For example to configure `includePaths`.
+When built-in Sass support was launched in [Next.js 9.3](https://nextjs-cn.com/blog/next-9-3#built-in-sass-support-for-global-stylesheets) we got the feedback that a subset of users wanted to configure the sass compiler. For example to configure `includePaths`.
 
 This is now possible by using the `sassOptions` key in `next.config.js`:
 

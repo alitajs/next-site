@@ -90,7 +90,7 @@ export default class FooterFeedback extends Component {
         return;
       }
 
-      fetch('https://api.nextjs.org/api/feedback', {
+      fetch('https://api.nextjs-cn.com/api/feedback', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -98,7 +98,7 @@ export default class FooterFeedback extends Component {
         body: JSON.stringify({
           url:
             window.location.hostname === 'localhost'
-              ? `https://nextjs.org/dev-mode${window.location.pathname}`
+              ? `https://nextjs-cn.com/dev-mode${window.location.pathname}`
               : window.location.toString(),
           note: value,
           email: this.state.emailValue || '',

@@ -2,7 +2,7 @@ import { useGetPoints } from '../../lib/learn/records';
 import { TWITTER_USER_NAME } from '../../lib/constants';
 
 const tweet = points => {
-  const url = `https://twitter.com/intent/tweet?url=https%3A%2F%2Fnextjs.org%2Flearn&text=I%20just%20got%20${points}%20points✨%20on&via=${TWITTER_USER_NAME}`;
+  const url = `https://twitter.com/intent/tweet?url=https%3A%2F%2Fnextjs-cn.com%2Flearn&text=I%20just%20got%20${points}%20points✨%20on&via=${TWITTER_USER_NAME}`;
   window.open(url, '_blank');
 };
 

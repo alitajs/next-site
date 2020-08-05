@@ -43,7 +43,7 @@ body {
 }
 ```
 
-Create a [`pages/_app.js` file](https://nextjs.org/docs/advanced-features/custom-app) if not already present.
+Create a [`pages/_app.js` file](https://nextjs-cn.com/docs/advanced-features/custom-app) if not already present.
 Then, import the `styles.css` file:
 
 ```jsx
@@ -55,7 +55,7 @@ export default function MyApp({ Component, pageProps }) {
 }
 ```
 
-Since stylesheets are global by nature, they must be imported in the [Custom `<App>` component](https://nextjs.org/docs/advanced-features/custom-app).
+Since stylesheets are global by nature, they must be imported in the [Custom `<App>` component](https://nextjs-cn.com/docs/advanced-features/custom-app).
 This is necessary to avoid class name and ordering conflicts for global styles.
 
 In development, expressing stylesheets this way allows your styles to be automatically updated on the page as you edit them.
@@ -117,7 +117,7 @@ export function Button() {
 ```
 
 CSS Modules are an _optional_ feature and are only enabled for files with the `.module.css` extension.
-Regular [`<link>` stylesheets](https://nextjs.org/docs/api-reference/next/head) and [global CSS files](#built-in-css-support-for-global-stylesheets) are still supported.
+Regular [`<link>` stylesheets](https://nextjs-cn.com/docs/api-reference/next/head) and [global CSS files](#built-in-css-support-for-global-stylesheets) are still supported.
 
 In production, all CSS Module files are automatically concatenated into **many minified and code-split `.css` files**.
 These `.css` files represent hot execution paths in your application, ensuring the minimal amount of CSS is loaded per-page for your application to paint.
@@ -394,7 +394,7 @@ Upgrading to the latest version of Next.js is all you need to do to leverage thi
 
 ### Catch-All Dynamic Routes
 
-With the release of Next.js 9 we introduced [dynamic route segments](https://nextjs.org/blog/next-9#dynamic-route-segments) with the goal of simplifying dynamic segments in Next.js without the need for a custom server.
+With the release of Next.js 9 we introduced [dynamic route segments](https://nextjs-cn.com/blog/next-9#dynamic-route-segments) with the goal of simplifying dynamic segments in Next.js without the need for a custom server.
 This feature has been massively adopted by Next.js users.
 
 There were still some cases that the dynamic route segments feature didn't cover.
