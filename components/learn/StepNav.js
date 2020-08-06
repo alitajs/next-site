@@ -26,7 +26,7 @@ const StepNav = ({ steps, nextLessonId, meta: { stepId, courseId, lessonId } }) 
         <ArrowIcon left>
           <LeftArrow color="#0070f3" />
         </ArrowIcon>
-        前一页
+        上一页
       </Button>
       <span className="spacer" />
       {i !== steps.length - 1 && (

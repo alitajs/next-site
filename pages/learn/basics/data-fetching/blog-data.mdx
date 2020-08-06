@@ -2,19 +2,19 @@ import Layout from '../../../../components/learn/Layout'
 import Image from '../../../../components/image'
 
 export const meta = {
-  title: 'Pre-rendering and Data Fetching',
+  title: '预渲染和数据获取',
   courseId: 'basics',
   lessonId: 'data-fetching',
   stepId: 'blog-data',
-  subtitle: 'Blog Data'
+  subtitle: '博客数据'
 }
 
-We’ll now add blog data to our app using the file system. Each blog post will be a markdown file.
+现在我们将使用文件系统将博客数据添加到应用程序中，每个博客文章都是一个 markdown 文件。
 
-- Create a new top-level directory called **`posts`** (this is not the same as `pages/posts`).
-- Inside, create two files: **`pre-rendering.md`** and **`ssg-ssr.md`**.
+- 创建一个新的名为 **`posts`** 的顶级目录，(这与 `pages/posts`不同)。
+- 在内部创建两个文件:**`pre-rendering.md`** 和 **`ssg-ssr.md`**。
 
-Copy the following to `pre-rendering.md`:
+将下列内容复制到 `pre-rendering.md`:
 
 ```md
 ---
@@ -30,7 +30,7 @@ Next.js has two forms of pre-rendering: **Static Generation** and **Server-side 
 Importantly, Next.js lets you **choose** which pre-rendering form to use for each page. You can create a "hybrid" Next.js app by using Static Generation for most pages and using Server-side Rendering for others.
 ```
 
-Copy the following to `ssg-ssr.md`:
+将下列内容复制到 `ssg-ssr.md`:
 
 ```md
 ---
@@ -54,16 +54,16 @@ On the other hand, Static Generation is **not** a good idea if you cannot pre-re
 In that case, you can use **Server-Side Rendering**. It will be slower, but the pre-rendered page will always be up-to-date. Or you can skip pre-rendering and use client-side JavaScript to populate data.
 ```
 
-> You might have noticed that each markdown file has a metadata section at the top containing `title` and `date`. This is called YAML Front Matter, which can be parsed using a library called [gray-matter](https://github.com/jonschlinkert/gray-matter).
+> 你可能已经注意到，每个 markdown 文件的顶部都有一个元数据部分，其中包含 `title` 和 `date`。这称为YAML Front Matter，可以使用一个名为[gray-matter](https://github.com/jonschlinkert/gray-matter)的库来处理它。
 
-### Parsing the Blog Data on `getStaticProps`
+### 在 `getStaticProps` 上解析博客数据
 
-Now, let’s update our index page (`pages/index.js`) using this data. We’d like to:
+现在，让我们使用这些数据更新我们的首页(`pages/index.js`)。 我们想要:
 
-- Parse each markdown file and get `title`, `date`, and file name (which will be used as `id` for the post URL).
-- List the data on the index page, sorted by date.
+- 解析每个 markdown 文件并获取'title'、'date'和文件名(将用作'id'作为文章的网址)。
+- 列出索引页上按日期排序的数据。
 
-To do this on pre-render, we need to implement `getStaticProps`.
+为了在预渲染时做到这一点，我们需要实现`getStaticProps`。
 
 <Image
   shadow
@@ -74,6 +74,6 @@ To do this on pre-render, we need to implement `getStaticProps`.
   height={948 / 2}
 />
 
-Let’s do it on the next page!
+让我们在下一页完成吧!
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

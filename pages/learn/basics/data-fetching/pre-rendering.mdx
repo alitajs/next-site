@@ -2,39 +2,39 @@ import Layout from '../../../../components/learn/Layout'
 import Image from '../../../../components/image'
 
 export const meta = {
-  title: 'Pre-rendering and Data Fetching',
+  title: '预渲染和数据获取',
   courseId: 'basics',
   lessonId: 'data-fetching',
   stepId: 'pre-rendering',
-  subtitle: 'Pre-rendering'
+  subtitle: '预渲染'
 }
 
-Before we talk about data fetching, let’s talk about one of the most important concepts in Next.js: **Pre-rendering**.
+在讨论数据获取之前，我们先来讨论一下 Next.js 中最重要的概念之一：**预渲染**。
 
-By default, Next.js pre-renders every page. This means that Next.js _generates HTML for each page in advance_, instead of having it all done by client-side JavaScript. Pre-rendering can result in better performance and SEO.
+默认情况下，Next.js 预渲染每个页面。这意味着 Next.js _为每个页面生成 HTML_，而不是让它全部由客户端 JavaScript 完成。预渲染可以使项目拥有更好的性能和搜索引擎优化。
 
-Each generated HTML is associated with minimal JavaScript code necessary for that page. When a page is loaded by the browser, its JavaScript code runs and makes the page fully interactive. (This process is called **hydration**.)
+每个生成 HTML 与该页所需的最小 JavaScript 代码相关联。当一个页面被浏览器加载时，它的 JavaScript 代码就会运行并使页面完全交互。(此过程称为**hydration**.)
 
-### Check That Pre-rendering Is Happening
+### 检查是否正在进行预渲染
 
-You can check that pre-rendering is happening by taking the following steps:
+你可以通过以下步骤检查预呈现是否正在进行:
 
-- Disable JavaScript in your browser (here’s how in [Chrome](https://developers.google.com/web/tools/chrome-devtools/javascript/disable)) and…
-- [Try accessing this page](https://next-learn-starter.now.sh/) (the final result of this tutorial).
+- 禁用浏览器中的 JavaScript (这里使如何在 [Chrome](https://developers.google.com/web/tools/chrome-devtools/javascript/disable) 浏览器中操作)
+- [尝试访问此页面](https://next-learn-starter.now.sh/) (本教程的最终结果)。
 
-You should see that your app is rendered without JavaScript. That’s because Next.js has pre-rendered the app into static HTML, allowing you to see the app UI without running JavaScript.
+你应该看到应用程序是在没有 JavaScript 的情况下呈现的。这是因为 Next.js 将应用程序预呈现为静态 HTML，允许你在不运行 JavaScript 的情况下查看应用程序 UI。
 
-> **Note**: You can also try the above steps on `localhost`, but CSS won’t be loaded if you disable JavaScript.
+> **注意**: 你也可以在 `localhost` 上尝试上述步骤，但是如果禁用 JavaScript，CSS 将不会加载。
 
-If your app is a plain React.js app (without Next.js), there’s no pre-rendering, so you won’t be able to see the app if you disable JavaScript. For example:
+如果你的应用程序是一个普通的 React.js 应用程序(没有 Next.js)，就没有预呈现功能，所以如果禁用 JavaScript，你将无法看到该应用程序。例如:
 
-- Enable JavaScript in your browser and [check out this page](https://create-react-app.now-examples.now.sh/). This is a plain React.js app built with [Create React App](https://create-react-app.dev/).
-- Now, disable JavaScript and access [the same page](https://create-react-app.now-examples.now.sh/) again.
-- You won’t see the app anymore — instead, it’ll say “You need to enable JavaScript to run this app.” This is because the app is not pre-rendered into static HTML.
+- 在浏览器中启用 JavaScript 并[查看此页面](https://create-react-app.now-examples.now.sh/)。这是一个普通的 React.js 应用程序，由[Create React App](https://create-react-app.dev/) 构建。
+- 现在，禁用 JavaScript 并再次访问[相同的页面](https://create-react-app.now-examples.now.sh/)。
+- 你不会再看到这个应用了 — 相反，它会说：“You need to enable JavaScript to run this app.”。这是因为应用程序没有预渲染为静态 HTML。
 
-### Summary: Pre-rendering vs No Pre-rendering
+### 总结: 预渲染与无预渲染
 
-Here’s a quick graphical summary:
+这里是一个快速的图形化总结:
 
 <Image
   shadow
@@ -53,6 +53,6 @@ Here’s a quick graphical summary:
   height={688 / 2}
 />
 
-Next, let’s talk about **two forms** of pre-rendering in Next.js.
+接下来，让我们在 Next.js 中讨论**两种形式**的预渲染。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

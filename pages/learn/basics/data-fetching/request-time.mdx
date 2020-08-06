@@ -3,14 +3,14 @@ import Link from 'next/link'
 import Image from '../../../../components/image'
 
 export const meta = {
-  title: 'Pre-rendering and Data Fetching',
+  title: '预渲染和数据获取',
   courseId: 'basics',
   lessonId: 'data-fetching',
   stepId: 'request-time',
-  subtitle: 'Fetching Data at Request Time'
+  subtitle: '在请求时间获取数据'
 }
 
-If you need to fetch data at **request time** instead of at build time, you can try **Server-side Rendering**:
+如果你需要在**请求时间获取数据**在构建时，你可以尝试**服务器端呈现**:
 
 <Image
   shadow
@@ -21,11 +21,11 @@ If you need to fetch data at **request time** instead of at build time, you can 
   height={1050 / 2}
 />
 
-To use Server-side Rendering, you need to export `getServerSideProps` instead of `getStaticProps` from your page.
+要使用服务器端呈现，你需要从页面中导出 `getServerSideProps` 而不是导出 `getStaticProps`。
 
-### Using `getServerSideProps`
+### 使用 `getServerSideProps`
 
-Here’s the starter code for `getServerSideProps`. It’s not necessary for our blog example, so we won’t be implementing it.
+下面是 `getServerSideProps` 的演示代码。对于我们的博客示例来说，它是不必要的，所以我们不会实现它。
 
 ```jsx
 export async function getServerSideProps(context) {
@@ -37,16 +37,16 @@ export async function getServerSideProps(context) {
 }
 ```
 
-Because `getServerSideProps` is called at request time, its parameter (`context`) contains request specific parameters. You can learn more in <Link href="/docs/[[...slug]]" as="/docs/basic-features/data-fetching#getserversideprops-server-side-rendering"><a>our documentation</a></Link>.
+因为 `getServerSideProps` 是在请求时调用的，所以它的参数(`context`)包含请求特定的参数。你可以在<Link href="/docs/[[...slug]]" as="/docs/basic-features/data-fetching#getserversideprops-server-side-rendering"><a>我们的文档</a></Link>中了解更多信息。
 
-You should use `getServerSideProps` only if you need to pre-render a page whose data must be fetched at request time. Time to first byte (TTFB) will be slower than `getStaticProps` because the server must compute the result on every request, and the result cannot be cached by a CDN without extra configuration.
+只有当你需要预呈现一个必须在请求时获取数据的页面时，你才应该使用`getServerSideProps`。到第一个字节的时间(TTFB)会比 `getStaticProps` 慢，因为服务器必须计算每个请求的结果，而且如果没有额外的配置，结果不能被CDN缓存。
 
-### Client-side Rendering
+### 客户端渲染
 
-If you **do not** need to pre-render the data, you can also use the following strategy (called **Client-side Rendering**):
+如果你**不**需要预渲染的数据，你也可以使用以下策略(称为**客户端渲染**):
 
-- Statically generate (pre-render) parts of the page that do not require external data.
-- When the page loads, fetch external data from the client using JavaScript and populate the remaining parts.
+- 静态生成不需要外部数据的页面部分(预渲染)。
+- 当页面加载时，使用 JavaScript 从客户端获取外部数据并填充其余部分。
 
 <Image
   shadow
@@ -57,11 +57,11 @@ If you **do not** need to pre-render the data, you can also use the following st
   height={1896 / 2}
 />
 
-This approach works well for user dashboard pages, for example. Because a dashboard is a private, user-specific page, SEO is not relevant, and the page doesn’t need to be pre-rendered. The data is frequently updated, which requires request-time data fetching.
+例如，这种方法适用于用户仪表板页面。因为仪表板是一个私有的、用户特定的页面，所以 SEO 不相关，而且页面不需要预先渲染。数据经常更新，还需要请求时获取数据。
 
 ### SWR
 
-The team behind Next.js has created a React hook for data fetching called [**SWR**](https://swr.now.sh/). We highly recommend it if you’re fetching data on the client side. It handles caching, revalidation, focus tracking, refetching on interval, and more. We won’t cover the details here, but here’s an example usage:
+Next.js 的团队创建了一个用于数据获取的 React hook，称为[**SWR**](https://swr.now.sh/)。我们强烈建议你在客户端获取数据是使用它。它处理缓存、重新验证、焦点跟踪、间隔重构等等。在这里我们不讨论细节，但这里有一个示例用法:
 
 ```jsx
 import useSWR from 'swr'
@@ -75,12 +75,12 @@ function Profile() {
 }
 ```
 
-[Check out the SWR documentation to learn more](https://swr.now.sh/).
+[了解更多 SWR 信息](https://swr.now.sh/).
 
-### That’s It!
+### 就是这样!
 
-In the next lesson, we’ll create pages for each blog post using **dynamic routes**.
+在下一课中，我们将使用**动态路由**为每个博客文章创建页面。
 
-> Again, you can get in-depth information about `getStaticProps` and `getServerSideProps` in <Link href="/docs/[[...slug]]" as="/docs/basic-features/data-fetching"><a>our documentation</a></Link>.
+> 同样，你可以在<Link href="/docs/[[...slug]]" as="/docs/basic-features/data-fetching"><a>我们的文档</a></Link>获得有关 `getStaticProps` 和 `getServerSideProps` 的详细信息。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

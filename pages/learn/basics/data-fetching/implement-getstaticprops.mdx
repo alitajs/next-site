@@ -2,23 +2,23 @@ import Layout from '../../../../components/learn/Layout'
 import Image from '../../../../components/image'
 
 export const meta = {
-  title: 'Pre-rendering and Data Fetching',
+  title: '预渲染和数据获取',
   courseId: 'basics',
   lessonId: 'data-fetching',
   stepId: 'implement-getstaticprops',
-  subtitle: 'Implement getStaticProps'
+  subtitle: '实现 getStaticProps'
 }
 
-First, install [gray-matter](https://github.com/jonschlinkert/gray-matter) which lets us parse the metadata in each markdown file.
+首先安装[gray-matter](https://github.com/jonschlinkert/gray-matter)，它允许我们解析每个 markdown 文件中的元数据。
 
 ```shell
 npm install gray-matter
 ```
 
-Next, we’ll create a simple library for fetching data from the file system.
+接下来，我们将创建一个简单的库，用于从文件系统中获取数据。
 
-- Create a top-level directory called `lib`, and…
-- Create a file called `posts.js` inside with the following contents:
+- 创建名为 `lib` 的顶级目录
+- 在里面创建一个名为 `posts.js` 的文件，内容如下:
 
 ```js
 import fs from 'fs'
@@ -58,13 +58,13 @@ export function getSortedPostsData() {
 }
 ```
 
-And in `pages/index.js`, import this function:
+在`pages/index.js`中，导入这个函数:
 
 ```js
 import { getSortedPostsData } from '../lib/posts'
 ```
 
-Then call this function in `getStaticProps`. You need to return the result inside the `props` key:
+然后在 `getStaticProps` 中调用这个函数，你需要将结果返回到 `props` 中：
 
 ```js
 export async function getStaticProps() {
@@ -77,13 +77,13 @@ export async function getStaticProps() {
 }
 ```
 
-Once this is set up, the `allPostsData` prop will be passed to the `Home` component. To see this, modify the component definition to take `{ allPostsData }`:
+一旦设置完毕，`allPostsData` 属性将被传递到 `Home` 组件。要查看这一点，请将组件定义修改为带`{ allPostsData }`属性:
 
 ```jsx
 export default function Home ({ allPostsData }) { ... }
 ```
 
-To display the data, add another `<section>` tag at the bottom of this component:
+若要显示数据，请在该组件底部添加另一个 `<section>` 标签:
 
 ```jsx
 export default function Home({ allPostsData }) {
@@ -110,7 +110,7 @@ export default function Home({ allPostsData }) {
 }
 ```
 
-You should now see the blog data if you access [http://localhost:3000](http://localhost:3000).
+如果你现在访问 [http://localhost:3000](http://localhost:3000)，你应该可以看到博客数据。
 
 <Image
   shadow
@@ -121,7 +121,7 @@ You should now see the blog data if you access [http://localhost:3000](http://lo
   height={578 / 2}
 />
 
-Congratulations! We’ve successfully fetched external data (from the file system) and pre-rendered the index page with this data.
+恭喜! 我们已经成功地获取了外部数据(从文件系统)，并使用该数据预渲染了首页。
 
 <Image
   shadow
@@ -132,6 +132,6 @@ Congratulations! We’ve successfully fetched external data (from the file syste
   height={948 / 2}
 />
 
-Let’s talk about some tips for using `getStaticProps` on the next page.
+让我们在下一页讨论一些 `getStaticProps` 的使用技巧。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

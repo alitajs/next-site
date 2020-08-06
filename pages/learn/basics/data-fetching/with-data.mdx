@@ -2,16 +2,16 @@ import Layout from '../../../../components/learn/Layout'
 import Image from '../../../../components/image'
 
 export const meta = {
-  title: 'Pre-rendering and Data Fetching',
+  title: '预渲染和数据获取',
   courseId: 'basics',
   lessonId: 'data-fetching',
   stepId: 'with-data',
-  subtitle: 'Static Generation with and without Data'
+  subtitle: '有和无数据的静态生成'
 }
 
-Static Generation can be done with and without **data**.
+静态生成可以使用和不使用**数据**来完成。
 
-So far, all the pages we’ve created do not require fetching external data. Those pages will automatically be statically generated when the app is built for production.
+到目前为止，我们创建的所有页面都不需要获取外部数据。这些页面将在应用程序编译的时候自动静态生成。
 
 <Image
   shadow
@@ -22,7 +22,7 @@ So far, all the pages we’ve created do not require fetching external data. Tho
   height={784 / 2}
 />
 
-However, for some pages, you might not be able to render the HTML without first fetching some external data. Maybe you need to access the file system, fetch external API, or query your database at build time. Next.js supports this case — Static Generation **with data** — out of the box.
+然而，对于某些页面，你可能无法在不先获取一些外部数据时呈现 HTML。你可能需要访问文件系统、获取外部 API 或在构建时查询数据库。Next.js 支持这种情况 — **有数据**的静态生成 — 开箱即用。
 
 <Image
   shadow
@@ -33,12 +33,12 @@ However, for some pages, you might not be able to render the HTML without first 
   height={1050 / 2}
 />
 
-### Static Generation with Data using `getStaticProps`
+### 使用 `getStaticProps` 的有数据的静态生成
 
-How does it work? Well, in Next.js, when you export a page component, you can also export an `async` function called `getStaticProps`. If you do this, then:
+它是如何工作的？在 Next.js 中，当导出一个页面组件时，还可以导出一个名为`getStaticProps` 的 `async` 函数。如果你这样做，那么:
 
-- `getStaticProps` runs at build time in production, and…
-- Inside the function, you can fetch external data and pass that as the props of the page.
+- 在生产过程中，在构建时运行`getStaticProps`。
+- 在函数内部，你可以获取外部数据并将其作为页面的属性传递。
 
 ```jsx
 export default function Home(props) { ... }
@@ -55,12 +55,12 @@ export async function getStaticProps() {
 }
 ```
 
-Essentially, `getStaticProps` allows you to tell Next.js: _“Hey, this page has some data dependencies — so when you pre-render this page at build time, make sure to resolve them first!”_
+本质上，`getStaticProps`允许你告诉 Next.js:_“嘿，这个页面有一些数据依赖关系 — 所以当你在构建时预渲染这个页面时，一定要先处理它们！”_
 
-> **Note**: In development mode, `getStaticProps` runs on each request instead.
+> **注意**: 在开发模式下，`getStaticProps` 在每个请求时运行。
 
-### Let’s Use `getStaticProps`
+### 让我们使用 `getStaticProps`
 
-It’s easier to learn by doing, so starting from the next page, we’ll use `getStaticProps` to implement our blog.
+这样做更容易学习，所以从下一页开始，我们将使用 `getStaticProps` 来实现我们的博客。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

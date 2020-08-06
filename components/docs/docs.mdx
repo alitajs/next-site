@@ -254,14 +254,14 @@ const pids = ['id1', 'id2', 'id3'];
 However, if a query and route param name are the same, route parameters will override the matching query params.
 For example, `/post/abc?pid=bcd` will have the `query` object: `{ pid: 'abc' }`.
 
-> **Note**: Predefined routes take precedence over dynamic routes.
+> **注意**: Predefined routes take precedence over dynamic routes.
 > For example, if you have `pages/post/[pid].js` and `pages/post/create.js`, the route `/post/create` will be matched by `pages/post/create.js` instead of the dynamic route (`[pid]`).
 
-> **Note**: Pages that are statically optimized by [automatic static optimization](#automatic-static-optimization) will be hydrated without their route parameters provided (`query` will be empty, i.e. `{}`).
+> **注意**: Pages that are statically optimized by [automatic static optimization](#automatic-static-optimization) will be hydrated without their route parameters provided (`query` will be empty, i.e. `{}`).
 > After hydration, Next.js will trigger an update to your application to provide the route parameters in the `query` object.
 > If your application cannot tolerate this behavior, you can opt-out of static optimization by capturing the query parameter in `getInitialProps`.
 
-> **Note**: If deploying to <PlatformLink /> dynamic routes will work out-of-the-box.
+> **注意**: If deploying to <PlatformLink /> dynamic routes will work out-of-the-box.
 > You do not need to configure custom routes in a `now.json` file.
 >
 > If you are new to <PlatformLink />, you can learn how to deploy a Next.js app to it in the [_Deploying a Next.js App_ Learn section](https://nextjs-cn.com/learn/basics/deploying-a-nextjs-app).
@@ -799,7 +799,7 @@ Router.events.on('routeChangeError', (err, url) => {
 });
 ```
 
-> **Note**: Using router events in `getInitialProps` is discouraged as it may result in unexpected behavior.<br/>
+> **注意**: Using router events in `getInitialProps` is discouraged as it may result in unexpected behavior.<br/>
 > Router events should be registered when a component mounts (`useEffect` or `componentDidMount`/`componentWillUnmount`) or imperatively when an event happens.
 >
 > ```js
@@ -901,7 +901,7 @@ export default function ActiveLink({ children, href }) {
 }
 ```
 
-> **Note**: `useRouter` is a React hook, meaning it cannot be used with classes.
+> **注意**: `useRouter` is a React hook, meaning it cannot be used with classes.
 > You can either use [`withRouter`](#using-a-higher-order-component) (a higher order component) or wrap your class in a function component.
 
 The above `router` object comes with an API similar to [`next/router`](#imperatively).
@@ -1103,7 +1103,7 @@ export default (req, res) => {
 };
 ```
 
-> **Note**: API Routes [do not specify CORS headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), so they'll be **same-origin only** by default.
+> **注意**: API Routes [do not specify CORS headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), so they'll be **same-origin only** by default.
 > You can customize this behavior by wrapping your export with CORS middleware.
 > We provide an [example of this below](#api-middlewares).
 
@@ -1551,10 +1551,10 @@ Note, [styled-jsx](https://github.com/vercel/styled-jsx) is included in Next.js 
 
 A custom `<Document>` can also include `getInitialProps` for expressing asynchronous server-rendering data requirements.
 
-> **Note**: `<Document>`'s `getInitialProps` function is not called during client-side transitions,
+> **注意**: `<Document>`'s `getInitialProps` function is not called during client-side transitions,
 > nor when a page is [automatically statically optimized](#automatic-static-optimization).
 
-> **Note**: Make sure to check if `ctx.req` / `ctx.res` are defined in `getInitialProps`.
+> **注意**: Make sure to check if `ctx.req` / `ctx.res` are defined in `getInitialProps`.
 > These variables will be `undefined` when a page is being statically exported for `next export` or [automatic static optimization](#automatic-static-optimization).
 
 To use a custom `<Document>`, you must create a file at `./pages/_document.js` and extend the `Document` class:
@@ -2027,7 +2027,7 @@ Place any server-only runtime config under a `serverRuntimeConfig` property.
 
 Anything accessible to both client and server-side code should be under `publicRuntimeConfig`.
 
-> **Note**: A page that relies on `publicRuntimeConfig` **must** use `getInitialProps` to opt-out of [automatic static optimization](#automatic-static-optimization).
+> **注意**: A page that relies on `publicRuntimeConfig` **must** use `getInitialProps` to opt-out of [automatic static optimization](#automatic-static-optimization).
 > You can also de-optimize your entire application by creating a [Custom `<App>`](#custom-app) with `getInitialProps`.
 
 ```js
@@ -2105,7 +2105,7 @@ If `getInitialProps` is absent, Next.js will **statically optimize** your page a
 This feature allows Next.js to emit hybrid applications that contain **both server-rendered and statically generated pages**.
 This ensures Next.js always emits applications that are **fast by default**.
 
-> **Note**: Statically generated pages are still reactive: Next.js will hydrate your application client-side to give it full interactivity.
+> **注意**: Statically generated pages are still reactive: Next.js will hydrate your application client-side to give it full interactivity.
 
 This feature provides many benefits.
 For example, optimized pages require no server-side computation and can be instantly streamed to the end-user from CDN locations.
@@ -2119,9 +2119,9 @@ This behavior is similar for `target: 'serverless'`.
 The built-in Next.js server (`next start`) and programmatic API (`app.getRequestHandler()`) both support this build output transparently.
 There is no configuration or special handling required.
 
-> **Note**: If you have a [custom `<App>`](#custom-app) with `getInitialProps` then this optimization will be disabled.
+> **注意**: If you have a [custom `<App>`](#custom-app) with `getInitialProps` then this optimization will be disabled.
 
-> **Note**: If you have a [custom `<Document>`](#custom-document) with `getInitialProps` be sure you check if `ctx.req` is defined before assuming the page is server-side rendered.
+> **注意**: If you have a [custom `<Document>`](#custom-document) with `getInitialProps` be sure you check if `ctx.req` is defined before assuming the page is server-side rendered.
 > `ctx.req` will be `undefined` for pages that are prerendered.
 
 ## Automatic Static Optimization Indicator
@@ -2287,12 +2287,12 @@ You're now ready to start converting files from `.js` to `.tsx` and leveraging t
 
 To learn more about TypeScript checkout its [documentation](https://www.typescriptlang.org/).
 
-> **Note**: Next.js will create a file named `next-env.d.ts` in the root of your project.
+> **注意**: Next.js will create a file named `next-env.d.ts` in the root of your project.
 > This file ensures Next.js' types are picked up by the TypeScript compiler.
 >
 > **You cannot remove this file, however, you can edit it (but don't need to).**
 
-> **Note**: Next.js does not enable TypeScript's `strict` mode by default.
+> **注意**: Next.js does not enable TypeScript's `strict` mode by default.
 > When you feel comfortable with TypeScript, you may turn this option on in your `tsconfig.json`.
 
 ### Exported types
@@ -2427,7 +2427,7 @@ AMP-only (`pages/about.js`) would output:
 
 During export Next.js automatically detects if a page is hybrid AMP and outputs the AMP version to `page.amp.html`. We also automatically insert the `<link rel="amphtml" href="/page.amp" />` and `<link rel="canonical" href="/" />` tags for you.
 
-> **Note**: When using `exportTrailingSlash: true` in `next.config.js`, output will be different. For Hybrid AMP pages, output will be `out/page/index.html` and `out/page.amp/index.html`, and for AMP-only pages, output will be `out/page/index.html`
+> **注意**: When using `exportTrailingSlash: true` in `next.config.js`, output will be different. For Hybrid AMP pages, output will be `out/page/index.html` and `out/page.amp/index.html`, and for AMP-only pages, output will be `out/page/index.html`
 
 ### Adding AMP Components
 
@@ -2537,7 +2537,7 @@ module.exports = {
 };
 ```
 
-> **Note**: If the export path is a filename (e.g. `/readme.md`) and is different than `.html`, you may need to set the `Content-Type` header to `text/html` when serving this content.
+> **注意**: If the export path is a filename (e.g. `/readme.md`) and is different than `.html`, you may need to set the `Content-Type` header to `text/html` when serving this content.
 
 The second argument is an `object` with:
 
@@ -2589,7 +2589,7 @@ With `next export`, we build a HTML version of your app. At export time we will 
 
 The `req` and `res` fields of the `context` object passed to `getInitialProps` are empty objects during export as there is no server running.
 
-> **Note**: If your pages don't have `getInitialProps` you may not need `next export` at all, `next build` is already enough thanks to [automatic static optimization](#automatic-static-optimization).
+> **注意**: If your pages don't have `getInitialProps` you may not need `next export` at all, `next build` is already enough thanks to [automatic static optimization](#automatic-static-optimization).
 
 > You won't be able to render HTML dynamically when static exporting, as we pre-build the HTML files. If you want to do dynamic rendering use `next start` or the custom server API
 

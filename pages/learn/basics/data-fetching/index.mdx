@@ -2,21 +2,21 @@ import Layout from '../../../../components/learn/Layout'
 import Link from 'next/link'
 
 export const meta = {
-  title: 'Pre-rendering and Data Fetching',
+  title: '预渲染和数据获取',
   courseId: 'basics',
   lessonId: 'data-fetching'
 }
 
-We’d like to create a blog (here’s [the desired result](https://next-learn-starter.now.sh/)), but so far we’ve added no blog content. In this lesson, we’ll learn how to fetch external blog data into our app. We’ll store the blog content in the file system, but it’ll work if the content is stored elsewhere (e.g. database or Headless CMS) .
+我们想创建一个博客(这里是[最终的效果](https://next-learn-starter.now.sh/))，但是到目前为止我们还没有添加博客内容。在本课中，我们将学习如何获取外部博客数据到我们的应用程序。我们将把博客内容存储在文件系统中，但是如果内容存储在其他地方(例如数据库或 Headless CMS)，它都可以工作。
 
 ### 这节课你将学到什么
 
-In this lesson, you’ll learn about:
+在本课中，你将学会:
 
-- Next.js’s pre-rendering feature.
-- The two forms of pre-rendering: Static Generation and Server-side Rendering.
-- Static Generation with and without data.
-- `getStaticProps` and how to use it to import external blog data into the index page.
-- Some useful information on `getStaticProps`.
+- Next.js 的预渲染特性。
+- 预渲染的两种形式:静态生成和服务端渲染。
+- 有和无数据的静态生成。
+- `getStaticProps`以及如何使用它将外部博客数据导入首页。
+- 关于 `getStaticProps` 的一些有用信息。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>
