@@ -2,28 +2,28 @@ import Layout from '../../../../components/learn/Layout'
 import Image from '../../../../components/image'
 
 export const meta = {
-  title: 'Assets, Metadata, and CSS',
+  title: '资源、元数据和CSS',
   courseId: 'basics',
   lessonId: 'assets-metadata-css',
   stepId: 'polishing-layout',
-  subtitle: 'Polishing Layout'
+  subtitle: '润饰布局'
 }
 
-So far, we’ve only added minimal React and CSS code just to illustrate concepts such as CSS Modules. Before we move on to our next lesson (data fetching), let’s polish our page styling and code.
+到目前为止，我们只添加了最小的 React 和 CSS 代码来说明诸如 CSS Modules 之类的概念。在我们继续下一课（数据获取）之前，让我们对页面样式和代码进行润色。
 
-### Download Your Profile Picture
+### 下载你的个人资料图片
 
-First, we’ll be using your profile picture for the final design.
+首先，我们将使用你的个人资料图片为最终设计。
 
-- **Download** your profile picture from GitHub, Twitter, LinkedIn or elsewhere (or [use this file](https://github.com/vercel/next-learn-starter/blob/master/basics-final/public/images/profile.jpg)).
-- Create an `images` directory inside of the `public` directory.
-- Save the picture as `profile.jpg` in the `public/images` directory.
-- The image size can be around 400px by 400px.
-- You may remove the unused SVG logo file directly under the `public` directory.
+- **下载** 你的个人资料图片来自 GitHub、Twitter、LinkedIn 或者其他地方 (或者[使用这个文件](https://github.com/vercel/next-learn-starter/blob/master/basics-final/public/images/profile.jpg)).
+- 在 `public` 目录中创建 `images` 目录。
+- 将图片保存为 `profile.jpg` ，放在 `public/images` 目录中。
+- 图像大小可以是 400*400px。
+- 你可以直接删除 `public` 目录下未使用的 SVG logo 文件。
 
-### Update `components/layout.module.css`
+### 更新 `components/layout.module.css`
 
-Second, we’ll use the following for `components/layout.module.css` — simply copy and paste it. It adds some more polished styles.
+其次，我们将在 `components/layout.module.css` 使用以下代码 — 只需复制并粘贴它。它增加了一些更精致的样式。
 
 ```css
 .container {
@@ -53,11 +53,11 @@ Second, we’ll use the following for `components/layout.module.css` — simply 
 }
 ```
 
-### Create `styles/utils.module.css`
+### 创建 `styles/utils.module.css`
 
-Third, let’s create a set of utility CSS classes for typography and others that will be useful across multiple components.
+第三，让我们创建一组在多个组件中都很有用的 CSS 类，用于排版和其他。
 
-Let’s add it as a CSS Module at `styles/utils.module.css`.
+让我们在 `styles/utils.module.css` 添加它，作为一个CSS Module。
 
 ```css
 .heading2Xl {
@@ -114,13 +114,13 @@ Let’s add it as a CSS Module at `styles/utils.module.css`.
 }
 ```
 
-### Update `components/layout.js`
+### 更新 `components/layout.js`
 
-Fourth, copy the following code to `components/layout.js` and **change** `Your Name` at the top to your name. Here’s what’s new:
+第四，将以下代码复制到`components/layout.js` 并且在顶部 **修改** `Your Name`为你的名字。以下是最新的消息:
 
-- `meta` tags (like `og:image`)
-- Boolean `home` prop which will adjust the size of the title and the image
-- “Back to home” link at the bottom if `home` is `false`
+- `meta` 标记 (如 `og:image`)
+- 可调整标题和图像大小的 `home` 属性
+- 如果`home`是`false`，则在底部的“Back to home”链接。
 
 ```jsx
 import Head from 'next/head'
@@ -191,11 +191,11 @@ export default function Layout({ children, home }) {
 }
 ```
 
-### Update `pages/index.js`
+### 更新 `pages/index.js`
 
-Finally, let's update the homepage.
+最后，让我们更新主页。
 
-Change `pages/index.js` as follows:
+将 `pages/index.js` 更改如下:
 
 ```jsx
 import Head from 'next/head'
@@ -220,7 +220,7 @@ export default function Home() {
 }
 ```
 
-Then replace `[Your Self Introduction]` with your self introduction. Here’s an example with the author’s profile:
+然后用你自己的自我介绍替换`[Your Self Introduction]`。以下是作者简介的一个例子:
 
 <Image
   shadow
@@ -231,8 +231,8 @@ Then replace `[Your Self Introduction]` with your self introduction. Here’s an
   height={864 / 2}
 />
 
-That’s it! We now have the polished layout code in place to move onto our data fetching lessons.
+就是这样！我们现在已经有了完善的布局代码，进入我们的数据获取课程。
 
-Before we wrap up this lesson, let’s talk about some helpful techniques related to Next.js’s CSS support on the next page.
+在结束本章节之前，让我们在下一页讨论与 Next.js 的 CSS 支持相关的一些有用技术。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

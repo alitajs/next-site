@@ -3,27 +3,27 @@ import Image from '../../../../components/image'
 import Link from 'next/link'
 
 export const meta = {
-  title: 'Assets, Metadata, and CSS',
+  title: '资源、元数据和CSS',
   courseId: 'basics',
   lessonId: 'assets-metadata-css',
   stepId: 'styling-tips',
-  subtitle: 'Styling Tips'
+  subtitle: '样式技巧'
 }
 
-Here are some styling tips that might be helpful.
+这里有一些样式技巧，可能会对你有帮助。
 
-> You can just **read through** the following sections. No need to make changes to our app!
+> 你可以**浏览**下面的部分，不需要修改我们的应用程序！
 
-### Using `classnames` library to toggle classes
+### 使用 `classnames` 库切换类
 
-[`classnames`](https://github.com/JedWatson/classnames) is a simple library that lets you toggle class names easily. You can install it using `npm install classnames` or `yarn add classnames`.
+[`classnames`](https://github.com/JedWatson/classnames) 是一个让你轻松切换类名的库。你可以使用 `npm install classnames` 或者 `yarn add classnames` 来安装它。
 
-Please take a look at its [README](https://github.com/JedWatson/classnames) for details, but here’s basic usage:
+请查看其 [README](https://github.com/JedWatson/classnames) 了解详情，但以下是基本用法：
 
-- Suppose that you want to create an `Alert` component which accepts `type`, which can be `'success'` or `'error'`.
-- If it’s `'success'`, you want the text color to be green. If it’s `'error'`, you want the text color to be red.
+- 假设你想创建一个 `Alert` 组件，该组件接受 `type`，它可以是`'success'` 或者 `'error'`。
+- 如果是 `'success'`，你希望文本颜色是绿色。如果它是 `'error'`，你希望文本的颜色是红色。
 
-You can first write a CSS module (e.g. `alert.module.css`) like this:
+你可以先写一个 CSS module (例如 `alert.module.css`) ，如下所示:
 
 ```css
 .success {
@@ -34,7 +34,7 @@ You can first write a CSS module (e.g. `alert.module.css`) like this:
 }
 ```
 
-And use `classnames` like this:
+并像这样使用 `classnames`:
 
 ```jsx
 import styles from './alert.module.css'
@@ -54,19 +54,19 @@ export default function Alert({ children, type }) {
 }
 ```
 
-### Customizing PostCSS Config
+### 自定义 PostCSS 配置
 
-Out of the box, with no configuration, Next.js compiles CSS using [PostCSS](https://postcss.org/).
+开箱即用，没有配置，Next.js 使用 [PostCSS](https://postcss.org/) 编译CSS。
 
-To customize PostCSS config, you can create a top-level file called `postcss.config.js`. This is useful if you’re using libraries like [Tailwind CSS](https://tailwindcss.com/).
+要自定义PostCSS配置，你可以创建一个名为 `postcss.config.js` 的顶级文件。如果你正在使用像 [Tailwind CSS](https://tailwindcss.com/) 这样的库，那么这将非常有用。
 
-Here’s an instruction for using [Tailwind CSS](https://tailwindcss.com/). We recommend using `postcss-preset-env` and `postcss-flexbugs-fixes` to match <Link href="/docs/[[...slug]]" as="/docs/advanced-features/customizing-postcss-config#default-behavior"><a>Next.js’s default behavior</a></Link>. First, install the packages:
+这里有一条关于使用 [Tailwind CSS](https://tailwindcss.com/) 的操作指引。我们建议使用 `postcss-preset-env` 和 `postcss-flexbugs-fixes` 来匹配 <Link href="/docs/[[...slug]]" as="/docs/advanced-features/customizing-postcss-config#default-behavior"><a>Next.js的默认行为</a></Link>。首先，安装软件包:
 
 ```shell
 npm install tailwindcss postcss-preset-env postcss-flexbugs-fixes
 ```
 
-Then write the following for `postcss.config.js`:
+然后为`postcss.config.js`编写以下内容：
 
 ```js
 module.exports = {
@@ -89,7 +89,7 @@ module.exports = {
 }
 ```
 
-We also recommend [removing unused CSS](https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css) by specifying the `purge` option on `tailwind.config.js`:
+我们建议通过在 `tailwind.config.js` 上指定 `purge`  选项来[删除未使用的 CSS](https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css):
 
 ```js
 // tailwind.config.js
@@ -103,20 +103,21 @@ module.exports = {
 }
 ```
 
-> To learn more about custom PostCSS configuration, check out <Link href="/docs/[[...slug]]" as="/docs/advanced-features/customizing-postcss-config"><a>our documentation</a></Link>.
+> 了解更多关于自定义 PostCSS 配置的信息，请查看<Link href="/docs/[[...slug]]" as="/docs/advanced-features/customizing-postcss-config"><a>我们的文档</a></Link>。
 
-### Using Sass
 
-Out of the box, Next.js allows you to import [Sass](https://sass-lang.com/) using both the `.scss` and `.sass` extensions. You can use component-level Sass via CSS Modules and the `.module.scss` or `.module.sass` extension.
+### 使用 Sass
 
-Before you can use Next.js' built-in Sass support, be sure to install sass:
+在开箱即用的情况下，Next.js 允许你导入 [Sass](https://sass-lang.com/)，同时使用 `.scss` 和 `.sass` 扩展。你可以通过 `.module.scss` 或 `.module.Sass` 扩展以 CSS Modules 的方式来使用组件级别的 Sass。
+
+在使用 Next.js 内置的 Sass 支持之前，一定要安装 Sass:
 
 ```shell
 npm install sass
 ```
 
-### That’s it for this lesson!
+### 这节课就到这里!
 
-To learn more about Next.js’s built-in CSS Support and CSS Modules, check out <Link href="/docs/[[...slug]]" as="/docs/basic-features/built-in-css-support"><a>our documentation</a></Link>.
+要了解更多关于 Next.js 的内置 CSS 支持和 CSS Modules 的信息，请查看<Link href="/docs/[[...slug]]" as="/docs/basic-features/built-in-css-support"><a>我们的文档</a></Link>。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

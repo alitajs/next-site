@@ -2,16 +2,16 @@ import Layout from '../../../../components/learn/Layout'
 import Image from '../../../../components/image'
 
 export const meta = {
-  title: 'Assets, Metadata, and CSS',
+  title: '资源、元数据和CSS',
   courseId: 'basics',
   lessonId: 'assets-metadata-css',
   stepId: 'global-styles',
-  subtitle: 'Global Styles'
+  subtitle: '全局样式'
 }
 
-CSS Modules are useful for component-level styles. But if you want to load some CSS to be loaded by **every page**, Next.js has support for that as well.
+CSS Modules 对于组件级样式很有用。但是如果你想加载一些 CSS 来作用于**每一页**，Next.js也支持这种方式。
 
-To load global CSS files, **create a file called `_app.js`** under `pages` and add the following content:
+要加载全局 CSS 文件，在 `pages` 下**创建一个名为`_app.js`的文件**，加上以下内容：
 
 ```jsx
 export default function App({ Component, pageProps }) {
@@ -19,28 +19,28 @@ export default function App({ Component, pageProps }) {
 }
 ```
 
-This `App` component is the top-level component which will be common across all the different pages. You can use this `App` component to keep state when navigating between pages, for example.
+这个 `App` 组件是顶级组件，在所有不同的页面上都可见。例如，当在页面之间导航时，你可以使用这个 `App` 组件来保持状态。
 
-### Restart the Development Server
+### 重新启动开发服务器
 
-**Important:** You need to restart the development server when you add `_app.js`. Press <kbd>Ctrl + c</kbd> to stop the server and run:
+**重要信息:** 添加 `_app.js` 时，你需要重新启动开发服务器。按 <kbd>Ctrl + c</kbd> 来停止服务器并重新运行:
 
 ```shell
 npm run dev
 ```
 
-### Adding Global CSS
+### 添加全局样式
 
-In Next.js, you can add global CSS files by importing them from `_app.js`. You **cannot** import global CSS anywhere else.
+在 Next.js 中，你可以通过从 `_app.js` 导入全局样式文件来添加它们。你**无法**在其他地方导入全局样式。
 
-The reason that global CSS can't be imported outside of `_app.js` is that global CSS affects all elements on the page.
+全局样式不能从外部导入的原因是 `_app.js` 是全局的，它的样式影响页面上的所有元素。
 
-If you would navigate from the homepage to the `/posts/first-post` page, global styles from the homepage would affect `/posts/first-post` unintentionally.
+如果从主页导航到 `/posts/first-post` 页面，主页的全局样式会无意中影响 `/posts/first-post`。
 
-You can place the global CSS file anywhere and use any name. So let’s do the following:
+你可以在任何地方放置全局样式文件并使用任何名称，因此让我们这样做：
 
-- Create a top-level `styles` directory and create `global.css` inside.
-- Add the following content. It resets some styles and changes the color of the `a` tag.
+- 创建一个顶级 `styles` 目录，并在里面创建 `global.css` 文件.
+- 添加下列内容。它重置一些样式并更改 `a` 标签的颜色。
 
 ```css
 html,
@@ -72,7 +72,7 @@ img {
 }
 ```
 
-Finally, import it from `_app.js`:
+最后，从 `_app.js` 导入它:
 
 ```jsx
 import '../styles/global.css'
@@ -82,7 +82,7 @@ export default function App({ Component, pageProps }) {
 }
 ```
 
-Now, if you access [http://localhost:3000/posts/first-post](http://localhost:3000/posts/first-post), you’ll see that the styles are applied:
+现在，如果你访问[http://localhost:3000/posts/first-post](http://localhost:3000/posts/first-post)，你将看到样式生效了：
 
 <Image
   shadow
@@ -93,11 +93,11 @@ Now, if you access [http://localhost:3000/posts/first-post](http://localhost:300
   height={316 / 2}
 />
 
-> **If it didn’t work**: Make sure you restart the development server when you add `_app.js`.
+> **如果它无效**: 请确保在添加`_app.js`时重新启动开发服务器。
 
-To summarize what we’ve learned so far:
+总结一下到目前为止我们所学到的:
 
-- To use CSS Modules, import a CSS file named `*.module.css` from any component.
-- To use global CSS, import a CSS file in `pages/_app.js`.
+- 要使用 CSS Modules，请从任何组件导入一个名为 `*.module.css` 的 CSS 文件。
+- 要使用全局样式，请在 `pages/_app.js` 中导入一个 CSS 文件。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

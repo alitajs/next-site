@@ -2,16 +2,16 @@ import Layout from '../../../../components/learn/Layout'
 import Image from '../../../../components/image'
 
 export const meta = {
-  title: 'Assets, Metadata, and CSS',
+  title: '资源、元数据和CSS',
   courseId: 'basics',
   lessonId: 'assets-metadata-css',
   stepId: 'css-styling',
-  subtitle: 'CSS Styling'
+  subtitle: 'CSS 样式'
 }
 
-Let’s now talk about **CSS styling**.
+现在让我们谈谈 **CSS 样式**。
 
-As you can see, our index page ([http://localhost:3000](http://localhost:3000)) already has some styling. If you take a look at `pages/index.js`, you should see the code like this:
+如你所见，我们的首页 ([http://localhost:3000](http://localhost:3000)) 已经有一些样式。如果你查看 `pages/index.js`，你应该看到如下代码:
 
 ```jsx
 <style jsx>{`
@@ -19,16 +19,16 @@ As you can see, our index page ([http://localhost:3000](http://localhost:3000)) 
 `}</style>
 ```
 
-This is using a library called [styled-jsx](https://github.com/vercel/styled-jsx). It’s a “CSS-in-JS” library — it lets you write CSS within a React component, and the CSS styles will be _scoped_ (other components won’t be affected).
+这是使用一个名为 [styled-jsx](https://github.com/vercel/styled-jsx) 的库。 它是一个 “CSS-in-JS” 的库 — 它允许你在一个 React 组件中编写 CSS，并且 CSS 样式将被限定在_当前范围_内(其他组件不会受到影响)。
 
-Next.js has built-in support for [styled-jsx](https://github.com/vercel/styled-jsx), but you can also use other popular CSS-in-JS libraries such as [styled-components](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components) or [emotion](https://github.com/vercel/next.js/tree/canary/examples/with-emotion).
+Next.js 内置支持了 [styled-jsx](https://github.com/vercel/styled-jsx)，但是你也可以使用其他流行的 CSS-in-JS 库，比如 [styled-components](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components) 或者 [emotion](https://github.com/vercel/next.js/tree/canary/examples/with-emotion)。
 
-### Writing and Importing CSS
+### 编写和导入 CSS
 
-Next.js has built-in support for CSS and Sass which allows you to import `.css` and `.scss` files.
+Next.js 内置支持 CSS 和 Sass的支持，允许你导入 `.css` 和 `.scss` 文件 。
 
-Using popular CSS libraries like [Tailwind CSS](https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss) is also supported.
+也支持使用流行的 CSS 库，比如 [Tailwind CSS](https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss)。
 
-In this lesson, we’ll talk about how to write and import CSS files in Next.js. We’ll also talk about Next.js’s built-in support for [CSS Modules](https://github.com/css-modules/css-modules) and [Sass](https://sass-lang.com/). Let’s dive in!
+在本课中，我们将讨论如何在 Next.js 中编写和导入 CSS 文件。我们还将讨论 Next.js 对 [CSS Modules](https://github.com/css-modules/css-modules) 和 [Sass](https://sass-lang.com/) 的内置支持。我们开始吧！
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

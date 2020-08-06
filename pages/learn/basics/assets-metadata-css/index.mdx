@@ -2,27 +2,27 @@ import Layout from '../../../../components/learn/Layout'
 import Link from 'next/link'
 
 export const meta = {
-  title: 'Assets, Metadata, and CSS',
+  title: '资源、元数据和CSS',
   courseId: 'basics',
   lessonId: 'assets-metadata-css'
 }
 
-The second page we added currently does not have styling. Let's add some CSS to style the page.
+目前我们添加的第二页没有样式。让我们添加一些CSS来装饰页面。
 
-Next.js has built-in support for CSS and Sass. For the purposes of this course we will use CSS.
+Next.js 内置了对CSS和Sass的支持，在本课程中，我们将使用CSS。
 
-This lesson will also talk about how Next.js handles static assets like images and page metadata like `title` tags.
+本课还将讨论 Next.js 如何处理图像之类的静态资产，以及`title` 标签之类的页面元数据。
 
-### What You’ll Learn in This Lesson
+### 这节课你将学到什么
 
-In this lesson, you’ll learn:
+在这一课中，你会学到:
 
-- How to add static files (images, etc) to Next.js.
-- How to customize what goes inside the `<head>` for each page.
-- How to create a reusable React component which is styled using CSS Modules.
-- How to add global CSS in `pages/_app.js`.
-- Some useful tips for styling in Next.js.
+- 如何向Next.js添加静态文件(图像等)。
+- 如何定制每个页面的 `<head>` 内的内容。
+- -如何使用 CSS Modules 创建可重用的React组件
+- 如何在 `pages/_app.js` 中添加全局CSS。
+- 在 Next.js 中使用一些实用的样式设计技巧。
 
-> If you’re looking for detailed documentation on Next.js styling, take a look <Link href="/docs/[[...slug]]" as="/docs/basic-features/built-in-css-support"><a>at the CSS documentation</a></Link>.
+> 如果你正在寻找关于 Next.js 样式的详细文档，请查看<Link href="/docs/[[...slug]]" as="/docs/basic-features/built-in-css-support"><a>CSS文档</a></Link>。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

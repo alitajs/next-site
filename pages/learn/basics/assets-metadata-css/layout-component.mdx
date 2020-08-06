@@ -2,17 +2,17 @@ import Layout from '../../../../components/learn/Layout'
 import Image from '../../../../components/image'
 
 export const meta = {
-  title: 'Assets, Metadata, and CSS',
+  title: '资源、元数据和CSS',
   courseId: 'basics',
   lessonId: 'assets-metadata-css',
   stepId: 'layout-component',
-  subtitle: 'Layout Component'
+  subtitle: '布局组件'
 }
 
-First, Let’s create a **Layout** component which will be common across all pages.
+首先，让我们创建一个 **Layout** 组件，这将在所有页面中都是通用的。
 
-- Create a top-level directory called `components`.
-- Inside, create a file called `layout.js` with the following content:
+- 创建一个名为 `components` 的顶级目录。
+- 在内部创建一个名为 `layout.js` 的文件，其内容如下:
 
 ```jsx
 function Layout({ children }) {
@@ -22,7 +22,7 @@ function Layout({ children }) {
 export default Layout
 ```
 
-Then, in `pages/posts/first-post.js`, import `Layout` and make it the outermost component.
+然后，在 `pages/posts/first-post.js` 中，导入 `Layout` 并将其作为最外层组件。
 
 ```jsx
 import Head from 'next/head'
@@ -46,11 +46,11 @@ export default function FirstPost() {
 }
 ```
 
-### Adding CSS
+### 添加 CSS
 
-Now, let’s add some styles for `Layout`. To do so, we’ll use [CSS Modules](https://github.com/css-modules/css-modules), which lets you import CSS files in a React component.
+现在，让我们为 `Layout` 添加一些样式。为此，我们将使用 [CSS Modules](https://github.com/css-modules/css-modules)，它允许你在 React 组件中导入 CSS 文件。
 
-Create a file called `layout.module.css` in the `components` directory with the following content:
+在 `components` 目录中创建一个名为 `layout.module.css` 的文件，其内容如下：
 
 ```css
 .container {
@@ -60,13 +60,13 @@ Create a file called `layout.module.css` in the `components` directory with the 
 }
 ```
 
-> **Important:** To use CSS Modules, the CSS file name must end with `.module.css`.
+> **重要信息:** 要使用CSS模块，CSS文件名必须以 `.module.css` 结尾。
 
-To use this in `Layout`, you need to:
+要在 `Layout` 中使用它，你需要：
 
-- Import it as `styles`
-- Use `styles.<class-name>` as `className`
-- In this case, the class name is `container`, so we’ll use `styles.container`
+- 将其导入为 `styles`
+- 使用 `styles.<class-name>` 作为 `className`
+- 在这种情况下，类名是 `container`，所以我们将使用 `styles.container`
 
 ```jsx
 import styles from './layout.module.css'
@@ -76,7 +76,7 @@ export default function Layout({ children }) {
 }
 ```
 
-If you go to [http://localhost:3000/posts/first-post](http://localhost:3000/posts/first-post) now, you should see that the text is now inside a centered container:
+如果你现在访问 [http://localhost:3000/posts/first-post](http://localhost:3000/posts/first-post)，你应该看到文本现在位于一个居中容器中:
 
 <Image
   shadow
@@ -87,9 +87,9 @@ If you go to [http://localhost:3000/posts/first-post](http://localhost:3000/post
   height={394 / 2}
 />
 
-### Automatically Generates Unique Class Names
+### 自动生成唯一类名
 
-Now, if you take a look at the HTML in your browser’s devtools, you’ll notice that the `div` tag has a class name that looks like `layout_container__...`.
+现在，如果你在浏览器开发者工具中查看一下 HTML ，你会注意到 `div` 标记有一个类似 `layout_container__...`的类名。
 
 <Image
   shadow
@@ -100,10 +100,10 @@ Now, if you take a look at the HTML in your browser’s devtools, you’ll notic
   height={134 / 2}
 />
 
-This is what CSS Modules does: _It automatically generates unique class names_. As long as you use CSS Modules, you don’t have to worry about class name collisions.
+这就是 CSS Modules 所做的：_它自动生成唯一的类名_。只要使用 CSS Modules，你就不必担心类名冲突。
 
-Furthermore, Next.js’s code splitting feature works on CSS Modules as well. It ensures the minimal amount of CSS is loaded for each page. This results in smaller bundle sizes.
+此外，Next.js 的代码分割功能也适用于 CSS Modules。它确保为每个页面加最少的 CSS 。这将产生较小的编译包大小。
 
-CSS Modules are extracted from the JavaScript bundles at build time and generate `.css` files that are loaded automatically by Next.js.
+CSS Modules 在构建时从 JavaScript 包中提取，并生成由 Next.js 自动加载的 `.css` 文件。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>
