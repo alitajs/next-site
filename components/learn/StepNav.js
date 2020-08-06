@@ -13,7 +13,7 @@ const StepNav = ({ steps, nextLessonId, meta: { stepId, courseId, lessonId } }) 
   if (!stepId) {
     return (
       <Button invert href={`/learn/${courseId}/${lessonId}/${steps[0].id}`}>
-        Start Now →
+        现在就开始 →
       </Button>
     );
   }
@@ -26,12 +26,12 @@ const StepNav = ({ steps, nextLessonId, meta: { stepId, courseId, lessonId } }) 
         <ArrowIcon left>
           <LeftArrow color="#0070f3" />
         </ArrowIcon>
-        Prev
+        前一页
       </Button>
       <span className="spacer" />
       {i !== steps.length - 1 && (
         <Button invert href={`/learn/${courseId}/${lessonId}/${steps[i + 1].id}`}>
-          Next
+          下一页
           <ArrowIcon right>
             <RightArrow color="white" />
           </ArrowIcon>
@@ -39,7 +39,7 @@ const StepNav = ({ steps, nextLessonId, meta: { stepId, courseId, lessonId } }) 
       )}
       {i === steps.length - 1 && nextLessonId && (
         <Button invert href={`/learn/${courseId}/${nextLessonId}`}>
-          Next Lesson
+          下一章
         </Button>
       )}
       <style jsx>{`

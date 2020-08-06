@@ -3,25 +3,25 @@ import Image from '../../../../components/image'
 import Link from 'next/link'
 
 export const meta = {
-  title: 'Navigate Between Pages',
+  title: '页面间导航',
   courseId: 'basics',
   lessonId: 'navigate-between-pages',
   stepId: 'client-side'
 }
 
-## Client-Side Navigation
+## 客户端导航
 
-The `Link` component enables **client-side navigation** between two pages in the same Next.js app.
+在同一个 Next.js 应用程序中，`Link` 组件在两个页面之间使用了**客户端导航**。
 
-Client-side navigation means that the page transition happens _using JavaScript_, which is faster than the default navigation done by the browser.
+客户端导航意味着页面转换_使用 JavaScript_进行，这比浏览器的默认导航更快。
 
-Here’s a simple way you can verify:
+这里有一个简单的方法可以验证:
 
-- Use the browser’s developer tools to change the `background` CSS property of `<html>` to `yellow`.
-- Click on the links to go back and forth between the two pages.
-- You’ll see that the yellow background persists between page transitions.
+- 使用浏览器的开发者工具更改 `<html>` 的 CSS 样式，将`background` 调到`yellow`。
+- 点击两个网页之间的链接来回切换。
+- 你会看到黄色的背景在页面转换之间仍然存在。
 
-This shows that the browser does _not_ load the full page and client-side navigation is working.
+这表明浏览器_没有_加载整个页面，客户端导航正在工作。
 
 <Image
   shadow
@@ -32,28 +32,28 @@ This shows that the browser does _not_ load the full page and client-side naviga
   height={558 / 1.5}
 />
 
-If you’ve used `<a href="…">` instead of `<Link href="…">` and did this, the background color will be cleared on link clicks because the browser does the full refresh.
+如果你使用了 `<a href="…">` 而不是 `<Link href="…">` 来进行同样的操作，当链接被点击时，背景颜色将被清除，因为浏览器做了充分的刷新。
 
-### Code splitting and prefetching
+### 代码分割和预取
 
-Next.js does code splitting automatically, so each page only loads what’s necessary for that page. That means when the homepage is rendered, the code for other pages is not served initially.
+Next.js 自动执行代码拆分，因此每个页面只加载该页面所需的内容。这意味着当网页呈现时，其他网页的代码最初并没有被提供。
 
-This ensures that the homepage loads quickly even if you add hundreds of pages.
+这样可以确保即使添加了数百个页面，主页也能快速加载。
 
-Only loading the code for the page you request also means that pages become isolated. If a certain page throws an error, the rest of the application would still work.
+只有为请求的页面加载代码也意味着页面变得孤立。如果某个页面抛出了错误，那么应用程序的其余页面仍然可以运行。
 
-Furthermore, in a production build of Next.js, whenever `Link` components appear in the browser’s viewport, Next.js automatically **prefetches** the code for the linked page in the background. By the time you click the link, the code for the destination page will already be loaded in the background, and the page transition will be near-instant!
+此外，在 Next.js 的生产版本中，每当 `Link` 组件出现在浏览器的视图中时，Next.js 就会自动在后台**预取**链接页面的代码。当你单击链接时，目标页面的代码可能已经加载完成，可以很快的完成页面切换！
 
-### Summary
+### 摘要
 
-Next.js automatically optimizes your application for the best performance by code splitting, client-side navigation, and prefetching (in production).
+Next.js 通过代码拆分、客户端导航和预取(生产环境中)来自动优化应用程序以获得最佳性能。
 
-You create routes as files under `pages` and use the built-in `Link` component. No routing libraries are required.
+你可以在`pages`目录下创建路径文件，并使用内置的 `Link` 组件。不需要路由库。
 
-You can learn more about the `Link` component <Link href="/docs/[[...slug]]" as="/docs/api-reference/next/link"><a>in the API reference documentation</a></Link> and routing in general <Link href="/docs/[[...slug]]" as="/docs/routing/introduction"><a>in the routing documentation</a></Link>.
+你可以在<Link href="/docs/[[...slug]]" as="/docs/api-reference/next/link"><a>API参考文档</a></Link>以及<Link href="/docs/[[...slug]]" as="/docs/routing/introduction"><a>路由文档</a></Link>中了解更多关于“Link”组件的信息。
 
-> **Note:** If you need to link to an <em>external</em> page outside the Next.js app, just use an `<a>` tag without `Link`.
+> **备注:** 如果你需要链接到 Next.js 应用程序<em>外部的</em>页面，只需使用一个不带 `Link` 的 `<a>` 标签。
 >
-> If you need to add attributes like, for example, `className`, add it to the `a` tag, _not_ to the `Link` tag. [Here’s an example](https://github.com/vercel/next-learn-starter/blob/master/snippets/link-classname-example.js).
+> 如果你需要添加属性，例如 `className`，则将其添加到 `a` 标签中，_不要_添加到 `Link` 标签。 [这里有一个示例](https://github.com/vercel/next-learn-starter/blob/master/snippets/link-classname-example.js).
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

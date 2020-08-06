@@ -12,7 +12,7 @@ const SkipPageButton = ({ meta }) => {
   return (
     <div>
       <Button invert href={`/learn/${meta.courseId}/${meta.lessonId}/${steps[i + 1].id}`}>
-        Next
+        下一步
         <ArrowIcon right>
           <RightArrow color="white" />
         </ArrowIcon>

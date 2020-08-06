@@ -2,23 +2,23 @@ import Layout from '../../../../components/learn/Layout'
 import Link from 'next/link'
 
 export const meta = {
-  title: 'Navigate Between Pages',
+  title: '页面间导航',
   courseId: 'basics',
   lessonId: 'navigate-between-pages'
 }
 
-So far, the Next.js app we created only has one page. In general websites and web applications could have many different pages.
+到目前为止，我们创建的 Next.js 应用程序只有一个页面。而通常一个网站或 web 应用会有很多不同的页面。
 
-Let's explore how to add more pages to our application.
+接下来我们就开始探索如何为我们的应用添加多个页面。
 
-## What You’ll Learn in This Lesson
+## 你将从这节课中学到什么
 
-In this lesson, you will:
+在这一课，你将:
 
-- Create a new page using the file system routing feature.
-- Learn how to use the `Link` component to enable client-side navigation between pages.
-- Learn about built-in support for code splitting and prefetching.
+- 利用文件系统路由的功能创建一个新页面。
+- 学习如何通过 `Link` 组件实现客户端页面间的导航。
+- 学习内置的代码分割和预取功能。
 
-> If you’re looking for detailed documentation on Next.js routing, take a look at the <Link href="/docs/[[...slug]]" as="/docs/routing/introduction"><a>routing documentation</a></Link>.
+> 如果你需要查看详细的 Next.js 路由文档，请进入 <Link href="/docs/[[...slug]]" as="/docs/routing/introduction"><a>路由文档</a></Link>。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

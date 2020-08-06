@@ -2,38 +2,38 @@ import Layout from '../../../../components/learn/Layout'
 import Image from '../../../../components/image'
 
 export const meta = {
-  title: 'Navigate Between Pages',
+  title: '页面间导航',
   courseId: 'basics',
   lessonId: 'navigate-between-pages',
   stepId: 'link-component',
-  subtitle: 'Link Component'
+  subtitle: 'Link 组件'
 }
 
-When linking between pages on websites you generally use the `<a>` HTML tag.
+当在网站的页面之间链接时，你通常使用 `<a>` HTML 标签。
 
-In Next.js, you use the `<Link>` React Component that wraps the `<a>` tag. `<Link>` allows you to do client-side navigation to a different page in the application.
+在 Next.js 中，你使用了包裹 `<a>` 标签的 `<Link>` React组件。`<Link>`允许你对应用程序中的不同页面进行客户端导航。
 
-### Using `<Link>`
+### 使用 `<Link>`
 
-First, in `pages/index.js`, import the `Link` component from `next/link` by adding this line at the top:
+首先，在 `pages/index.js` 中，从 `next/link` 导入 `Link` 组件，方法是在顶部添加这一行:
 
 ```js
 import Link from 'next/link'
 ```
 
-Then modify this line in the `h1` tag:
+然后修改 `h1`  标记中的这一行:
 
 ```jsx
 Learn <a href="https://nextjs-cn.com">Next.js!</a>
 ```
 
-To this:
+修改为:
 
 ```jsx
 Read <Link href="/posts/first-post"><a>this page!</a></Link>
 ```
 
-Next, replace the content of `pages/posts/first-post.js` with the following:
+接下来，将 `pages/posts/first-post.js` 的内容改为:
 
 ```jsx
 import Link from 'next/link'
@@ -52,9 +52,9 @@ export default function FirstPost() {
 }
 ```
 
-As you can see, the `Link` component is similar to using `<a>` tags, but instead of `<a href="…">`, you use `<Link href="…">` and put an `<a>` tag inside.
+如你所见，`Link` 组件类似于 `<a>` 标签的用法，但是你应该使用 `<Link href="…">` 而不是 `<a href="…">`。并用它包裹一个 `<a>` 标签。
 
-Let’s check to see it works. You now should have a link on each page, allowing you to go back and forth:
+让我们来看看它的运行效果。你现在应该在每一页上都有一个链接，允许你来回切换页面:
 
 <Image
   shadow

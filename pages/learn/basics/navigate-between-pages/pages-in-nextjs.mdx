@@ -2,27 +2,27 @@ import Layout from '../../../../components/learn/Layout'
 import Image from '../../../../components/image'
 
 export const meta = {
-  title: 'Navigate Between Pages',
+  title: '页面间导航',
   courseId: 'basics',
   lessonId: 'navigate-between-pages',
   stepId: 'pages-in-nextjs',
-  subtitle: 'Pages in Next.js'
+  subtitle: 'Next.js 中的页面'
 }
 
-In Next.js, a page is a React Component exported from a file in the `pages` directory.
+在 Next.js 中，页面是一个从 `pages` 目录中的文件导出的 React 组件。
 
-Pages are associated with a route based on their **file name**. For example, in development:
+页面与基于**文件名**的路由对应，例如，在开发中:
 
-- `pages/index.js` is associated with the `/` route.
-- `pages/posts/first-post.js` is associated with the `/posts/first-post` route.
+- `pages/index.js` 对应路由 `/`。
+- `pages/posts/first-post.js` 对应路由 `/posts/first-post` 。
 
-We already have the `pages/index.js` file, so let’s create `pages/posts/first-post.js` to see how it works.
+我们已经有了 `pages/index.js` 文件，那么让我们创建 `pages/posts/first-post.js`，看看它是如何运行的。
 
-### Create a New Page
+### 创建一个新的页面
 
-Create the `posts` directory under `pages`.
+在 `pages` 目录下新建 `posts` 目录。
 
-Create a file called `first-post.js` inside the `posts` directory with the following contents:
+在 `posts` 目录下新建一个以 `first-post.js` 命名的文件，内容如下:
 
 ```jsx
 export default function FirstPost() {
@@ -30,9 +30,9 @@ export default function FirstPost() {
 }
 ```
 
-The component can have any name, but you must export it as a `default` export.
+组件可以有任何名称，但必须将其导出为 `default` 。
 
-Now, make sure that the development server is running and visit [http://localhost:3000/posts/first-post](http://localhost:3000/posts/first-post). You should see the page:
+现在，确保开发服务器正在运行并访问 [http://localhost:3000/posts/first-post](http://localhost:3000/posts/first-post)。你应该看到这个页面:
 
 <Image
   shadow
@@ -43,12 +43,12 @@ Now, make sure that the development server is running and visit [http://localhos
   height={282 / 2}
 />
 
-This is how you can create different pages in Next.js.
+这就是在 Next.js 中创建不同页面的方法。
 
-Simply create a JS file under the `pages` directory, and the path to the file becomes the URL path.
+只需在 'pages' 目录下创建一个 JS 文件，该文件的路径就成为 URL 路径。
 
-In a way, this is similar to building websites using HTML or PHP files. Instead of writing HTML you write JSX and use React Components.
+在某种程度上，这类似于使用 HTML 或 PHP 文件。你编写 JSX 和使用 React 组件来替代写 HTML。
 
-Let's add a link to the newly added page so that we can navigate to it from the homepage.
+让我们添加一个链接到新添加的页面，以便可以从主页导航到它。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>
