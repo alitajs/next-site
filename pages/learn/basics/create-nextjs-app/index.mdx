@@ -3,7 +3,7 @@ import Logo from '../../../../components/logo'
 import Link from 'next/link'
 
 export const meta = {
-  title: 'Create a Next.js App',
+  title: '创建 Next.js 应用程序',
   courseId: 'basics',
   lessonId: 'create-nextjs-app'
 }
@@ -12,44 +12,44 @@ export const meta = {
   <Logo size={80} />
 </p>
 
-To build a complete web application with React from scratch, there are many important details you need to consider:
+要从头开始使用 React 构建一个完整的 Web 应用程序，需要考虑许多重要的细节:
 
-- Code has to be bundled using a bundler like webpack and transformed using a compiler like Babel.
-- You need to do production optimizations such as code splitting.
-- You might want to statically pre-render some pages for performance and SEO. You might also want to use server-side rendering or client-side rendering.
-- You might have to write some server-side code to connect your React app to your data store.
+- 必须使用打包程序（例如 webpack）打包代码，并使用 Babel 等编译器进行代码转换。
+- 你需要针对生产环境进行优化，例如代码拆分。
+- 你可能需要对一些页面进行预先渲染以提高页面性能和 SEO。你可能还希望使用服务器端渲染或客户端渲染。
+- 你可能必须编写一些服务器端代码才能将 React 应用程序连接到数据存储。
 
-A _framework_ can solve these problems. But such a framework must have the right level of abstraction — otherwise it won’t be very useful. It also needs to have great "Developer Experience", ensuring you and your team have an amazing experience while writing code.
+一个_框架_可以解决这些问题。但是，这样的框架必须具有正确的抽象级别 - 不然它就不好用。它还需要具有出色的“开发人员经验”，以确保你和你的团队在编写代码时拥有出色的经验。
 
-### Next.js: The React Framework
+### Next.js: React 框架
 
-Enter **Next.js**, the React Framework. Next.js provides a solution to all of the above problems. But more importantly, it puts you and your team in the pit of success when building React applications.
+尝试使用 React 框架 **Next.js**。Next.js 为上述所有问题提供了解决方案。但更重要的是，它能确保您和您的团队成功地构建 React 应用程序。
 
-Next.js has the best-in-class "Developer Experience" and many built-in features; a sample of them are:
+Next.js 具有同类框架中最佳的“开发人员体验”和许多内置功能。列举其中一些如下:
 
-- An intuitive page-based routing system (with support for dynamic routes)
-- Pre-rendering, both static generation (SSG) and server-side rendering (SSR) are supported on a per-page basis
-- Automatic code splitting for faster page loads
-- Client-side routing with optimized prefetching
-- Built-in CSS and Sass support, and support for any CSS-in-JS library
-- Development environment which supports Hot Module Replacement
-- API routes to build API endpoints with Serverless Functions
-- Fully extendable
+- 直观的、基于页面的路由系统（并支持动态路由）
+- 预渲染。支持在页面级设置静态生成 (SSG) 和服务器端渲染 (SSR)
+- 自动代码拆分，提升页面加载速度
+- 具有优化的预取功能的客户端路由
+- 内置 CSS 和 Sass 的支持，并支持任何 CSS-in-JS 库
+- 开发环境支持热模块替换
+- API 路由可使用 Serverless Functions 构建 API 端点
+- 完全可扩展
 
-Next.js is used in tens of thousands of production-facing websites and web applications, including many of the world's largest brands.
+Next.js 被用于数以万计的的网站和 Web 应用程序，其中包括许多世界上最大的品牌。
 
-### About This Tutorial
+### 关于本教程
 
-This free interactive course will guide you through how to get started with Next.js.
+这个免费的交互式课程将指导您完成 Next.js 入门的学习。
 
-In this tutorial, you’ll learn Next.js basics by creating a very simple **blog app**. Here’s an example of the final result:
+在本教程中，您将通过创建一个非常简单的**博客应用程序**学习Next.js基础。这是最终结果的示例:
 
 **[https://next-learn-starter.now.sh](https://next-learn-starter.now.sh/)** ([source](https://github.com/vercel/next-learn-starter/tree/master/demo))
 
-Let’s get started!
+让我们开始吧!
 
-> This tutorial assumes basic knowledge of JavaScript and React. If you’ve never written React code, you should go through [the official React tutorial](https://reactjs.org/tutorial/tutorial.html) first.
+> 本教程假定您具有 JavaScript 和 React 的基础知识。如果您从未编写过 React 代码，则应首先阅读[官方的 React 教程](https://reactjs.org/tutorial/tutorial.html) first.
 >
-> If you’re looking for the Next.js documentation instead, <Link href="/docs/[[...slug]]" as="/docs/getting-started"><a>click here</a></Link>.
+> 如果你想看的是 Next.js 文档, <Link href="/docs/[[...slug]]" as="/docs/getting-started"><a>单击此处</a></Link>.
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

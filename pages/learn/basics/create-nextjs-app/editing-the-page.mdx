@@ -2,39 +2,39 @@ import Layout from '../../../../components/learn/Layout'
 import Image from '../../../../components/image'
 
 export const meta = {
-  title: 'Create a Next.js App',
+  title: '创建 Next.js 应用程序',
   courseId: 'basics',
   lessonId: 'create-nextjs-app',
   stepId: 'editing-the-page',
-  subtitle: 'Editing the page'
+  subtitle: '编辑页面'
 }
 
-Let’s try editing the starter page.
+让我们尝试编辑这个初始页面。
 
-- Make sure the Next.js development server is still running.
-- Open `pages/index.js` with your text editor.
-- Find the text that says **“Welcome to”** under the `<h1>` tag and change it to **“Learn”**.
-- Save the file.
+- 确保 Next.js 开发服务器仍在运行。
+- 用你的文本编辑器打开 `pages/index.js`。
+- 在 `<h1>` 标签下找到 **“Welcome to”** 文字并把它修改为 **“Learn”** 。
+- 保存文件.
 
-As soon as you save the file, the browser automatically reloads and updates the page with the new text:
+保存文件后，浏览器会自动重新加载并使用新文本更新页面:
 
 <Image
   shadow
-  alt="Learn Next.js"
+  alt="学习 Next.js"
   oversize={false}
   src="/static/images/learn/create-nextjs-app/learn-nextjs.png"
   width={1030 / 2}
   height={384 / 2}
 />
 
-The Next.js development server has the **Hot Reloading** feature. When you make changes to files Next.js automatically applies the changes in the browser. No refresh needed! This will help you iterate on your app quickly.
+Next.js 开发服务器具有 **热重载(Hot Reloading)** 功能。当你对文件进行修改时，Next.js 会自动在浏览器中应用这些更改。无需刷新！这将帮助您快速迭代应用程序。
 
-### Next Up: Creating Pages
+### 下一步: 创建页面
 
-Great job! That’s it for the first lesson.
+干的漂亮! 第一课就是这样。
 
-In the next lesson, we’ll talk about _creating more pages and navigating between pages_.
+在下一课中，我们将讨论 _创建更多页面以及在页面之间导航_。
 
-> You should keep the development server running, but if you want to restart it, hit <kbd>Ctrl + c</kbd> to stop the server.
+> 你应该保持开发服务器一直运行，但是如果你想重新启动它，请按 <kbd>Ctrl + c</kbd> 来停止服务器。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

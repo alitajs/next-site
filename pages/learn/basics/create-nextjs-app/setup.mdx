@@ -1,54 +1,54 @@
 import Layout from '../../../../components/learn/Layout'
 
 export const meta = {
-  title: 'Create a Next.js App',
+  title: '创建 Next.js 应用程序',
   courseId: 'basics',
   lessonId: 'create-nextjs-app',
   stepId: 'setup',
-  subtitle: 'Setup',
+  subtitle: '安装程序',
   question: {
     answers: ['Welcome to Next.js!', 'Hello Next.js!'],
     correctAnswer: 'Welcome to Next.js!'
   }
 }
 
-First, let’s make sure that your development environment is ready.
+首先，让我们确保你的开发环境已经准备就绪。
 
-- If you don’t have **Node.js** installed, [install it from here](https://nodejs.org/en/). You’ll need Node.js version **10.13** or later.
-- You’ll be using your own text editor and terminal app for this tutorial.
+- 如果你尚未安装 **Node.js** , [从此处安装](https://nodejs.org/en/). 要求 Node.js **10.13** 或更高版本.
+- 在本教程中，你将使用自己的文本编辑器和终端应用程序。
 
-> If you are on Windows, we recommend [downloading Git for Windows](https://gitforwindows.org/) and use Git Bash that comes with it, which supports the UNIX-specific commands in this tutorial.
+> 如果你使用的是 Windows 用户, 我们建议你 [下载 Windows 版 Git](https://gitforwindows.org/) 并使用其随附的 Git Bash，它支持本教程中所用到的 UNIX 特定的命令。
 
-### Create a Next.js app
+### 创建 Next.js 应用程序
 
-To create a Next.js app, open your terminal, `cd` into the directory you’d like to create the app in, and run the following command:
+要创建Next.js应用，请打开你的终端，`cd` 进入你要在其中创建应用的目录，然后运行以下命令:
 
 ```shell
 npx create-next-app nextjs-blog --use-npm --example "https://github.com/vercel/next-learn-starter/tree/master/learn-starter"
 ```
 
-> Under the hood, this uses the tool called `create-next-app`, which bootstraps a Next.js app for you. It uses [this template](https://github.com/vercel/next-learn-starter/tree/master/learn-starter) through the `--example` flag.
+> 在幕后，是通过调用 `create-next-app` 工具完成的，该工具为你创建了一个 Next.js 应用程序。通过 `--example` 参数指定使用[此模板](https://github.com/vercel/next-learn-starter/tree/master/learn-starter) 。
 >
-> If it doesn’t work, please take a look at [this page](https://github.com/vercel/next-learn-starter/blob/master/errors/install.md).
+> 如果不起作用，请查看[这里](https://github.com/vercel/next-learn-starter/blob/master/errors/install.md)。
 
-### Run the development server
+### 运行开发服务器
 
-You now have a new directory called `nextjs-blog`. Let’s `cd` into it:
+现在，你有了一个名为的新目录 `nextjs-blog`。让我们 `cd` 进入此目录:
 
 ```shell
 cd nextjs-blog
 ```
 
-Then, run the following command:
+然后，运行以下命令:
 
 ```shell
 npm run dev
 ```
 
-This starts your Next.js app’s "development server" (more on this later) on port **3000**.
+这将在 **3000** 端口上启动 Next.js 应用程序的“开发服务器”(稍后将对此进行详细介绍)。
 
-Let’s check to see if it’s working. Open [http://localhost:3000](http://localhost:3000) from your browser.
+让我们检查一下是否正常运行。在你的浏览器中打开 [http://localhost:3000](http://localhost:3000)。
 
-**Question**: What text do you see on the page?
+**问题**: 你在页面上看到什么文字?
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>
