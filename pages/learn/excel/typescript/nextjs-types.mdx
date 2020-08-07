@@ -6,14 +6,14 @@ export const meta = {
   courseId: 'excel',
   lessonId: 'typescript',
   stepId: 'nextjs-types',
-  subtitle: 'Next.js Specific Types'
+  subtitle: 'Next.js 内置类型'
 }
 
-Here are some Next.js specific types you can use.
+这里有一些 Next.js 内置类型供你使用。
 
-### Static Generation and Server-side Rendering
+### 静态生成与服务器端渲染
 
-For `getStaticProps`, `getStaticPaths`, and `getServerSideProps`, you can use the `GetStaticProps`, `GetStaticPaths`, and `GetServerSideProps` types respectively:
+关于 `getStaticProps`、 `getStaticPaths` 和 `getServerSideProps`，你可以分别使用 `GetStaticProps`、`GetStaticPaths` 和 `GetServerSideProps` 类型:
 
 ```ts
 import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next'
@@ -33,7 +33,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
 
 ## API Routes
 
-The following is an example of how to use the built-in types for API routes:
+以下是如何将内置类型用于 API Routes 的示例：
 
 ```ts
 import { NextApiRequest, NextApiResponse } from 'next'
@@ -43,9 +43,9 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
 }
 ```
 
-## Custom `App`
+## 自定义 `App`
 
-You can convert `pages/_app.js` into `pages/_app.tsx` and use the built-in type `AppProps`, like so:
+你可以将 `pages/_app.js` 转换为 `pages/_app.tsx` 并使用内置类型 `AppProps`，如下所示:
 
 ```tsx
 import { AppProps } from 'next/app'
@@ -57,19 +57,19 @@ function App({ Component, pageProps }: AppProps) {
 export default App
 ```
 
-### Converting Your App
+### 转换你的应用程序
 
-To convert the blog app we created in the basics lessons into TypeScript, update the following files:
+要将我们在基础课程中创建的博客应用程序转换为 TypeScript，请更新以下文件:
 
-- `components/date.js`: Update to `date.tsx` using [this code](https://github.com/vercel/next-learn-starter/blob/master/typescript-final/components/date.tsx)
-- `components/layout.js`: Update to `layout.tsx` using [this code](https://github.com/vercel/next-learn-starter/blob/master/typescript-final/components/layout.tsx)
-- `lib/posts.js`: Update to `posts.ts` using [this code](https://github.com/vercel/next-learn-starter/blob/master/typescript-final/lib/posts.ts)
-- `pages/posts/[id].js`: Update to `[id].tsx` using [this code](https://github.com/vercel/next-learn-starter/blob/master/typescript-final/pages/posts/[id].tsx)
-- `pages/index.js`: Update to `index.tsx` using [this code](https://github.com/vercel/next-learn-starter/blob/master/typescript-final/pages/index.tsx)
-- `pages/_app.js`: Update to `_app.tsx` using [this code](https://github.com/vercel/next-learn-starter/blob/master/typescript-final/pages/_app.tsx)
-- `pages/api/hello.js`: Update to `hello.ts` using [this code](https://github.com/vercel/next-learn-starter/blob/master/typescript-final/pages/api/hello.ts)
+- `components/date.js`:使用[这些代码](https://github.com/vercel/next-learn-starter/blob/master/typescript-final/components/date.tsx)，更新到`date.tsx`
+- `components/layout.js`:使用[这些代码](https://github.com/vercel/next-learn-starter/blob/master/typescript-final/components/layout.tsx)，更新到`layout.tsx`
+- `lib/posts.js`:使用[这些代码](https://github.com/vercel/next-learn-starter/blob/master/typescript-final/lib/posts.ts)，更新到`posts.ts`
+- `pages/posts/[id].js`:使用[这些代码](https://github.com/vercel/next-learn-starter/blob/master/typescript-final/pages/posts/[id].tsx)，更新到`[id].tsx`
+- `pages/index.js`:使用[这些代码](https://github.com/vercel/next-learn-starter/blob/master/typescript-final/pages/index.tsx)，更新到`index.tsx`
+- `pages/_app.js`:使用[这些代码](https://github.com/vercel/next-learn-starter/blob/master/typescript-final/pages/_app.tsx)，更新到`_app.tsx`
+- `pages/api/hello.js`:使用[这些代码](https://github.com/vercel/next-learn-starter/blob/master/typescript-final/pages/api/hello.ts)，更新到`hello.ts`
 
-Also, since `remark-html` doesn’t have type definitions within the package or in [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped), create a top-level `global.d.ts` file to add a type declaration.
+另外，由于 `remark-html` 在包中没有类型定义[DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped),创建顶级`global.d.ts`文件以添加类型声明。
 
 ```ts
 declare module 'remark-html' {
@@ -78,8 +78,8 @@ declare module 'remark-html' {
 }
 ```
 
-就是这样! Your app is now powered by TypeScript.
+就是这样! 你的应用程序现在使用 TypeScript 了。
 
-> To learn more about using Next.js in TypeScript, take a look at <Link href="/docs/[[...slug]]" as="/docs/basic-features/typescript"><a>our documentation</a></Link>.
+> 了解更多在 Next.js 中使用 TypeScript，查看<Link href="/docs/[[...slug]]" as="/docs/basic-features/typescript"><a>我们的文档</a></Link>。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>
