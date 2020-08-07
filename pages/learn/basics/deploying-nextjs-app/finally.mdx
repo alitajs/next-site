@@ -3,59 +3,59 @@ import TwitterLink from '../../../../components/name/twitter-link'
 import Link from 'next/link'
 
 export const meta = {
-  title: 'Deploying Your Next.js App',
+  title: '部署你的 Next.js 应用程序',
   courseId: 'basics',
   lessonId: 'deploying-nextjs-app',
   stepId: 'finally',
-  subtitle: 'Finally'
+  subtitle: '结束语'
 }
 
-Congratulations on finishing all the basics lessons! Here are some recommended steps:
+恭喜你完成了所有的基础课程！以下是一些推荐步骤:
 
-### Share Your Next.js App
+### 分享你的 Next.js 应用程序
 
-We encourage you to share the app you built in this tutorial on Twitter. If you do, please mention our team at <TwitterLink /> so that we can take a look! We’d love to get your feedback on this tutorial as well.
+我们鼓励你在 Twitter 上分享你在本教程中构建的应用程序。如果你分享了，请@我们的团队<TwitterLink />，让我们来看看！我们也希望得到你对本教程的反馈。
 
-### Use TypeScript with Next.js
+### 在 Next.js 中使用 TypeScript
 
-If you prefer using [TypeScript](https://www.typescriptlang.org/), you can learn <Link href="/learn/excel/typescript"><a>how to use TypeScript with Next.js from here</a></Link>.
+如果你更喜欢使用 [TypeScript](https://www.typescriptlang.org/)，你可以从这里了解<Link href="/learn/excel/typescript"><a>如何在 Next.js 中使用 TypeScript</a></Link>。
 
-### What to Learn Next
+### 接下来学什么
 
-Take a look at <Link href="/docs/[[...slug]]" as="/docs"><a>our documentation</a></Link> to learn more. In particular, the following pages might be interesting:
+看看<Link href="/docs/[[...slug]]" as="/docs"><a>我们的文档</a></Link>了解更多。特别是，以下几页可能会很有趣:
 
 - <Link href="/docs/[[...slug]]" as="/docs/basic-features/data-fetching">
     <a>
-      <strong>Data Fetching</strong>
+      <strong>数据获取</strong>
     </a>
   </Link>
-  : Learn in depth about data fetching.
+  : 深入了解数据获取。
 - <Link
     href="/docs/[[...slug]]"
     as="/docs/api-reference/next.config.js/introduction"
   >
     <a>
-      <strong>Next.js Configuration</strong>
+      <strong>Next.js 配置</strong>
     </a>
   </Link>
-  : In particular, the <Link
+  : 特别是，<Link
     href="/docs/[[...slug]]"
     as="/docs/api-reference/next.config.js/environment-variables"
   >
-    <a>Environment Variables</a>
-  </Link> documentation might be helpful.
+    <a>环境变量</a>
+  </Link> 文档可能会有所帮助。
 - <Link
     href="/docs/[[...slug]]"
     as="/docs/advanced-features/amp-support/introduction"
   >
     <a>
-      <strong>AMP Support</strong>
+      <strong>AMP 支持</strong>
     </a>
   </Link>
-  : Next.js lets you easily create an AMP page.
+  : Next.js 允许你轻松创建一个 AMP 页面。
 
-### Join the Conversation
+### 加入 Discussions
 
-If you have questions about anything related to Next.js, you're always welcome to ask our community on [GitHub Discussions](https://github.com/vercel/next.js/discussions).
+如果你有任何与Next.js相关的问题，欢迎随时在 [GitHub Discussions](https://github.com/vercel/next.js/discussions) 上询问我们的团队。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

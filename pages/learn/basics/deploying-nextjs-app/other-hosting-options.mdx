@@ -1,16 +1,16 @@
 import Layout from '../../../../components/learn/Layout'
 
 export const meta = {
-  title: 'Deploying Your Next.js App',
+  title: '部署你的 Next.js 应用程序',
   courseId: 'basics',
   lessonId: 'deploying-nextjs-app',
   stepId: 'other-hosting-options',
-  subtitle: 'Other Hosting Options'
+  subtitle: '其他托管服务器选项'
 }
 
-Next.js can be deployed to any hosting provider that supports Node.js.
+可以将 Next.js 部署到任何支持 Node.js 的托管服务器。
 
-If you’ve followed the instructions so far, your `package.json` should have `build` and `start` scripts:
+如果你已经遵循了目前为止的说明，那么你的 `package.json` 应该有 `build` 和 `start` 脚本:
 
 ```json
 {
@@ -22,20 +22,20 @@ If you’ve followed the instructions so far, your `package.json` should have `b
 }
 ```
 
-In your own hosting provider, run the `build` script once, which builds the production application in the `.next` folder.
+在你自己的托管服务器上，运行一次` build` 脚本，该脚本在 `.next` 文件夹中构建生产应用程序。
 
 ```shell
 npm run build
 ```
 
-After building, the `start` script starts a Node.js server that supports hybrid pages, serving both statically generated and server-side rendered pages. The server also supports API Routes as well.
+构建完成后，`start` 脚本启动一个支持混合页面的 Node.js 服务器，它同时提供静态生成和服务器端呈现的页面。该服务器也支持 API Routes。
 
 ```shell
 npm run start
 ```
 
-> **Tip**: You can customize the `start` script in `package.json` to accept a `PORT` parameter by updating it as: `"start": "next start -p $PORT"`.
+> **提示**: 你可以在 `package.json` 中自定义 `start` 脚本以接受`PORT`参数，方法是将其更新为: `"start": "next start -p $PORT"`。
 
-就是这样! If you have questions about deploying Next.js, you can ask our community on [GitHub Discussions](https://github.com/vercel/next.js/discussions).
+就是这样! 如果你对部署Next.js有疑问，你可以在 [GitHub Discussions](https://github.com/vercel/next.js/discussions) 上询问我们的团队。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

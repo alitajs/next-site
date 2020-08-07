@@ -5,29 +5,29 @@ import PlatformLink from '../../../../components/name/platform-link'
 import PlatformText from '../../../../components/name/platform-text'
 
 export const meta = {
-  title: 'Deploying Your Next.js App',
+  title: '部署你的 Next.js 应用程序',
   courseId: 'basics',
   lessonId: 'deploying-nextjs-app',
   stepId: 'deploy',
-  subtitle: `Deploy to ${PLATFORM_NAME}`
+  subtitle: `部署到${PLATFORM_NAME}`
 }
 
-The easiest way to deploy Next.js to production is to use the **<PlatformLink />** platform developed by the creators of Next.js.
+将 Next.js 部署到生产环境的最简单方法是使用由 Next.js 的创建者开发的平台 **<PlatformLink />**。
 
-&#8203;<PlatformText /> is an all-in-one platform with Global CDN supporting static & JAMstack deployment and Serverless Functions. We believe <PlatformText /> is the optimal place to deploy Next.js apps. You can start using it for _free_ — no credit card required.
+<PlatformText/> 是一个集成全局 CDN 的平台，支持静态、 JAMstack 部署和无服务器功能。我们相信 <PlatformLink /> 是部署 Next.js 应用程序的最佳位置。你可以开始_免费_使用它 - 不需要信用卡。
 
-### Create a <PlatformText /> Account
+### 创建一个 <PlatformText /> 账户
 
-First, go to <PlatformLink href="/signup" /> to create a <PlatformText /> account. Choose **Continue with GitHub** and go through the sign up process.
+首先，转到 <PlatformLink href="/signup" /> 创建一个 <PlatformText /> 账户。选择 **Continue with GitHub** 并完成注册流程。
 
-### Import your `nextjs-blog` repository
+### 导入你的 `nextjs-blog` 项目
 
-Once you’re signed up, **import** your `nextjs-blog` repository on <PlatformText />. You can do so from here: <PlatformLink href="/import/git" />.
+只要你登录了，你就可以在 <PlatformText /> 上**导入**你的 `nextjs-blog` 存储库。你可以从这里开始: <PlatformLink href="/import/git" />。
 
-- You’ll need to **Install <PlatformText /> for GitHub**. You can give it access to **All Repositories**.
-- Once you’ve installed <PlatformText />, import `nextjs-blog`.
+- 你需要**安装 <PlatformText /> for GitHub**。你可以授权它访问你的**所有仓库**。
+- 一旦安装完 <PlatformText/>，导入`nextjs-blog`。
 
-You can use _default values_ for the following settings — no need to change anything. <PlatformText /> automatically detects that you have a Next.js app and chooses optimal build settings for you.
+你可以对下列设置使用_默认值_ — 无需做任何修改。<PlatformText /> 自动检测到你有一个 Next.js 应用程序，并为你选择最佳的构建设置。
 
 - Project Name
 - Root Directory
@@ -35,12 +35,12 @@ You can use _default values_ for the following settings — no need to change an
 - Output Directory
 - Development Command
 
-When you deploy, your Next.js app will start building. It should finish in under a minute.
+当你部署的时候，你的 Next.js 应用程序将开始构建，它将在一分钟内完成。
 
-> **Help is available**: If your deployment fails, you can always get help on [GitHub Discussions](https://github.com/vercel/next.js/discussions). To learn more about deployment, take a look at <Link href="/docs/[[...slug]]" as="/docs/deployment"><a>our documentation</a></Link>.
+> **可获取的帮助**: 如果你的部署失败，你可以随时在 [GitHub Discussions](https://github.com/vercel/next.js/discussions) 上获得帮助。要了解有关部署的更多信息，请查看<Link href="/docs/[[...slug]]" as="/docs/deployment"><a>我们的文档</a></Link>。
 
-When it’s done, you’ll get **deployment URLs**. Click on one of the URLs and you should see the Next.js starter page live.
+完成后，你会得到**部署网址**。单击其中的一个 URLs ，你应该会看到 Next.js 的启动页。
 
-Congratulations! You just deployed your Next.js app to production. On the next page, we’ll go into the details of <PlatformText /> and the recommended workflow.
+恭喜你! 你刚刚将 Next.js 应用程序部署到了生产环境。在下一页中，我们将介绍 <PlatformText /> 的细节和推荐的工作流程。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

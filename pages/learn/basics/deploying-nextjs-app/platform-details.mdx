@@ -7,37 +7,37 @@ import PlatformText from '../../../../components/name/platform-text'
 import { PLATFORM_NAME } from '../../../../lib/constants'
 
 export const meta = {
-  title: 'Deploying Your Next.js App',
+  title: '部署你的 Next.js 应用程序',
   courseId: 'basics',
   lessonId: 'deploying-nextjs-app',
   stepId: 'platform-details',
-  subtitle: `Next.js and ${PLATFORM_NAME}`
+  subtitle: `Next.js 和 ${PLATFORM_NAME}`
 }
 
-&#8203;<PlatformLink /> is made by the creators of Next.js and has first-class support for Next.js. When you deploy your Next.js app to <PlatformText />, the following happens by default:
+<PlatformLink /> 由 Next.js 的创建者制作，并为 Next.js 提供一流的支持。当你将 Next.js 应用程序部署到 <PlatformLink /> 时，默认情况下出现以下情况:
 
-- Pages that use Static Generation and assets (JS, CSS, images, fonts, etc) will automatically be served from the <PlatformCdnLink />, which is blazingly fast.
-- Pages that use Server-Side Rendering and API routes will automatically become isolated <PlatformLink href="/docs/v2/serverless-functions/introduction">Serverless Functions</PlatformLink>. This allows page rendering and API requests to scale infinitely.
+- 使用静态生成和资产 (JS、CSS、图像、字体等)的页面将自动从速度非常快的 <PlatformCdnLink /> 提供。
+- 使用服务器端呈现和 API routes 的页面将自动成为孤立的<PlatformLink href="/docs/v2/serverless-functions/introduction">无服务器功能</PlatformLink>。这允许页面渲染和 API 请求无限扩展。
 
-&#8203;<PlatformText /> has many more features, such as:
+<PlatformText /> 有更多的特性，比如:
 
-- **Custom Domains:** Once deployed on <PlatformText />, you can assign a custom domain to your Next.js app. Take a look at <PlatformLink href="/docs/v2/custom-domains">our documentation</PlatformLink> here.
-- **Environment Variables:** You can also set environment variables on <PlatformText />. Take a look at <PlatformLink href="/docs/v2/build-step#environment-variables">our documentation</PlatformLink> here. You can then <Link href="/docs/[[...slug]]" as="/docs/api-reference/next.config.js/environment-variables"><a>use those environment variables</a></Link> in your Next.js app.
-- **Automatic HTTPS:** HTTPS is enabled by default (including custom domains) and doesn't require extra configuration. We auto-renew SSL certificates.
+- **自定义域名:** 一旦部署到 <PlatformText /> 上，你就可以为 Next.js 应用程序分配一个自定义域名。在这里看看<PlatformLink href="/docs/v2/custom-domains">我们的文档</PlatformLink>。
+- **环境变量:** 你还可以在 <PlatformText /> 上设置环境变量。在这里看看<PlatformLink href="/docs/v2/build-step#environment-variables">我们的文档</PlatformLink>。然后，你可以在 Next.js 应用程序中<Link href="/docs/[[...slug]]" as="/docs/api-reference/next.config.js/environment-variables"><a>使用这些环境变量</a></Link>。
+- **自动 HTTPS:** HTTPS 是默认启用的(包括自定义域)，不需要额外的配置。我们自动续费 SSL 证书。
 
-Read <PlatformLink href="/docs">our documentation</PlatformLink> to learn more about the <PlatformText /> platform.
+阅读 <PlatformLink href="/docs">我们的文档</PlatformLink> 了解更多关于 <PlatformText /> 平台的信息。
 
-### Preview Deployment for Every Push
+### 每个推送预览部署
 
-> The steps below are **optional** — you can try it or just read it through.
+> 下面的步骤是**可选的** — 你可以尝试一下，或者直接略读。
 
-After deploying to <PlatformText />, try doing the following if you can:
+部署到 <PlatformText /> 之后，如果可以的话，尝试执行以下操作:
 
-- Create a new **branch** on your app.
-- Make some changes and push to GitHub.
-- Create a new **pull request** ([GitHub help page](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)).
+- 在你的应用程序上创建一个新的**分支**。
+- 做出一些修改，并推进到 GitHub。
+- 创建一个新的 **pull request** ([GitHub help page](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request))。
 
-You should see a comment by the `vercel` bot on the pull request page.
+你应该在请求页面上看到 `vercel` 机器人的评论。
 
 <Image
   shadow
@@ -48,22 +48,22 @@ You should see a comment by the `vercel` bot on the pull request page.
   height={128 / 2}
 />
 
-Try clicking on the **Preview** URL inside this comment. You should see the changes you just made.
+点击这个评论中的**预览**链接，你会看到你刚刚做的改变。
 
-When you have a pull request open, <PlatformText /> automatically creates a **preview deployment** for that branch on every push. The preview URL will always point to the latest preview deployment.
+当你开启一个新的 pull request 时，<PlatformText /> 会在每次推送时自动为该分支创建一个**预览部署***。预览 URL 将始终指向最新的预览部署。
 
-You can share this preview URL with your collaborators and get immediate feedback.
+你可以与你的合作者共享此预览URL，并获得即时反馈。
 
-If your preview deployment looks good, **merge it to `master`**. When you do this, <PlatformText /> automatically creates a production deployment.
+如果你的预览部署看起来很好，**合并到 `master`**。当你这样做时，<PlatformText /> 会自动创建一个生产部署。
 
-### Develop, Preview, Ship
+### 开发，预览，上架
 
-We’ve just gone through the workflow we call **DPS**: **D**evelop, **P**review, and **S**hip.
+我们刚刚经历了我们称之为 **DPS** 的工作流:**D** 开发、**P** 预览和 **S** 上架。
 
-- **Develop**: We’ve written code in Next.js and used the Next.js development server running to take advantage of its hot reloading feature.
-- **Preview**: We’ve pushed changes to a branch on GitHub, and <PlatformText /> created a preview deployment that’s available via a URL. We can share this preview URL with others for feedback. In addition to doing _code reviews_, you can do _deployment previews_.
-- **Ship**: We’ve merged the pull request to `master` to ship to production.
+- **开发**: 我们在 Next.js 中编写了代码，并使用运行的 Next.js 开发服务器利用了其热加载特性。
+- **预览**: 我们已经将更改推送到 GitHub 上的一个分支，并且 <PlatformText /> 创建了一个可以通过 URL 访问的预览部署。我们可以与他人分享此预览 URL 以获得反馈。除了执行代码审查之外，还可以执行部署预览。
+- **上架**: 我们将 pull request 合并到 `master` 完成上架。
 
-We strongly recommend using this workflow when developing Next.js apps — it will help you iterate on your app faster.
+我们强烈建议在开发 Next.js 应用程序时使用此工作流 — 它将帮助你更快地迭代应用程序。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

@@ -5,31 +5,31 @@ import PlatformLink from '../../../../components/name/platform-link'
 import PlatformText from '../../../../components/name/platform-text'
 
 export const meta = {
-  title: 'Deploying Your Next.js App',
+  title: '部署你的 Next.js 应用程序',
   courseId: 'basics',
   lessonId: 'deploying-nextjs-app',
   stepId: 'github',
-  subtitle: 'Push to GitHub'
+  subtitle: '推送到GitHub'
 }
 
-Before we deploy, let’s push our Next.js app to [GitHub](https://github.com/vercel/next.js) if you haven’t done so already. This will make deployment easier.
+在部署之前，让我们将 Next.js 应用程序推送到 [GitHub](https://github.com/vercel/next.js)。（如果你还没把代码推送到 GitHub 的话。）这将使部署更加容易。
 
-- On your personal GitHub account, create a new repository called `nextjs-blog`.
-- The repository can be public or private. You do **not** need to initialize it with a README or other files.
-- If you need help, take a look at [this guide on GitHub](https://help.github.com/en/github/getting-started-with-github/create-a-repo).
+- 在你个人的 GitHub 帐户上，创建一个名为 `nextjs-blog` 的新存储库。
+- 储存库可以是公共的，也可以是私人的。你**不需要**使用 README 或其他文件初始化它。
+- 如果你需要帮助，请看一下 [GitHub 上的指南](https://help.github.com/en/github/getting-started-with-github/create-a-repo)。
 
-Then:
+然后:
 
-- If you haven’t initialized the git repository locally for your Next.js app, do so now.
-- Push the Next.js app to this GitHub repository.
+- 如果你还没有在本地初始化 git 存储库，那么现在就初始化它。
+- 将 Next.js 应用程序推送到这个 GitHub 资源库。
 
-To push to GitHub, you can run the following commands (replace `<username>` with your GitHub username):
+要推送到 GitHub，你可以运行以下命令(用你的 GitHub 用户名替换 `<username>`):
 
 ```bash
 git remote add origin https://github.com/<username>/nextjs-blog.git
 git push -u origin master
 ```
 
-Once your GitHub repository is ready, continue to the next page.
+一旦你的 GitHub 存储库就绪，继续下一页。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>
