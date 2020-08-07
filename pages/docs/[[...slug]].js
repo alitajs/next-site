@@ -139,7 +139,7 @@ const Docs = ({ routes, route: _route, data, html }) => {
             </Container>
             <SocialMeta
               title={title}
-              url={`https://nextjs-cn.com${asPath}`}
+              url={`https://nextjs.org${asPath}`}
               image="/static/twitter-cards/documentation.png"
               description={data.description}
             />
