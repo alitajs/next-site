@@ -42,7 +42,7 @@ export async function getSortedPostsData() {
 
 这是可行的，因为`getStaticProps`仅在**服务器端运行**。它永远不会在客户端运行。它甚至不会包含在浏览器的 JS 包中。这意味着你可以编写直接数据库查询之类的代码，而不必将它们发送到浏览器。
 
-### 开发 vs. 生产
+### 开发环境 v.s. 生产环境
 
 - 在 **development** 中 (`npm run dev` or `yarn dev`), `getStaticProps` 在_每个请求上_运行。
 - 在 **production** 中, `getStaticProps` 在_构建时_运行。
