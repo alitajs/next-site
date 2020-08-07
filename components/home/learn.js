@@ -10,25 +10,25 @@ export default function Learn() {
       <SectionHeader
         margin="0 0 2rem 0"
         id="learn"
-        title="Learn Next.js"
-        description="Learn Next.js step-by-step and earn points ✨."
+        title="学习 Next.js"
+        description="一步步带你学习 Next.js 并获得奖励 ✨."
       />
       <Link href="/learn/basics/create-nextjs-app">
-        <a title="Get started learning Next.js">
+        <a title="开始学习 Next.js">
           <Image
             shadow
-            alt="Learn page overview"
+            alt="学习页面概述"
             oversize={false}
             margin={60}
-            src="/static/images/learn.png"
-            width={1852 / 2}
-            height={990 / 2}
+            src="/static/images/learn-cn.png"
+            width={2242 / 2}
+            height={1520 / 2}
           />
         </a>
       </Link>
       <div>
         <Button href="/learn/basics/create-nextjs-app" invert>
-          Get Started
+          开始学习
         </Button>
       </div>
     </Container>

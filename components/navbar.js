@@ -50,9 +50,9 @@ function Navbar() {
               className={cn('mute', {
                 selected: route.startsWith('/showcase')
               })}
-              title="Showcase"
+              title="网站实例"
             >
-              Showcase
+              网站实例
             </a>
           </Link>
 
@@ -61,9 +61,9 @@ function Navbar() {
               className={cn('mute', {
                 selected: route.startsWith('/docs')
               })}
-              title="Documentation"
+              title="文档"
             >
-              Docs
+              文档
             </a>
           </Link>
 
@@ -73,7 +73,7 @@ function Navbar() {
                 selected: route.startsWith('/blog')
               })}
             >
-              Blog
+              博客
             </a>
           </Link>
 
@@ -106,7 +106,7 @@ function Navbar() {
 
           <div className="learn">
             <Button href="/learn/basics/create-nextjs-app?utm_source=next-site&utm_medium=homepage-cta&utm_campaign=next-website">
-              Learn
+              入门教程
             </Button>
           </div>
         </div>

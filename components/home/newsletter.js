@@ -45,15 +45,14 @@ class Newsletter extends React.PureComponent {
       <Container wide overflow center padding role="region" aria-labelledby="customers">
         <div className="content">
           <aside>
-            <h2>Next.js is getting better every day — don’t miss out on all the action.</h2>
+            <h2>Next.js 每天都在变得越来越好 - 不要错过所有的变化。</h2>
             <h3>
-              Join the Next.js newsletter and stay updated on new releases and features, guides, and
-              case studies.
+              订阅 Next.js 的时事通讯以保持更新新版本和特性、指南和案例的研究。
             </h3>
           </aside>
           <aside>
             {this.state.success ? (
-              <p className="subscribe-success">Thanks for subscribing!</p>
+              <p className="subscribe-success">感谢订阅!</p>
             ) : (
               <div className="email-form">
                 <EmailForm
@@ -61,7 +60,7 @@ class Newsletter extends React.PureComponent {
                   loading={this.state.loading}
                   onEmail={this.onEmail}
                   buttonLabel="SUBSCRIBE"
-                  message="Subscribe"
+                  message="订阅"
                   align="left"
                   withButton
                   withIcon

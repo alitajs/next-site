@@ -20,12 +20,12 @@ export default function Customers() {
       <SectionHeader
         anchor="showcases"
         id="customers"
-        title="Who’s Using Next.js"
-        description="We’re honored some of the most talented creatives out there build with Next.js"
+        title="谁在使用 Next.js"
+        description="我们非常荣幸能有这些天才的创意是基于 Next.js 构建的"
       />
       <ShowcasePreview />
       <Button href="/showcase" invert>
-        View Showcase
+        查看网站实例
       </Button>
     </Container>
   );

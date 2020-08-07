@@ -43,10 +43,10 @@ export default {
   note: (
     <>
       <p>
-        Next.js will serve each file in <code>/pages</code> under a pathname matching the filename.
+        Next.js 将在 <code>/pages</code> 目录下的每个文件与文件名匹配的访问路径对应
       </p>
       <p>
-        For example, <code>/pages/about.js</code> is served at <code>site.com/about</code>.
+        例如，<code>/pages/about.js</code> 对应的访问路径是 <code>site.com/about</code>。
       </p>
     </>
   )

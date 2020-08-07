@@ -19,11 +19,11 @@ const Banner = () => {
           rel="noopener noreferrer"
         >
           <p>
-            Deploy <b>Next.js</b> on the platform it was made for →
+            在专属平台上部署 <b>Next.js</b> →
           </p>
 
           <p className="mobile">
-            Deploy <b>Next.js</b> in seconds →
+            在几秒钟内部署 <b>Next.js</b> →
           </p>
         </a>
       </div>

@@ -6,9 +6,9 @@ import Browser from '../browser';
 import TabButton from './tab-button';
 
 const DEMO_DATA = {
-  'File-System Routing': require('./demos/file-system-routing').default,
-  'Automatic Code Splitting': require('./demos/code-splitting').default,
-  'More...': require('./demos/more').default
+  '文件即路由': require('./demos/file-system-routing').default,
+  '自动代码拆分': require('./demos/code-splitting').default,
+  '更多特性...': require('./demos/more').default
 };
 
 export default function Demo() {
@@ -22,7 +22,7 @@ export default function Demo() {
               <div>
                 <div className="demo-header">
                   {Object.keys(DEMO_DATA).map(id =>
-                    id === 'More...' ? null : (
+                    id === '更多特性...' ? null : (
                       <TabButton
                         invert
                         className="tab"
@@ -42,13 +42,13 @@ export default function Demo() {
                   <TabButton
                     invert
                     className="tab"
-                    selected={selectedId === 'More...'}
-                    onClick={isAmp ? undefined : () => onSelect('More...')}
+                    selected={selectedId === '更多特性...'}
+                    onClick={isAmp ? undefined : () => onSelect('更多特性...')}
                     on={
-                      isAmp ? `tap:AMP.setState({ demoTabs: { selected: 'More...' } })` : undefined
+                      isAmp ? `tap:AMP.setState({ demoTabs: { selected: '更多特性...' } })` : undefined
                     }
                   >
-                    {'More...'}
+                    {'更多特性...'}
                   </TabButton>
                 </div>
                 <div className="demo-body row display-tablet">

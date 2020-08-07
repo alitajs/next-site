@@ -45,8 +45,7 @@ export default {
   note: (
     <>
       <p>
-        Every <code>import</code> you declare gets bundled and served with each page. That means
-        pages never load unnecessary code!
+        你声明的每个<code>import</code>都会与每个页面捆绑在一起，这意味着页面从不加载不必要的代码！
       </p>
     </>
   )

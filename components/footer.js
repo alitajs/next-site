@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { TWITTER_USER_NAME, ORG_NAME, PLATFORM_URL } from '../lib/constants';
+import { TWITTER_USER_NAME, ORG_NAME, PLATFORM_URL,REANSLATOR_NAME } from '../lib/constants';
 import Container from './container';
 import withPure from './hoc/pure';
 import Logo from './icons/platform-logotype-black';
@@ -63,28 +63,33 @@ export default withPure(() => (
         </style>
         <div className="grid f5">
           <div>
-            <h4 className="fw5">General resources</h4>
+            <h4 className="fw5">常用资源</h4>
             <p>
-              <a href="/docs">Docs</a>
+              <a href="/docs">文档</a>
             </p>
             <p>
               <Link href="/learn/basics/create-nextjs-app" prefetch={false}>
-                <a>Learn</a>
+                <a>入门教程</a>
               </Link>
             </p>
             <p>
               <Link href="/showcase" prefetch={false}>
-                <a>Showcase</a>
+                <a>网站实例</a>
               </Link>
             </p>
             <p>
               <Link href="/blog" prefetch={false}>
-                <a>Blog</a>
+                <a>博客</a>
               </Link>
+            </p>
+            <p>
+              <a href="https://www.nextjs.org" target>
+                英文站点
+              </a>
             </p>
           </div>
           <div>
-            <h4 className="fw5">More</h4>
+            <h4 className="fw5">更多</h4>
             <p>
               <a
                 href="https://vercel.com/contact/sales?utm_source=next-site&utm_medium=footer&utm_campaign=next-website"
@@ -115,7 +120,7 @@ export default withPure(() => (
             </p>
           </div>
           <div>
-            <h4 className="fw5">About {ORG_NAME}</h4>
+            <h4 className="fw5">关于 {ORG_NAME}</h4>
             <p>
               <a
                 href={`${PLATFORM_URL}/oss?utm_source=next-site&utm_medium=footer&utm_campaign=next-website`}
@@ -148,7 +153,7 @@ export default withPure(() => (
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Privacy Policy
+                私隐政策
               </a>
             </p>
           </div>
@@ -165,6 +170,9 @@ export default withPure(() => (
           </a>
           <div>
             Copyright © {`${new Date().getFullYear()}`} {ORG_NAME}, Inc. All rights reserved.
+          </div>
+          <div>
+            本站文章由 {REANSLATOR_NAME} 翻译，转载请注明出处。
           </div>
         </div>
       </footer>

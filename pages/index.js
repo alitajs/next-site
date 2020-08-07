@@ -20,13 +20,12 @@ export default function Index() {
         image="/static/twitter-cards/home.jpg"
         title={`Next.js 中文官网 by ${REANSLATOR_NAME} - 最新最全的 Next.js 中文网`}
         url="https://nextjs-cn.com"
-        description={`Production grade React applications that scale. The world’s leading companies use Next.js by ${ORG_NAME} to build static and dynamic websites and web applications.`}
+        description={`生产级规模的 React 应用。世界领先的公司使用由${ORG_NAME}创建的 Next.js 来构建静态和动态的网站和网络应用。`}
       />
       <SkipNavContent />
-      <Notification href="/blog/next-9-5" title="Next 9.5 is out!" titleMobile="Next 9.5 is out!">
-        <b>Next 9.5 is out!</b> — Stable Incremental Static Regeneration, Custom Base Path,
-        Redirects and Rewrites, Webpack 5 Beta, and more!
-        <span className="highlight">Learn More →</span>
+      <Notification href="/blog/next-9-5" title="Next 9.5 已正式发布!" titleMobile="Next 9.5 已正式发布!">
+        <b>Next 9.5 已正式发布!</b> — 增加了稳定的增量静态页面生成、自定义根路径、 重定向和重写、支持 Webpack 5 Beta 等新功能!
+        <span className="highlight">查看详情 →</span>
       </Notification>
       <Intro />
       <Demo />

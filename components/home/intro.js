@@ -112,7 +112,7 @@ export default function Intro() {
         <div className="intro-container">
           <LogoContainer isAmp={isAmp} />
           <div className="campaign no-drag no-tap-highlight">
-            <h1 className={classNames('title-1', 'fw6')}>The React Framework for</h1>
+            <h1 className={classNames('title-1', 'fw6')}>一个 React 框架，适用于</h1>
             <h2 className={classNames('title-2', 'fw7')}>
               <Campaign />
             </h2>
@@ -122,13 +122,13 @@ export default function Intro() {
                   href="/learn/basics/create-nextjs-app?utm_source=next-site&utm_medium=homepage-cta&utm_campaign=next-website"
                   invert
                 >
-                  Start Learning
+                  开始学习
                 </Button>
               </div>
 
               <div className="button-spacer">
                 <Button href="/showcase" invert outline>
-                  View Showcase
+                  查看网站实例
                 </Button>
               </div>
             </div>
@@ -140,7 +140,7 @@ export default function Intro() {
               </a>
               <div>
                 <Button href="/docs" amp>
-                  View Docs
+                  查看文档
                 </Button>
               </div>
               <div>
