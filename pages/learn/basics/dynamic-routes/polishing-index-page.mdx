@@ -2,18 +2,18 @@ import Layout from '../../../../components/learn/Layout'
 import Image from '../../../../components/image'
 
 export const meta = {
-  title: 'Dynamic Routes',
+  title: '动态路由',
   courseId: 'basics',
   lessonId: 'dynamic-routes',
   stepId: 'polishing-index-page',
-  subtitle: 'Polishing the Index Page'
+  subtitle: '润饰首页'
 }
 
-As the final step, let’s update our index page (`pages/index.js`).
+作为最后一步，让我们更新我们的首页 (`pages/index.js`)。
 
-In particular, we need to add links to each post page. We’ll be using the `Link` component, but we need to do something differently this time.
+特别是，我们需要添加链接到每个帖子页面。我们将使用 `Link` 组件，但这次我们需要做一些不同的事情。
 
-To link to a page with dynamic routes, you need to use the `Link` component differently. In our case, to link to `/posts/ssg-ssr`, you need to write it like this:
+若要链接到具有动态路由的页面，你需要使用 `Link` 组件的另一种用法。在我们的示例中，要链接到 `/posts/ssg-ssr` ，你需要这样写:
 
 ```jsx
 <Link href="/posts/[id]" as="/posts/ssg-ssr">
@@ -21,16 +21,16 @@ To link to a page with dynamic routes, you need to use the `Link` component diff
 </Link>
 ```
 
-如你所见, you need to use `[id]` for `href` and the actual path (`ssg-ssr`) for the `as` prop.
+如你所见,你需要将 `[id]` 用于 `href`，而将实际路径 (`ssg-ssr`) 用于 `as` 属性。
 
-Let’s implement it. First, import `Link` and `Date` in `pages/index.js`:
+让我们实现它。首先，在 `pages/index.js` 导入 `Link` 和 `Date`:
 
 ```js
 import Link from 'next/link'
 import Date from '../components/date'
 ```
 
-Then, near the bottom of the `Home` component, replace the `li` tag with the following:
+然后，在 `Home` 组件的底部附近，将 `li` 标签做如下修改:
 
 ```jsx
 <li className={utilStyles.listItem} key={id}>
@@ -44,7 +44,7 @@ Then, near the bottom of the `Home` component, replace the `li` tag with the fol
 </li>
 ```
 
-It should now have the links to each article:
+它现在应该有每篇文章的链接:
 
 <Image
   shadow
@@ -55,8 +55,8 @@ It should now have the links to each article:
   height={472 / 2}
 />
 
-> If something is not working, make sure that your code [looks like this](https://github.com/vercel/next-learn-starter/tree/master/api-routes-starter).
+> 如果有些东西不工作，请确保你的代码[看起来像这样](https://github.com/vercel/next-learn-starter/tree/master/api-routes-starter)。
 
-That’s it! Before we wrap up this lesson, let’s talk about some tips for using dynamic routes on the next page.
+没错！在结束本课之前，让我们在下一页中来谈谈使用动态路由的一些技巧。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

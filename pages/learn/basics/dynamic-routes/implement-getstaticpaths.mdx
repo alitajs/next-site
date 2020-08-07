@@ -2,19 +2,19 @@ import Layout from '../../../../components/learn/Layout'
 import Image from '../../../../components/image'
 
 export const meta = {
-  title: 'Dynamic Routes',
+  title: '动态路由',
   courseId: 'basics',
   lessonId: 'dynamic-routes',
   stepId: 'implement-getstaticpaths',
-  subtitle: 'Implement getStaticPaths'
+  subtitle: '实现 getStaticPaths'
 }
 
-First, let’s set up the files:
+首先，让我们操作这些文件:
 
-- Create a file called **`[id].js`** inside the `pages/posts` directory.
-- Also, **remove `first-post.js`** inside the `pages/posts` directory — we’ll no longer use this.
+- 在 `pages/posts` 目录中创建一个名为 **`[id].js`** 的文件。
+- 而且，**删除** `pages/posts` 目录中的 **`first-post.js`** 文件 — 我们将不再使用它。
 
-Then, add this to `pages/posts/[id].js`. We’ll fill in `...` later.
+然后，将以下内容添加到 `pages/posts/[id].js` 。我们稍后会填写 `...` 部分。
 
 ```jsx
 import Layout from '../../components/layout'
@@ -24,7 +24,7 @@ export default function Post() {
 }
 ```
 
-Then, open `lib/posts.js` and add this function. This will return the list of file names (excluding `.md`) in the `posts` directory:
+然后，打开 `lib/posts.js` 并添加这个函数。这将返回 `posts` 目录中的文件名列表(排除 `.md`):
 
 ```jsx
 export function getAllPostIds() {
@@ -53,15 +53,15 @@ export function getAllPostIds() {
 }
 ```
 
-**Important**: The returned list is _not_ just an array of strings — it **must** be an array of objects that look like the comment above. Each object must have the `params` key and contain an object with the `id` key (because we’re using `[id]` in the file name). Otherwise, `getStaticPaths` will fail.
+**重要的**: 返回的列表不仅仅是字符串数组 — 它**必须**是一个对象数组，看起来像上面的注释。每个对象必须有 `params` 属性，并包含一个带有 `id` 属性的对象（因为我们正在文件名中使用`[id]`)。否则，`getStaticPaths` 将失败。
 
-Finally, in `pages/posts/[id].js`, we’ll import this function:
+最后，在 `pages/posts/[id].js` 中，我们将导入这个函数:
 
 ```js
 import { getAllPostIds } from '../../lib/posts'
 ```
 
-And create `getStaticPaths` which calls this function:
+然后在 `getStaticPaths` 调用这个函数:
 
 ```jsx
 export async function getStaticPaths() {
@@ -73,9 +73,9 @@ export async function getStaticPaths() {
 }
 ```
 
-- The array of possible values for `id` must be the value of the `paths` key of the returned object. This is exactly what `getAllPostIds()` returns.
-- Ignore `fallback: false` for now — we’ll explain that later.
+- 返回对象的 `paths` 属性必须是 `id` 的可能值数组。这正是`getAllPostIds()`返回的内容。
+- 现在忽略 `fallback: false`，我们稍后会解释。
 
-We’re almost done — but we still need to implement `getStaticProps`. Let’s do that on the next page!
+我们几乎快完成了 — 但我们仍然需要实现 `getStaticProps`。让我们在下一页做吧！
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

@@ -2,27 +2,27 @@ import Layout from '../../../../components/learn/Layout'
 import Image from '../../../../components/image'
 
 export const meta = {
-  title: 'Dynamic Routes',
+  title: '动态路由',
   courseId: 'basics',
   lessonId: 'dynamic-routes',
   stepId: 'render-markdown',
-  subtitle: 'Render Markdown'
+  subtitle: '渲染 Markdown'
 }
 
-To render markdown content, we’ll use the `remark` library. First, let’s install it:
+要渲染 markdown 内容，我们将使用 `remark` 库。首先，让我们安装它:
 
 ```shell
 npm install remark remark-html
 ```
 
-Import them in `lib/posts.js`:
+在 `lib/posts.js`中导入他们:
 
 ```js
 import remark from 'remark'
 import html from 'remark-html'
 ```
 
-And update `getPostData()` as follows to use `remark`.
+并将 `getPostData()` 更新如下，以使用`remark`。
 
 ```js
 export async function getPostData(id) {
@@ -47,9 +47,9 @@ export async function getPostData(id) {
 }
 ```
 
-**Important**: We added the **`async`** keyword to `getPostData` because we need to use `await` for `remark`.
+**重要的**: 我们给 `getPostData` 加了 **`async`** 关键字，因为我们需要使用 `await` 来等待 `remark` 执行完成。
 
-That means we need to update `getStaticProps` in `pages/posts/[id].js` to use `await` when calling `getPostData`:
+这意味着我们需要更新 `pages/posts/[id].js` 中的 `getStaticProps`，以便在调用 `getPostData` 时使用 `await`:
 
 ```js
 export async function getStaticProps({ params }) {
@@ -59,7 +59,7 @@ export async function getStaticProps({ params }) {
 }
 ```
 
-Finally, update the `Post` component to render `contentHtml` using `dangerouslySetInnerHTML`:
+最后，更新 `Post` 组件，使用 `dangerouslySetInnerHTML` 渲染 `contentHtml`:
 
 ```jsx
 export default function Post({ postData }) {
@@ -77,12 +77,12 @@ export default function Post({ postData }) {
 }
 ```
 
-Try visiting these pages again:
+再次访问这些页面:
 
 - [http://localhost:3000/posts/ssg-ssr](http://localhost:3000/posts/ssg-ssr)
 - [http://localhost:3000/posts/pre-rendering](http://localhost:3000/posts/pre-rendering)
 
-You should now see the blog content:
+你现在应该可以看到博客内容:
 
 <Image
   shadow
@@ -93,6 +93,6 @@ You should now see the blog content:
   height={980 / 2}
 />
 
-We’re almost done! Let’s polish each page next.
+我们快完成了！接下来让我们润饰每个页面。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

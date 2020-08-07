@@ -2,16 +2,16 @@ import Layout from '../../../../components/learn/Layout'
 import Image from '../../../../components/image'
 
 export const meta = {
-  title: 'Dynamic Routes',
+  title: '动态路由',
   courseId: 'basics',
   lessonId: 'dynamic-routes',
   stepId: 'polishing-post-page',
-  subtitle: 'Polishing the Post Page'
+  subtitle: '润饰帖子页面'
 }
 
-### Adding `title` to the Post Page
+### 在帖子页面中添加 `title`
 
-In `pages/posts/[id].js`, let’s add the `title` tag using the post data. Import `next/head` and add the `title` tag:
+在 `pages/posts/[id].js` 中，让我们使用帖子数据添加 `title` 标签。导入 `next/head` 并添加 `title` 标签:
 
 ```jsx
 import Head from 'next/head'
@@ -28,15 +28,15 @@ export default function Post({ postData }) {
 }
 ```
 
-### Formatting the Date
+### 格式化日期
 
-To format the date, we’ll use the `date-fns` library. First, install it:
+要设置日期的格式，我们将使用`date-fns`库。首先，先安装它:
 
 ```shell
 npm install date-fns
 ```
 
-Next, create the `Date` component at `components/date.js`:
+接下来，在 `components/date.js` 中创建 `Date` 组件:
 
 ```jsx
 import { parseISO, format } from 'date-fns'
@@ -47,7 +47,7 @@ export default function Date({ dateString }) {
 }
 ```
 
-And use it in `pages/posts/[id].js`:
+然后在 `pages/posts/[id].js` 中使用它:
 
 ```jsx
 // Add this line to imports
@@ -65,11 +65,11 @@ export default function Post({ postData }) {
 }
 ```
 
-If you access [http://localhost:3000/posts/pre-rendering](http://localhost:3000/posts/pre-rendering), you should now see the date written as **“January 1, 2020”**.
+如果你访问 [http://localhost:3000/posts/pre-rendering](http://localhost:3000/posts/pre-rendering)，你现在应该看到日期写为 **“January 1, 2020”**。
 
-### Adding CSS
+### 添加 CSS
 
-Finally, let’s add some CSS. In `pages/posts/[id].js`, put everything under the `article` tag and use CSS modules like below:
+最后，让我们添加一些 CSS。在 `pages/posts/[id].js` 中，将所有内容放在 `article` 标签下，并使用下面这样的 CSS 模块:
 
 ```jsx
 // Add this line
@@ -93,7 +93,7 @@ export default function Post({ postData }) {
 }
 ```
 
-If you access [http://localhost:3000/posts/pre-rendering](http://localhost:3000/posts/pre-rendering), the page should now look a little better:
+如果你访问 [http://localhost:3000/posts/pre-rendering](http://localhost:3000/posts/pre-rendering)，页面现在应该更好看一些:
 
 <Image
   shadow
@@ -104,6 +104,6 @@ If you access [http://localhost:3000/posts/pre-rendering](http://localhost:3000/
   height={661 / 2}
 />
 
-Great work! We’ll polish the index page next and we’ll be done!
+很好！下一步我们将润饰首页，我们将完成本节课程！
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

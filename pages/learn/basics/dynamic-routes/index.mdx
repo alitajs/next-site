@@ -2,22 +2,22 @@ import Layout from '../../../../components/learn/Layout'
 import Link from 'next/link'
 
 export const meta = {
-  title: 'Dynamic Routes',
+  title: '动态路由',
   courseId: 'basics',
   lessonId: 'dynamic-routes'
 }
 
-We’ve populated the index page with the blog data, but we still haven’t created individual blog pages yet (here’s the [the desired result](https://next-learn-starter.now.sh/)). We want the URL for these pages to depend on the blog data, which means we need to use dynamic routes.
+我们已经用博客数据填充了首页，但是我们还没有创建单独的博客页面(这里是[最终的效果](https://next-learn-starter.now.sh/))。我们希望这些页面的 URL 依赖于博客数据，这意味着我们需要使用动态路由。
 
 ### 这节课你将学到什么
 
 在这一课中，你会学到:
 
-- How to statically generate pages with dynamic routes using `getStaticPaths`.
-- How to write `getStaticProps` to fetch the data for each blog post.
-- How to render markdown using `remark`.
-- How to pretty-print date strings.
-- How to link to a page with dynamic routes.
-- Some useful information on dynamic routes.
+- 如何使用 `getStaticPaths` 静态生成具有动态路由的页面。
+- 如何编写 `getStaticProps` 来获取每个博客文章的数据。
+- 如何用 `remark` 渲染 markdown。
+- 如何美观的展示日期字符串。
+- 如何链接到具有动态路由的页面。
+- 一些有关动态路由的有用信息。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

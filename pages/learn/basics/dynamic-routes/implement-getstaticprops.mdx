@@ -2,16 +2,16 @@ import Layout from '../../../../components/learn/Layout'
 import Image from '../../../../components/image'
 
 export const meta = {
-  title: 'Dynamic Routes',
+  title: '动态路由',
   courseId: 'basics',
   lessonId: 'dynamic-routes',
   stepId: 'implement-getstaticprops',
-  subtitle: 'Implement getStaticProps'
+  subtitle: '实现 getStaticProps'
 }
 
-We need to fetch necessary data to render the post with the given `id`.
+我们需要通过 `id` 获取必要的数据来渲染帖子。
 
-To do so, open `lib/posts.js` again and add this function. This will return the post data based on `id`:
+为此，再次打开 `lib/posts.js` 并添加以下函数。这将返回基于 `id` 的帖子数据:
 
 ```jsx
 export function getPostData(id) {
@@ -29,19 +29,19 @@ export function getPostData(id) {
 }
 ```
 
-Finally, in `pages/posts/[id].js`, replace this line:
+最后，在 `pages/posts/[id].js` 中，修改这一行:
 
 ```js
 import { getAllPostIds } from '../../lib/posts'
 ```
 
-…with this:
+修改为:
 
 ```js
 import { getAllPostIds, getPostData } from '../../lib/posts'
 ```
 
-And create `getStaticProps` which calls this function:
+然后在 `getStaticProps` 调用这个函数:
 
 ```jsx
 export async function getStaticProps({ params }) {
@@ -54,7 +54,7 @@ export async function getStaticProps({ params }) {
 }
 ```
 
-Then update the `Post` component to use `postData`:
+然后更新 `Post` 组件以使用 `postData`:
 
 ```jsx
 export default function Post({ postData }) {
@@ -70,12 +70,12 @@ export default function Post({ postData }) {
 }
 ```
 
-That’s it! Try visiting these pages:
+完成了，试试浏览这些页面:
 
 - [http://localhost:3000/posts/ssg-ssr](http://localhost:3000/posts/ssg-ssr)
 - [http://localhost:3000/posts/pre-rendering](http://localhost:3000/posts/pre-rendering)
 
-You should be able to see the blog data for each page:
+你应该能够看到每个页面的博客数据:
 
 <Image
   shadow
@@ -86,21 +86,21 @@ You should be able to see the blog data for each page:
   height={738 / 2}
 />
 
-Great! We’ve successfully generated dynamic pages.
+太好了！我们已经成功地生成了动态页面。
 
-### Something Wrong?
+### 遇到问题？
 
-If you come across an error, make sure your files have the correct code:
+如果你遇到错误，请确保你的文件有正确的代码:
 
-- `pages/posts/[id].js` should [look like this](https://github.com/vercel/next-learn-starter/blob/master/dynamic-routes-step-1/pages/posts/%5Bid%5D.js).
-- `lib/posts.js` should [look like this](https://github.com/vercel/next-learn-starter/blob/master/dynamic-routes-step-1/lib/posts.js).
-- (If it’s still not working) The remaining code should [look like this](https://github.com/vercel/next-learn-starter/tree/master/dynamic-routes-step-1).
+- `pages/posts/[id].js` 应该[看起来像这样](https://github.com/vercel/next-learn-starter/blob/master/dynamic-routes-step-1/pages/posts/%5Bid%5D.js).
+- `lib/posts.js` 应该[看起来像这样](https://github.com/vercel/next-learn-starter/blob/master/dynamic-routes-step-1/lib/posts.js).
+- (如果还是没用) 剩余代码应该[看起来像这样](https://github.com/vercel/next-learn-starter/tree/master/dynamic-routes-step-1).
 
-If you’re still stuck, feel free to ask the community on [GitHub Discussions](https://github.com/vercel/next.js/discussions). It’d be helpful if you could push your code to GitHub and link to it so others can take a look.
+如果还卡着，随时在[GitHub Discussions](https://github.com/vercel/next.js/discussions)上向团队提问。如果你可以将代码推送到 GitHub 并链接到它，以便其他人可以查看它，这将是非常有用的。
 
-### Summary
+### 摘要
 
-Again, here’s the graphical summary of what we’ve done:
+这里是我们所做工作的图形摘要:
 
 <Image
   shadow
@@ -111,6 +111,6 @@ Again, here’s the graphical summary of what we’ve done:
   height={1054 / 2}
 />
 
-But we still haven’t displayed the blog **markdown content**. So let’s do this next.
+但是我们还没有显示博客 **markdown 内容**。让我们做下一步。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

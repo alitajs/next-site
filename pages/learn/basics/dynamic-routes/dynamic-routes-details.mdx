@@ -2,14 +2,14 @@ import Layout from '../../../../components/learn/Layout'
 import Link from 'next/link'
 
 export const meta = {
-  title: 'Dynamic Routes',
+  title: '动态路由',
   courseId: 'basics',
   lessonId: 'dynamic-routes',
   stepId: 'dynamic-routes-details',
-  subtitle: 'Dynamic Routes Details'
+  subtitle: '动态路由技巧'
 }
 
-You can get in-depth information about dynamic routes in our documentation:
+你可以在我们的文档中获得有关动态路由的深入信息:
 
 - <Link href="/docs/[[...slug]]" as="/docs/basic-features/data-fetching">
     <a>Data Fetching</a>
@@ -18,11 +18,11 @@ You can get in-depth information about dynamic routes in our documentation:
     <a>Dynamic Routes</a>
   </Link>
 
-But here is some essential information you should know about dynamic routes.
+但是这里有一些你应该知道的关于动态路由的重要信息。
 
-### Fetch External API or Query Database
+### 获取外部 API 或查询数据库
 
-Like `getStaticProps`, `getStaticPaths` can fetch data from any data source. In our example, `getAllPostIds` (which is used by `getStaticPaths`) may fetch from an external API endpoint:
+与 `getStaticProps` 类似，`getStaticPaths` 可以从任何数据源获取数据。在我们的示例中，`getAllPostIds` 的数据(由 `getStaticPaths` 使用)可以从外部API获取:
 
 ```js
 export async function getAllPostIds() {
@@ -40,32 +40,32 @@ export async function getAllPostIds() {
 }
 ```
 
-### Development v.s. Production
+### 开发环境 v.s. 生产环境
 
-- In **development** (`npm run dev` or `yarn dev`), `getStaticPaths` runs on _every request_.
-- In **production**, `getStaticPaths` runs at _build time_.
+- 在 **development** 中 (`npm run dev` or `yarn dev`), `getStaticProps` 在_每个请求上_运行。
+- 在 **production** 中, `getStaticProps` 在_构建时_运行。
 
 ### Fallback
 
-Recall that we returned `fallback: false` from `getStaticPaths`. What does this mean?
+还记得吗，我们从 `getStaticPaths` 返回了 `fallback: false` ，这是什么意思？
 
-If `fallback` is `false`, then any paths not returned by `getStaticPaths` will result in a **404 page**.
+如果 `fallback` 是 `false`，那么 `getStaticPaths` 没有返回的任何路径将导致一个**404 page**。
 
-If `fallback` is `true`, then the behavior of `getStaticProps` changes:
+如果 `fallback` 是 `true`，那么 `getStaticPaths` 的行为就会改变:
 
-- The paths returned from `getStaticPaths` will be rendered to HTML at build time.
-- The paths that have not been generated at build time will **not** result in a 404 page. Instead, Next.js will serve a “fallback” version of the page on the first request to such a path.
-- In the background, Next.js will statically generate the requested path. Subsequent requests to the same path will serve the generated page, just like other pages pre-rendered at build time.
+- 在构建时间从 `getStaticPaths` 返回的路径将被渲染到 HTML。
+- 在构建时未生成的路径**不会**导致404页。相反，Next.js 将在第一个请求中提供该页面的 “fallback” 版本。
+- 在后台，Next.js 将静态生成请求的路径。生成的页面将服务于对同一路径的后续请求，就像构建时预渲染的其他页面一样。
 
-This is beyond the scope of our lessons, but you can learn more about `fallback: true` in <Link href="/docs/[[...slug]]" as="/docs/basic-features/data-fetching#fallback-pages"><a>our documentation</a></Link>.
+这超出了我们的课程的范围，但你可以在<Link href="/docs/[[...slug]]" as="/docs/basic-features/data-fetching#fallback-pages"><a>我们的文档</a></Link>学到更多关于`fallback: true`的知识。
 
-### Catch-all Routes
+### 全面控制路由
 
-Dynamic routes can be extended to catch all paths by adding three dots (`...`) inside the brackets. For example:
+可以通过在括号内添加三个点 (`...`) 来扩展动态路由以捕捉所有路径。例如:
 
-- `pages/posts/[...id].js` matches `/posts/a`, but also `/posts/a/b`, `/posts/a/b/c` and so on.
+- `pages/posts/[...id].js` 匹配 `/posts/a`, 但也匹配 `/posts/a/b`, `/posts/a/b/c` 等。
 
-If you do this, in `getStaticPaths`, you must return an array as the value of the `id` key like so:
+如果你这样做，在 `getStaticPaths` 中，你必须返回一个数组作为 `id` 键的值，如下所示:
 
 ```js
 return [
@@ -79,7 +79,7 @@ return [
 ]
 ```
 
-And `params.id` will be an array in `getStaticProps`:
+然后在 `getStaticProps` 中， `params.id` 将是一个数组:
 
 ```js
 export async function getStaticProps({ params }) {
@@ -87,15 +87,15 @@ export async function getStaticProps({ params }) {
 }
 ```
 
-Take a look at our <Link href="/docs/[[...slug]]" as="/docs/routing/dynamic-routes"><a>Dynamic Routes</a></Link> documentation to learn more.
+看看我们的<Link href="/docs/[[...slug]]" as="/docs/routing/dynamic-routes"><a>动态路由</a></Link>文档，了解更多。
 
-### Router
+### 路由
 
-If you want to access the Next.js router, you can do so by importing the `useRouter` hook from `next/router`. Take a look at our <Link href="/docs/[[...slug]]" as="/docs/routing/dynamic-routes"><a>router documentation</a></Link> to learn more.
+如果你想访问 Next.js 路由，可以通过从 `next/router` 导入 `useRouter` 来实现这一点。看看我们的<Link href="/docs/[[...slug]]" as="/docs/routing/dynamic-routes"><a>路由文档</a></Link>以了解更多。
 
-### 404 Pages
+### 404 页面
 
-To create a custom 404 page, create `pages/404.js`. This file is statically generated at build time.
+若要创建自定义404页，请创建 `pages/404.js`。此文件在编译时静态生成。
 
 ```jsx
 // pages/404.js
@@ -104,19 +104,19 @@ export default function Custom404() {
 }
 ```
 
-Take a look at our <Link href="/docs/[[...slug]]" as="/docs/advanced-features/custom-error-page#404-page"><a>Error Pages</a></Link> documentation to learn more.
+看看我们的<Link href="/docs/[[...slug]]" as="/docs/advanced-features/custom-error-page#404-page"><a>错误页面</a></Link>文档以了解更多。
 
-### More Examples
+### 更多例子
 
-We have created several examples to illustrate `getStaticProps` and `getStaticPaths` — take a look at their source code to learn more:
+我们创建了几个例子来说明 `getStaticProps` 和 `getStaticPaths` — 查看它们的源代码了解更多:
 
 - [Blog Starter using markdown files](https://github.com/vercel/next.js/tree/canary/examples/blog-starter) ([Demo](https://next-blog-starter.now.sh/))
 - [DatoCMS Example](https://github.com/vercel/next.js/tree/canary/examples/cms-datocms) ([Demo](https://next-blog-datocms.now.sh/))
 - [TakeShape Example](https://github.com/vercel/next.js/tree/canary/examples/cms-takeshape) ([Demo](https://next-blog-takeshape.now.sh/))
 - [Sanity Example](https://github.com/vercel/next.js/tree/canary/examples/cms-sanity) ([Demo](https://next-blog-sanity.now.sh/))
 
-### That’s it!
+### 就是这样!
 
-In the next lesson, we’ll talk about the API Routes feature for Next.js.
+在下一课中，我们将讨论 Next.js 的 API路由特性。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

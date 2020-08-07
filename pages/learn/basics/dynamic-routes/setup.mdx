@@ -2,7 +2,7 @@ import Layout from '../../../../components/learn/Layout'
 import SkipPageButton from '../../../../components/learn/SkipPageButton.js'
 
 export const meta = {
-  title: 'Dynamic Routes',
+  title: '动态路由',
   courseId: 'basics',
   lessonId: 'dynamic-routes',
   stepId: 'setup'
@@ -24,10 +24,10 @@ npx create-next-app nextjs-blog --use-npm --example "https://github.com/vercel/n
 
 然后按照命令输出中的指令(`cd` 进入目录并启动开发服务器)。
 
-You should also update the following files:
+你还应该更新以下文件:
 
-- `public/images/profile.jpg` with your photo (Recommended: 400px width/height).
-- `const name = '[Your Name]'` in `components/layout.js` with your name.
-- `<p>[Your Self Introduction]</p>` in `pages/index.js` with your self introduction.
+- `public/images/profile.jpg` 是你的照片(建议: 400px width/height)。
+- 在 `components/layout.js` 中的 `const name = '[Your Name]'` 是你的名字。
+- 在 `pages/index.js` 中的 `<p>[Your Self Introduction]</p>` 是你的自我介绍.
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>
