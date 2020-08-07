@@ -83,7 +83,7 @@ export default withPure(() => (
               </Link>
             </p>
             <p>
-              <a href="https://www.nextjs.org" target>
+              <a href="https://www.nextjs.org" target="true">
                 英文站点
               </a>
             </p>
