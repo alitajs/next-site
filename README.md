@@ -38,7 +38,11 @@ Next.js网站使用的表情符号来自 [Twemoji](https://twemoji.twitter.com)�
 
 ## 参与翻译
 
-想要参与本文档翻译，请关注 [翻译进度](https://github.com/alitajs/next-site/issues/1)，认领你想要翻译的文章。并请在较短的时间内完成翻译，并提交PR。
+想要参与本文档翻译，请关注 [翻译进度](https://github.com/alitajs/next-site-cn/issues/1)，认领你想要翻译的文章。并请在较短的时间内完成翻译，并提交PR。
+
+### 标点符号
+
+除了使用英文的冒号和括号（我觉得看起来舒服点），其他的标点符号，都使用中文标点符号。
 
 ## 后续计划
 

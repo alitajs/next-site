@@ -11,14 +11,14 @@ import Customers from '../components/home/customers';
 import Newsletter from '../components/home/newsletter';
 import Learn from '../components/home/learn';
 import SocialMeta from '../components/social-meta';
-import { ORG_NAME } from '../lib/constants';
+import { ORG_NAME, REANSLATOR_NAME } from '../lib/constants';
 
 export default function Index() {
   return (
-    <Page title={`Next.js by ${ORG_NAME} - The React Framework`}>
+    <Page title={`Next.js 中文官网 by ${REANSLATOR_NAME} - 最新最全的 Next.js 中文网`}>
       <SocialMeta
         image="/static/twitter-cards/home.jpg"
-        title={`Next.js by ${ORG_NAME} - The React Framework`}
+        title={`Next.js 中文官网 by ${REANSLATOR_NAME} - 最新最全的 Next.js 中文网`}
         url="https://nextjs-cn.com"
         description={`Production grade React applications that scale. The world’s leading companies use Next.js by ${ORG_NAME} to build static and dynamic websites and web applications.`}
       />
