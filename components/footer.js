@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { TWITTER_USER_NAME, ORG_NAME, PLATFORM_URL,REANSLATOR_NAME } from '../lib/constants';
+import { TWITTER_USER_NAME, ORG_NAME, PLATFORM_URL, REANSLATOR_NAME } from '../lib/constants';
 import Container from './container';
 import withPure from './hoc/pure';
 import Logo from './icons/platform-logotype-black';
@@ -83,7 +83,7 @@ export default withPure(() => (
               </Link>
             </p>
             <p>
-              <a href="https://www.nextjs.org" target="true">
+              <a href="https://www.nextjs.org" rel="noopener noreferrer" target="_blank">
                 英文站点
               </a>
             </p>
@@ -171,9 +171,7 @@ export default withPure(() => (
           <div>
             Copyright © {`${new Date().getFullYear()}`} {ORG_NAME}, Inc. All rights reserved.
           </div>
-          <div>
-            本站文章由 {REANSLATOR_NAME} 翻译，转载请注明出处。
-          </div>
+          <div>本站文章由 {REANSLATOR_NAME} 翻译，转载请注明出处。</div>
         </div>
       </footer>
     </Container>
