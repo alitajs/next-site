@@ -95,9 +95,6 @@ const Code = ({ children }) => (
       pre code::before {
         content: '';
       }
-      pre code::after {
-        content: '';
-      }
       /* Allow selecting all text for easy copy-pasting.
          Right now, only enable it for CSS / Markdown because
          for JS code, you might not want to copy

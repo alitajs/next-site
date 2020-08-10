@@ -1,7 +1,6 @@
 import Layout from '../../../../components/learn/Layout'
 import AnswerBox from '../../../../components/learn/AnswerBox'
 import Image from '../../../../components/image'
-import Link from 'next/link'
 
 export const meta = {
   title: '资源、元数据和CSS',
@@ -26,7 +25,7 @@ export const meta = {
 
 请注意，使用 `<Head>` 代替小写字母`<head>`。`<Head>` 是内置于 Next.js 中的 React 组件。它允许你修改页面的 `<head>`。
 
-你可以从 `next/head` 模块导入 `Head` 组件。You can import the `Head` component from the `next/head` module.
+你可以从 [`next/head`](/docs/api-reference/next/head) 模块导入 `Head` 组件。
 
 ### 添加 `<Head>` 到 `first-post.js`
 
@@ -34,7 +33,7 @@ export const meta = {
 
 打开 `pages/posts/first-post.js` 文件。
 
-首先，从 `next/head` 导入 `Head`:
+首先，从 [`next/head`](/docs/api-reference/next/head) 导入 `Head`:
 
 ```js
 import Head from 'next/head'
@@ -55,10 +54,12 @@ export default function FirstPost() {
 }
 ```
 
-尝试访问 [http://localhost:3000/posts/first-post](http://localhost:3000/posts/first-post)。浏览器标题现在应该是 “First Post”。通过使用浏览器的开发工具，您应该会看到 `title` 标签被添加到 `<head>` 中。
+尝试访问 [http://localhost:3000/posts/first-post](http://localhost:3000/posts/first-post)。浏览器标题现在应该是 “First Post”。通过使用浏览器的开发工具，你应该会看到 `title` 标签被添加到 `<head>` 中。
 
-> 了解更多关于 `next/head` 的信息，请查看<Link href="/docs/[[...slug]]" as="/docs/api-reference/next/head"><a>API参考文档</a></Link>。
+要了解更多关于“Head”组件的信息，请查看【API对“next/Head”的引用】。
+
+> 要了解更多关于 `Head` 组件的信息，请查看 [API 对 `next/head` 的引用](/docs/api-reference/next/head)。
 >
-> 如果您想自定义`<html>`,例如，要添加 `lang` 属性，您可以通过创建一个自定义 `Document` 组件来这样做。在<Link href="/docs/[[...slug]]" as="/docs/advanced-features/custom-document"><a>自定义 document 文档</a></Link>中了解更多信息。
+> 如果你想自定义 `<html>` ,例如，要添加 `lang` 属性，你可以通过创建一个自定义 `pages/_document.js` 文件来这样做。在[自定义 `Document` 文档](/docs/advanced-features/custom-document)中了解更多信息。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

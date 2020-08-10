@@ -53,7 +53,7 @@ export function getAllPostIds() {
 }
 ```
 
-**重要的**: 返回的列表不仅仅是字符串数组 — 它**必须**是一个对象数组，看起来像上面的注释。每个对象必须有 `params` 属性，并包含一个带有 `id` 属性的对象（因为我们正在文件名中使用`[id]`)。否则，`getStaticPaths` 将失败。
+**重要的**: 返回的列表不仅仅是字符串数组 — 它**必须**是一个对象数组，看起来像上面的注释。每个对象必须有 `params` 属性，并包含一个带有 `id` 属性的对象（因为我们正在文件名中使用`[id]`)。否则，[`getStaticPaths`](/docs/basic-features/data-fetching#getstaticpaths-static-generation) 将失败。
 
 最后，在 `pages/posts/[id].js` 中，我们将导入这个函数:
 
@@ -61,7 +61,7 @@ export function getAllPostIds() {
 import { getAllPostIds } from '../../lib/posts'
 ```
 
-然后在 `getStaticPaths` 调用这个函数:
+然后在 [`getStaticPaths`](/docs/basic-features/data-fetching#getstaticpaths-static-generation) 调用这个函数:
 
 ```jsx
 export async function getStaticPaths() {
@@ -73,9 +73,9 @@ export async function getStaticPaths() {
 }
 ```
 
-- 返回对象的 `paths` 属性必须是 `id` 的可能值数组。这正是`getAllPostIds()`返回的内容。
-- 现在忽略 `fallback: false`，我们稍后会解释。
+- 返回对象的 [`paths` 属性](/docs/basic-features/data-fetching#the-paths-key-required)必须是 `id` 的可能值数组。这正是`getAllPostIds()`返回的内容。
+- 现在忽略 [`fallback: false`](/docs/basic-features/data-fetching#fallback-false)，我们稍后会解释。
 
-我们几乎快完成了 — 但我们仍然需要实现 `getStaticProps`。让我们在下一页做吧！
+我们几乎快完成了 — 但我们仍然需要实现 [`getStaticProps`](/docs/basic-features/data-fetching#getstaticprops-static-generation)。让我们在下一页做吧！
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

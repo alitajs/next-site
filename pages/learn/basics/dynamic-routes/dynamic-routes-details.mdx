@@ -1,5 +1,4 @@
 import Layout from '../../../../components/learn/Layout'
-import Link from 'next/link'
 
 export const meta = {
   title: '动态路由',
@@ -9,20 +8,12 @@ export const meta = {
   subtitle: '动态路由技巧'
 }
 
-你可以在我们的文档中获得有关动态路由的深入信息:
 
-- <Link href="/docs/[[...slug]]" as="/docs/basic-features/data-fetching">
-    <a>Data Fetching</a>
-  </Link>
-- <Link href="/docs/[[...slug]]" as="/docs/routing/dynamic-routes">
-    <a>Dynamic Routes</a>
-  </Link>
-
-但是这里有一些你应该知道的关于动态路由的重要信息。
+下面是一些你应该知道的关于[动态路由](/docs/routing/dynamic-routes)的基本信息。
 
 ### 获取外部 API 或查询数据库
 
-与 `getStaticProps` 类似，`getStaticPaths` 可以从任何数据源获取数据。在我们的示例中，`getAllPostIds` 的数据(由 `getStaticPaths` 使用)可以从外部API获取:
+与 [`getStaticProps`](/docs/basic-features/data-fetching#getstaticprops-static-generation) 类似，[`getStaticPaths`](/docs/basic-features/data-fetching#getstaticpaths-static-generation) 可以从任何数据源获取数据。在我们的示例中，`getAllPostIds` 的数据(由 [`getStaticPaths`](/docs/basic-features/data-fetching#getstaticpaths-static-generation) 使用)可以从外部API获取:
 
 ```js
 export async function getAllPostIds() {
@@ -42,22 +33,22 @@ export async function getAllPostIds() {
 
 ### 开发环境 v.s. 生产环境
 
-- 在 **development** 中 (`npm run dev` or `yarn dev`), `getStaticProps` 在_每个请求上_运行。
-- 在 **production** 中, `getStaticProps` 在_构建时_运行。
+- 在 **development** 中 (`npm run dev` or `yarn dev`), [`getStaticPaths`](/docs/basic-features/data-fetching#getstaticpaths-static-generation) 在_每个请求上_运行。
+- 在 **production** 中, [`getStaticPaths`](/docs/basic-features/data-fetching#getstaticpaths-static-generation) 在_构建时_运行。
 
 ### Fallback
 
-还记得吗，我们从 `getStaticPaths` 返回了 `fallback: false` ，这是什么意思？
+还记得吗，我们从 [`getStaticPaths`](/docs/basic-features/data-fetching#getstaticpaths-static-generation) 返回了 `fallback: false` ，这是什么意思？
 
-如果 `fallback` 是 `false`，那么 `getStaticPaths` 没有返回的任何路径将导致一个**404 page**。
+如果 [`fallback` 是 `false`](/docs/basic-features/data-fetching#fallback-false)，那么 [`getStaticPaths`](/docs/basic-features/data-fetching#getstaticpaths-static-generation) 没有返回的任何路径将导致一个 **404 page**。
 
-如果 `fallback` 是 `true`，那么 `getStaticPaths` 的行为就会改变:
+如果 [`fallback` 是 `true`](/docs/basic-features/data-fetching#fallback-true)，那么 [`getStaticProps`](/docs/basic-features/data-fetching#getstaticprops-static-generation) 的行为就会改变:
 
-- 在构建时间从 `getStaticPaths` 返回的路径将被渲染到 HTML。
-- 在构建时未生成的路径**不会**导致404页。相反，Next.js 将在第一个请求中提供该页面的 “fallback” 版本。
+- 在构建时间从 [`getStaticProps`](/docs/basic-features/data-fetching#getstaticprops-static-generation) 返回的路径将被渲染到 HTML。
+- 在构建时未生成的路径**不会**导致 404 页面。相反，Next.js 将在第一个请求中提供该页面的 “fallback” 版本。
 - 在后台，Next.js 将静态生成请求的路径。生成的页面将服务于对同一路径的后续请求，就像构建时预渲染的其他页面一样。
 
-这超出了我们的课程的范围，但你可以在<Link href="/docs/[[...slug]]" as="/docs/basic-features/data-fetching#fallback-pages"><a>我们的文档</a></Link>学到更多关于`fallback: true`的知识。
+这超出了我们的课程的范围，但你可以在[`fallback` 文档](/docs/basic-features/data-fetching#the-fallback-key-required)学到更多关于`fallback: true`的知识。
 
 ### 全面控制路由
 
@@ -65,7 +56,7 @@ export async function getAllPostIds() {
 
 - `pages/posts/[...id].js` 匹配 `/posts/a`, 但也匹配 `/posts/a/b`, `/posts/a/b/c` 等。
 
-如果你这样做，在 `getStaticPaths` 中，你必须返回一个数组作为 `id` 键的值，如下所示:
+如果你这样做，在 [`getStaticPaths`](/docs/basic-features/data-fetching#getstaticpaths-static-generation) 中，你必须返回一个数组作为 `id` 键的值，如下所示:
 
 ```js
 return [
@@ -79,7 +70,7 @@ return [
 ]
 ```
 
-然后在 `getStaticProps` 中， `params.id` 将是一个数组:
+然后在 [`getStaticProps`](/docs/basic-features/data-fetching#getstaticprops-static-generation) 中， `params.id` 将是一个数组:
 
 ```js
 export async function getStaticProps({ params }) {
@@ -87,15 +78,15 @@ export async function getStaticProps({ params }) {
 }
 ```
 
-看看我们的<Link href="/docs/[[...slug]]" as="/docs/routing/dynamic-routes"><a>动态路由</a></Link>文档，了解更多。
+看看[捕捉所有路线文档](/docs/routing/dynamic-routes#catch-all-routes)，了解更多信息。
 
 ### 路由
 
-如果你想访问 Next.js 路由，可以通过从 `next/router` 导入 `useRouter` 来实现这一点。看看我们的<Link href="/docs/[[...slug]]" as="/docs/routing/dynamic-routes"><a>路由文档</a></Link>以了解更多。
+如果你想访问 Next.js 路由，可以通过从 [`next/router`](/docs/api-reference/next/router) 导入 [`useRouter`](/docs/api-reference/next/router#userouter) 来实现这一点。
 
 ### 404 页面
 
-若要创建自定义404页，请创建 `pages/404.js`。此文件在编译时静态生成。
+若要创建[自定义 404 页面](/docs/advanced-features/custom-error-page#404-page)，请创建 `pages/404.js`。此文件在编译时静态生成。
 
 ```jsx
 // pages/404.js
@@ -104,19 +95,20 @@ export default function Custom404() {
 }
 ```
 
-看看我们的<Link href="/docs/[[...slug]]" as="/docs/advanced-features/custom-error-page#404-page"><a>错误页面</a></Link>文档以了解更多。
+看看我们的[错误页面](/docs/advanced-features/custom-error-page)文档以了解更多。
 
 ### 更多例子
 
-我们创建了几个例子来说明 `getStaticProps` 和 `getStaticPaths` — 查看它们的源代码了解更多:
+我们创建了几个例子来说明 [`getStaticProps`](/docs/basic-features/data-fetching#getstaticprops-static-generation) 和 [`getStaticPaths`](/docs/basic-features/data-fetching#getstaticpaths-static-generation) — 查看它们的源代码了解更多:
 
 - [Blog Starter using markdown files](https://github.com/vercel/next.js/tree/canary/examples/blog-starter) ([Demo](https://next-blog-starter.now.sh/))
+- [WordPress Example](https://github.com/vercel/next.js/tree/canary/examples/cms-wordpress) ([Demo](https://next-blog-wordpress.now.sh/))
 - [DatoCMS Example](https://github.com/vercel/next.js/tree/canary/examples/cms-datocms) ([Demo](https://next-blog-datocms.now.sh/))
 - [TakeShape Example](https://github.com/vercel/next.js/tree/canary/examples/cms-takeshape) ([Demo](https://next-blog-takeshape.now.sh/))
 - [Sanity Example](https://github.com/vercel/next.js/tree/canary/examples/cms-sanity) ([Demo](https://next-blog-sanity.now.sh/))
 
 ### 就是这样!
 
-在下一课中，我们将讨论 Next.js 的 API Routes 特性。
+在下一课中，我们将讨论 Next.js 的 [API Routes](/docs/api-routes/introduction) 特性。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

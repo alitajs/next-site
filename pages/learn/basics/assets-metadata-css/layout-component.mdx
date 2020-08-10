@@ -60,7 +60,7 @@ export default function FirstPost() {
 }
 ```
 
-> **重要信息:** 要使用CSS模块，CSS文件名必须以 `.module.css` 结尾。
+> **重要信息:** 要使用 [CSS Modules](/docs/basic-features/built-in-css-support#adding-component-level-css)，CSS 文件名必须以 `.module.css` 结尾。
 
 要在 `Layout` 中使用它，你需要：
 
@@ -100,10 +100,10 @@ export default function Layout({ children }) {
   height={134 / 2}
 />
 
-这就是 CSS Modules 所做的：_它自动生成唯一的类名_。只要使用 CSS Modules，你就不必担心类名冲突。
+这就是 [CSS Modules](/docs/basic-features/built-in-css-support#adding-component-level-css) 所做的：_它自动生成唯一的类名_。只要使用 CSS Modules，你就不必担心类名冲突。
 
-此外，Next.js 的代码分割功能也适用于 CSS Modules。它确保为每个页面加最少的 CSS 。这将产生较小的编译包大小。
+此外，Next.js 的代码分割功能也适用于 [CSS Modules](/docs/basic-features/built-in-css-support#adding-component-level-css)。它确保为每个页面加最少的 CSS 。这将产生较小的编译包大小。
 
-CSS Modules 在构建时从 JavaScript 包中提取，并生成由 Next.js 自动加载的 `.css` 文件。
+[CSS Modules](/docs/basic-features/built-in-css-support#adding-component-level-css) 在构建时从 JavaScript 包中提取，并生成由 Next.js 自动加载的 `.css` 文件。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

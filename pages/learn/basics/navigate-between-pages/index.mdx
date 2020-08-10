@@ -1,5 +1,4 @@
 import Layout from '../../../../components/learn/Layout'
-import Link from 'next/link'
 
 export const meta = {
   title: '页面间导航',
@@ -15,10 +14,10 @@ export const meta = {
 
 在这一课，你将:
 
-- 利用文件系统路由的功能创建一个新页面。
-- 学习如何通过 `Link` 组件实现客户端页面间的导航。
+- 利用[文件系统路由](/docs/routing/introduction)的功能创建一个新页面。
+- 学习如何通过 [`Link`](https://nextjs.org/docs/api-reference/next/link) 组件实现客户端页面间的导航。
 - 学习内置的代码分割和预取功能。
 
-> 如果你需要查看详细的 Next.js 路由文档，请进入 <Link href="/docs/[[...slug]]" as="/docs/routing/introduction"><a>路由文档</a></Link>。
+> 如果你需要查看详细的 Next.js 路由文档，请进入[路由文档](/docs/routing/introduction)。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

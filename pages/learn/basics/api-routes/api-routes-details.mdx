@@ -1,5 +1,4 @@
 import Layout from '../../../../components/learn/Layout'
-import Link from 'next/link'
 
 export const meta = {
   title: 'API Routes',
@@ -9,13 +8,13 @@ export const meta = {
   subtitle: 'API Routes 技巧'
 }
 
-你可以在<Link href="/docs/[[...slug]]" as="/docs/api-routes/dynamic-api-routes"><a>我们的文档</a></Link>中获得关于 API Routes 的深入信息。但这里有一些关于 API Routes 的重要信息，你应该知道的。
+这里有一些你应该知道的关于[API路线](/docs/api-routes/introduction)的基本信息。
 
 ### 不要从 `getStaticProps` 或者 `getStaticPaths` 获取 API Routes
 
-你**不应该**从`getStaticProps`或`getStaticPaths` 获取 API Routes。相反，直接在 `getStaticProps` 或 `getStaticPaths` (或调用辅助函数)中编写服务端代码。
+你**不应该**从 [`getStaticProps`](/docs/basic-features/data-fetching#getstaticprops-static-generation) 或 [`getStaticPaths`](/docs/basic-features/data-fetching#getstaticpaths-static-generation) 获取 API Routes。相反，直接在 [`getStaticProps`](/docs/basic-features/data-fetching#getstaticprops-static-generation) 或 [`getStaticPaths`](/docs/basic-features/data-fetching#getstaticpaths-static-generation) (或调用辅助函数)中编写服务端代码。
 
-原因如下:`getStaticProps` 和 `getStaticPaths` 仅在服务端运行。它永远不会在客户端运行。它甚至不会包含在浏览器的 JS 包中。这意味着你可以编写直接数据库查询之类的代码，而不必将它们发送到浏览器。
+原因如下: [`getStaticProps`](/docs/basic-features/data-fetching#getstaticprops-static-generation) 和 [`getStaticPaths`](/docs/basic-features/data-fetching#getstaticpaths-static-generation) 仅在服务端运行。它永远不会在客户端运行。它甚至不会包含在浏览器的 JS 包中。这意味着你可以编写直接数据库查询之类的代码，而不必将它们发送到浏览器。
 
 ### 一个好的用例: 处理表单输入
 
@@ -30,13 +29,13 @@ export default (req, res) => {
 
 ### 预览模式
 
-当你的网页从一个 headless CMS 获取数据时，静态生成是有用的。然而，当你在你的 headless CMS 上写草稿，并且想要在你的页面上立即**预览**草稿时，这并不理想。你希望 Next.js 在**请求时**而不是在构建时呈现这些页面，并获取草稿内容而不是发布的内容。你希望 Next.js 仅在这个特定情况下绕过静态生成。
+当你的网页从一个 headless CMS 获取数据时，[静态生成](/docs/basic-features/pages#static-generation-recommended)是有用的。然而，当你在你的 headless CMS 上写草稿，并且想要在你的页面上立即**预览**草稿时，这并不理想。你希望 Next.js 在**请求时**而不是在构建时渲染这些页面，并获取草稿内容而不是发布的内容。你希望 Next.js 仅在这个特定情况下绕过静态生成。
 
-Next.js 有一个特性叫做**预览模式**解决了这个问题，它利用了 API Routes。要了解更多信息，请查看我们的<Link href="/docs/[[...slug]]" as="/docs/advanced-features/preview-mode"><a>预览模式</a></Link>文档。
+Next.js 有一个特性叫做**预览模式**解决了这个问题，它利用了 [API Routes](/docs/api-routes/introduction)。要了解更多信息，请查看我们的[预览模式](/docs/advanced-features/preview-mode)文档。
 
 ### 动态 API Routes
 
-API Routes 可以是动态的，就像普通页面一样。看看我们的<Link href="/docs/[[...slug]]" as="/docs/api-routes/dynamic-api-routes"><a>动态 API Routes</a></Link> 文档，了解更多信息。
+API Routes 可以是动态的，就像普通页面一样。看看我们的[动态 API Routes](/docs/api-routes/dynamic-api-routes) 文档，了解更多信息。
 
 ### 就是这样!
 

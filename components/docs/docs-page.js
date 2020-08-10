@@ -236,11 +236,8 @@ function DocsPage({ route, html, prevRoute, nextRoute }) {
           background: #fafafa;
           border: 1px solid #eaeaea;
           border-radius: 3px;
-          padding: 1rem 1.25rem;
+          padding: 0 1.25rem;
           margin: 1.5rem 0;
-        }
-        .docs blockquote p {
-          margin: 0;
         }
 
         /* Card */

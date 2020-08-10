@@ -1,6 +1,5 @@
 import Layout from '../../../../components/learn/Layout'
 import Image from '../../../../components/image'
-import Link from 'next/link'
 
 export const meta = {
   title: '资源、元数据和CSS',
@@ -12,7 +11,7 @@ export const meta = {
 
 首先，让我们讨论一下 Next.js 如何处理 **静态资产** 如图像。
 
-Next.js 在**顶级 `public` 目录**下提供静态文件，如图像。 `public` 中的文件可以从应用程序的根目录中引用，类似于`pages`。
+Next.js 在**顶级 [`public` 目录](/docs/basic-features/static-file-serving)**下提供静态文件，如图像。 `public` 中的文件可以从应用程序的根目录中引用，类似于[`pages`](/docs/basic-features/pages)。
 
 如果你在应用程序中打开`pages/index.js` 并查看 `<footer>`，我们会像这样使用 logo 图像：
 
@@ -22,6 +21,6 @@ Next.js 在**顶级 `public` 目录**下提供静态文件，如图像。 `publi
 
 logo 图像存在于应用程序顶层的`public`目录中。
 
-`public` 目录对 `robots.txt`、Google 站点验证和任何其他静态资产也很有用。查看<Link href="/docs/[[...slug]]" as="/docs/basic-features/static-file-serving"><a>静态文件服务文档</a></Link>以了解更多信息。
+`public` 目录对 `robots.txt`、Google 站点验证和任何其他静态资产也很有用。查看[静态文件服务文档](/docs/basic-features/static-file-serving)以了解更多信息。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

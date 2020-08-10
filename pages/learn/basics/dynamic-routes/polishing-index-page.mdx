@@ -11,9 +11,9 @@ export const meta = {
 
 作为最后一步，让我们更新我们的首页 (`pages/index.js`)。
 
-特别是，我们需要添加链接到每个帖子页面。我们将使用 `Link` 组件，但这次我们需要做一些不同的事情。
+特别是，我们需要添加链接到每个帖子页面。我们将使用 [`Link`](/docs/api-reference/next/link) 组件，但这次我们需要做一些不同的事情。
 
-若要链接到具有动态路由的页面，你需要使用 `Link` 组件的另一种用法。在我们的示例中，要链接到 `/posts/ssg-ssr` ，你需要这样写:
+若要链接到具有动态路由的页面，你需要使用 [`Link`](/docs/api-reference/next/link) 组件的另一种用法。在我们的示例中，要链接到 `/posts/ssg-ssr` ，你需要这样写:
 
 ```jsx
 <Link href="/posts/[id]" as="/posts/ssg-ssr">
@@ -23,7 +23,7 @@ export const meta = {
 
 如你所见,你需要将 `[id]` 用于 `href`，而将实际路径 (`ssg-ssr`) 用于 `as` 属性。
 
-让我们实现它。首先，在 `pages/index.js` 导入 `Link` 和 `Date`:
+让我们实现它。首先，在 `pages/index.js` 导入 [`Link`](/docs/api-reference/next/link) 和 `Date`:
 
 ```js
 import Link from 'next/link'
@@ -57,6 +57,6 @@ import Date from '../components/date'
 
 > 如果有些东西不工作，请确保你的代码[看起来像这样](https://github.com/vercel/next-learn-starter/tree/master/api-routes-starter)。
 
-没错！在结束本课之前，让我们在下一页中来谈谈使用动态路由的一些技巧。
+没错！在结束本课之前，让我们在下一页中来谈谈使用[动态路由](/docs/routing/dynamic-routes)的一些技巧。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

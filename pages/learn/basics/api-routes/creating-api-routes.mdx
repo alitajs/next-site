@@ -1,5 +1,4 @@
 import Layout from '../../../../components/learn/Layout'
-import Link from 'next/link'
 
 export const meta = {
   title: 'API Routes',
@@ -9,7 +8,7 @@ export const meta = {
   subtitle: '创建 API Routes'
 }
 
-API Routes 允许你在 Next.js 应用程序中创建一个 API 端。你可以通过在 `pages/api` 目录下创建一个具有以下格式的 **function** 来完成此操作:
+[API Routes](/docs/api-routes/introduction) 允许你在 Next.js 应用程序中创建一个 API 端。你可以通过在 `pages/api` 目录下创建一个具有以下格式的 **function** 来完成此操作:
 
 ```js
 // req = request data, res = response data
@@ -32,8 +31,8 @@ export default (req, res) => {
 
 尝试访问 [http://localhost:3000/api/hello](http://localhost:3000/api/hello)。你应该看到 `{"text":"Hello"}`。请注意:
 
-- `req` 是一个关于 [http.IncomingMessage](https://nodejs.org/api/http.html#http_class_http_incomingmessage) 的实例，再加上一些预制中间件，你可以在<Link href="/docs/[[...slug]]" as="/docs/api-routes/api-middlewares"><a>这里</a></Link>看到。
-- `res` 是一个关于 [http.ServerResponse](https://nodejs.org/api/http.html#http_class_http_serverresponse) 的实例，再加上一些辅助函数，你可以在<Link href="/docs/[[...slug]]" as="/docs/api-routes/response-helpers"><a>这里</a></Link>看到。
+- `req` 是一个关于 [http.IncomingMessage](https://nodejs.org/api/http.html#http_class_http_incomingmessage) 的实例，再加上一些预制中间件，你可以在[这里](/docs/api-routes/api-middlewares)看到。
+- `res` 是一个关于 [http.ServerResponse](https://nodejs.org/api/http.html#http_class_http_serverresponse) 的实例，再加上一些辅助函数，你可以在[这里](/docs/api-routes/response-helpers)看到。
 
 就是这样!在结束本课之前，让我们来谈谈在下一页中使用 API Routes 的一些技巧。
 

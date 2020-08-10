@@ -64,7 +64,7 @@ export function getSortedPostsData() {
 import { getSortedPostsData } from '../lib/posts'
 ```
 
-然后在 `getStaticProps` 中调用这个函数，你需要将结果返回到 `props` 中：
+然后在 [`getStaticProps`](docs/basic-features/data-fetching#getstaticprops-static-generation) 中调用这个函数，你需要将结果返回到 `props` 中：
 
 ```js
 export async function getStaticProps() {
@@ -132,6 +132,6 @@ export default function Home({ allPostsData }) {
   height={948 / 2}
 />
 
-让我们在下一页讨论一些 `getStaticProps` 的使用技巧。
+让我们在下一页讨论一些 [`getStaticProps`](/docs/basic-features/data-fetching#getstaticprops-static-generation) 的使用技巧。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

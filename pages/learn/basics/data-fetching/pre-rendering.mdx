@@ -9,7 +9,7 @@ export const meta = {
   subtitle: '预渲染'
 }
 
-在讨论数据获取之前，我们先来讨论一下 Next.js 中最重要的概念之一：**预渲染**。
+在讨论[数据获取](/docs/basic-features/data-fetching)之前，我们先来讨论一下 Next.js 中最重要的概念之一：[**预渲染**](/docs/basic-features/pages#pre-rendering)。
 
 默认情况下，Next.js 预渲染每个页面。这意味着 Next.js _为每个页面生成 HTML_，而不是让它全部由客户端 JavaScript 完成。预渲染可以使项目拥有更好的性能和搜索引擎优化。
 
@@ -17,16 +17,16 @@ export const meta = {
 
 ### 检查是否正在进行预渲染
 
-你可以通过以下步骤检查预呈现是否正在进行:
+你可以通过以下步骤检查预渲染是否正在进行:
 
 - 禁用浏览器中的 JavaScript (这里使如何在 [Chrome](https://developers.google.com/web/tools/chrome-devtools/javascript/disable) 浏览器中操作)
 - [尝试访问此页面](https://next-learn-starter.now.sh/) (本教程的最终结果)。
 
-你应该看到应用程序是在没有 JavaScript 的情况下呈现的。这是因为 Next.js 将应用程序预呈现为静态 HTML，允许你在不运行 JavaScript 的情况下查看应用程序 UI。
+你应该看到应用程序是在没有 JavaScript 的情况下渲染的。这是因为 Next.js 将应用程序预渲染为静态 HTML，允许你在不运行 JavaScript 的情况下查看应用程序 UI。
 
 > **注意**: 你也可以在 `localhost` 上尝试上述步骤，但是如果禁用 JavaScript，CSS 将不会加载。
 
-如果你的应用程序是一个普通的 React.js 应用程序(没有 Next.js)，就没有预呈现功能，所以如果禁用 JavaScript，你将无法看到该应用程序。例如:
+如果你的应用程序是一个普通的 React.js 应用程序(没有 Next.js)，就没有[预渲染](/docs/basic-features/pages#pre-rendering)功能，所以如果禁用 JavaScript，你将无法看到该应用程序。例如:
 
 - 在浏览器中启用 JavaScript 并[查看此页面](https://create-react-app.now-examples.now.sh/)。这是一个普通的 React.js 应用程序，由[Create React App](https://create-react-app.dev/) 构建。
 - 现在，禁用 JavaScript 并再次访问[相同的页面](https://create-react-app.now-examples.now.sh/)。

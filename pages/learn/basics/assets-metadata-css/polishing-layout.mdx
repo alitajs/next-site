@@ -9,17 +9,17 @@ export const meta = {
   subtitle: '润饰布局'
 }
 
-到目前为止，我们只添加了最小的 React 和 CSS 代码来说明诸如 CSS Modules 之类的概念。在我们继续下一课（数据获取）之前，让我们对页面样式和代码进行润色。
+到目前为止，我们只添加了最小的 React 和 CSS 代码来说明诸如 [CSS Modules](/docs/basic-features/built-in-css-support#adding-component-level-css) 之类的概念。在我们继续下一课（[数据获取](/docs/basic-features/data-fetching)）之前，让我们对页面样式和代码进行润色。
 
 ### 下载你的个人资料图片
 
 首先，我们将使用你的个人资料图片为最终设计。
 
 - **下载** 你的个人资料图片来自 GitHub、Twitter、LinkedIn 或者其他地方 (或者[使用这个文件](https://github.com/vercel/next-learn-starter/blob/master/basics-final/public/images/profile.jpg)).
-- 在 `public` 目录中创建 `images` 目录。
+- 在 [`public` 目录](/docs/basic-features/static-file-serving)中创建 `images` 目录。
 - 将图片保存为 `profile.jpg` ，放在 `public/images` 目录中。
 - 图像大小可以是 400*400px。
-- 你可以直接删除 `public` 目录下未使用的 SVG logo 文件。
+- 你可以直接删除 [`public` 目录](/docs/basic-features/static-file-serving)下未使用的 SVG logo 文件。
 
 ### 更新 `components/layout.module.css`
 
@@ -57,7 +57,7 @@ export const meta = {
 
 第三，让我们创建一组在多个组件中都很有用的 CSS 类，用于排版和其他。
 
-让我们在 `styles/utils.module.css` 添加它，作为一个CSS Module。
+让我们在 `styles/utils.module.css` 添加它，作为一个 [CSS Module](/docs/basic-features/built-in-css-support#adding-component-level-css)。
 
 ```css
 .heading2Xl {

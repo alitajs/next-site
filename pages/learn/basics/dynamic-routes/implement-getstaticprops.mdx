@@ -41,7 +41,7 @@ import { getAllPostIds } from '../../lib/posts'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 ```
 
-然后在 `getStaticProps` 调用这个函数:
+然后在 [`getStaticProps`](/docs/basic-features/data-fetching#getstaticprops-static-generation) 调用这个函数:
 
 ```jsx
 export async function getStaticProps({ params }) {
@@ -86,7 +86,7 @@ export default function Post({ postData }) {
   height={738 / 2}
 />
 
-太好了！我们已经成功地生成了动态页面。
+太好了！我们已经成功地生成了[动态路由](/docs/routing/dynamic-routes)。
 
 ### 遇到问题？
 

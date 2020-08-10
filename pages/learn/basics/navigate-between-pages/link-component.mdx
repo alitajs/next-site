@@ -11,11 +11,11 @@ export const meta = {
 
 当在网站的页面之间链接时，你通常使用 `<a>` HTML 标签。
 
-在 Next.js 中，你使用了包裹 `<a>` 标签的 `<Link>` React组件。`<Link>`允许你对应用程序中的不同页面进行客户端导航。
+在 Next.js 中，你使用了从 [`next/link`](/docs/api-reference/next/link) 导出的 `<Link>` 组件包裹 `<a>` 标签。`<Link>`允许你对应用程序中的不同页面进行客户端导航。
 
 ### 使用 `<Link>`
 
-首先，在 `pages/index.js` 中，从 `next/link` 导入 `Link` 组件，方法是在顶部添加这一行:
+首先，在 `pages/index.js` 中，从 [`next/link`](/docs/api-reference/next/link) 导入 `Link` 组件，方法是在顶部添加这一行:
 
 ```js
 import Link from 'next/link'

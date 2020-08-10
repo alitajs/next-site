@@ -1,6 +1,5 @@
 import Layout from '../../../../components/learn/Layout'
 import Image from '../../../../components/image'
-import Link from 'next/link'
 
 export const meta = {
   title: '资源、元数据和CSS',
@@ -18,7 +17,7 @@ export const meta = {
 
 [`classnames`](https://github.com/JedWatson/classnames) 是一个让你轻松切换类名的库。你可以使用 `npm install classnames` 或者 `yarn add classnames` 来安装它。
 
-请查看其 [README](https://github.com/JedWatson/classnames) 了解详情，但以下是基本用法：
+请查看其 [文档](https://github.com/JedWatson/classnames) 了解详情，但以下是基本用法：
 
 - 假设你想创建一个 `Alert` 组件，该组件接受 `type`，它可以是`'success'` 或者 `'error'`。
 - 如果是 `'success'`，你希望文本颜色是绿色。如果它是 `'error'`，你希望文本的颜色是红色。
@@ -58,15 +57,15 @@ export default function Alert({ children, type }) {
 
 开箱即用，没有配置，Next.js 使用 [PostCSS](https://postcss.org/) 编译CSS。
 
-要自定义PostCSS配置，你可以创建一个名为 `postcss.config.js` 的顶级文件。如果你正在使用像 [Tailwind CSS](https://tailwindcss.com/) 这样的库，那么这将非常有用。
+要自定义PostCSS配置，你可以创建一个名为 [`postcss.config.js`](/docs/advanced-features/customizing-postcss-config#customizing-plugins) 的顶级文件。如果你正在使用像 [Tailwind CSS](https://tailwindcss.com/) 这样的库，那么这将非常有用。
 
-这里有一条关于使用 [Tailwind CSS](https://tailwindcss.com/) 的操作指引。我们建议使用 `postcss-preset-env` 和 `postcss-flexbugs-fixes` 来匹配 <Link href="/docs/[[...slug]]" as="/docs/advanced-features/customizing-postcss-config#default-behavior"><a>Next.js的默认行为</a></Link>。首先，安装软件包:
+这里有一条关于使用 [Tailwind CSS](https://tailwindcss.com/) 的操作指引。我们建议使用 `postcss-preset-env` 和 `postcss-flexbugs-fixes` 来匹配 [Next.js 的默认行为](/docs/advanced-features/customizing-postcss-config#default-behavior)。首先，安装软件包:
 
 ```shell
 npm install tailwindcss postcss-preset-env postcss-flexbugs-fixes
 ```
 
-然后为`postcss.config.js`编写以下内容：
+然后为 [`postcss.config.js`](/docs/advanced-features/customizing-postcss-config#customizing-plugins) 编写以下内容：
 
 ```js
 module.exports = {
@@ -103,14 +102,13 @@ module.exports = {
 }
 ```
 
-> 了解更多关于自定义 PostCSS 配置的信息，请查看<Link href="/docs/[[...slug]]" as="/docs/advanced-features/customizing-postcss-config"><a>我们的文档</a></Link>。
-
+> 了解更多关于自定义 PostCSS 配置的信息，请查看[我们的 PostCSS 文档](/docs/advanced-features/customizing-postcss-config)。
 
 ### 使用 Sass
 
-在开箱即用的情况下，Next.js 允许你导入 [Sass](https://sass-lang.com/)，同时使用 `.scss` 和 `.sass` 扩展。你可以通过 `.module.scss` 或 `.module.Sass` 扩展以 CSS Modules 的方式来使用组件级别的 Sass。
+在开箱即用的情况下，Next.js 允许你导入 [Sass](/docs/basic-features/built-in-css-support#sass-support)，同时使用 `.scss` 和 `.sass` 扩展。你可以通过 `.module.scss` 或 `.module.Sass` 扩展以 [CSS Modules](/docs/basic-features/built-in-css-support#adding-component-level-css) 的方式来使用组件级别的 Sass。
 
-在使用 Next.js 内置的 Sass 支持之前，一定要安装 Sass:
+在使用 Next.js 内置的 Sass 支持之前，一定要安装 [`sass`](https://github.com/sass/sass):
 
 ```shell
 npm install sass
@@ -118,6 +116,6 @@ npm install sass
 
 ### 这节课就到这里!
 
-要了解更多关于 Next.js 的内置 CSS 支持和 CSS Modules 的信息，请查看<Link href="/docs/[[...slug]]" as="/docs/basic-features/built-in-css-support"><a>我们的文档</a></Link>。
+要了解更多关于 Next.js 的内置 CSS 支持和 CSS Modules 的信息，请查看[我们的 CSS 文档](/docs/basic-features/built-in-css-support)。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

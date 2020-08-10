@@ -9,7 +9,7 @@ export const meta = {
   subtitle: '渲染 Markdown'
 }
 
-要渲染 markdown 内容，我们将使用 `remark` 库。首先，让我们安装它:
+要渲染 markdown 内容，我们将使用 [`remark`](https://github.com/remarkjs/remark) 库。首先，让我们安装它:
 
 ```shell
 npm install remark remark-html
@@ -49,7 +49,7 @@ export async function getPostData(id) {
 
 **重要的**: 我们给 `getPostData` 加了 **`async`** 关键字，因为我们需要使用 `await` 来等待 `remark` 执行完成。
 
-这意味着我们需要更新 `pages/posts/[id].js` 中的 `getStaticProps`，以便在调用 `getPostData` 时使用 `await`:
+这意味着我们需要更新 `pages/posts/[id].js` 中的 [`getStaticProps`](/docs/basic-features/data-fetching#getstaticprops-static-generation)，以便在调用 `getPostData` 时使用 `await`:
 
 ```js
 export async function getStaticProps({ params }) {

@@ -1,5 +1,4 @@
 import Layout from '../../../../components/learn/Layout'
-import Link from 'next/link'
 
 export const meta = {
   title: '预渲染和数据获取',
@@ -9,7 +8,7 @@ export const meta = {
   subtitle: 'getStaticProps 技巧'
 }
 
-你可以在<Link href="/docs/[[...slug]]" as="/docs/basic-features/data-fetching"><a>我们的文档</a></Link>中获得有关 `getStaticProps` 的详细信息。但是这里有一些关于`getStaticProps`的重要信息，你应该知道。
+以下是一些你应该知道的关于 [`getStaticProps`](/docs/basic-features/data-fetching#getstaticprops-static-generation) 重要信息。
 
 ### Fetch 外部 API 或查询数据库
 
@@ -40,25 +39,25 @@ export async function getSortedPostsData() {
 }
 ```
 
-这是可行的，因为`getStaticProps`仅在**服务器端运行**。它永远不会在客户端运行。它甚至不会包含在浏览器的 JS 包中。这意味着你可以编写直接数据库查询之类的代码，而不必将它们发送到浏览器。
+这是可行的，因为 [`getStaticProps`](/docs/basic-features/data-fetching#getstaticprops-static-generation) 仅在**服务器端运行**。它永远不会在客户端运行。它甚至不会包含在浏览器的 JS 包中。这意味着你可以编写直接数据库查询之类的代码，而不必将它们发送到浏览器。
 
 ### 开发环境 v.s. 生产环境
 
-- 在 **development** 中 (`npm run dev` or `yarn dev`), `getStaticProps` 在_每个请求上_运行。
-- 在 **production** 中, `getStaticProps` 在_构建时_运行。
+- 在 **development** 中 (`npm run dev` or `yarn dev`), [`getStaticProps`](/docs/basic-features/data-fetching#getstaticprops-static-generation) 在_每个请求上_运行。
+- 在 **production** 中, [`getStaticProps`](/docs/basic-features/data-fetching#getstaticprops-static-generation) 在_构建时_运行。
 
 因为它意味着要在构建时运行，所以你将无法使用仅在请求时可用的数据，例如查询参数或HTTP headers。
 
 ### 仅允许在页面中使用
 
-`getStaticProps` 只能从**页面**导出。不能从非页面文件导出它。
+[`getStaticProps`](/docs/basic-features/data-fetching#getstaticprops-static-generation) 只能从[**页面**](/docs/basic-features/pages)导出。不能从非页面文件导出它。
 
-这种限制的原因之一是，React 需要在呈现页面之前拥有所有必需的数据。
+这种限制的原因之一是，React 需要在渲染页面之前拥有所有必需的数据。
 
 ### 我需要在请求时间获取数据怎么办?
 
-如果你无法在用户请求之前预渲染页面，那么静态生成就**不是**一个好主意。也许你的页面显示频繁更新的数据，页面内容在每个请求上都会改变。
+如果你无法在用户请求之前预渲染页面，那么[静态生成](/docs/basic-features/pages#static-generation-recommended)就**不是**一个好主意。也许你的页面显示频繁更新的数据，页面内容在每个请求上都会改变。
 
-在这种情况下，你可以使用**服务器端渲染**或者跳过预渲染。在我们进入下一章节之前，我们先来讨论一下这些策略。
+在这种情况下，你可以使用[**服务器端渲染**](/docs/basic-features/pages#server-side-rendering)或者跳过预渲染。在我们进入下一章节之前，我们先来讨论一下这些策略。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

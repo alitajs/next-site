@@ -1,5 +1,4 @@
 import Layout from '../../../../components/learn/Layout'
-import Link from 'next/link'
 
 export const meta = {
   title: 'TypeScript',
@@ -13,7 +12,7 @@ export const meta = {
 
 ### 静态生成与服务器端渲染
 
-关于 `getStaticProps`、 `getStaticPaths` 和 `getServerSideProps`，你可以分别使用 `GetStaticProps`、`GetStaticPaths` 和 `GetServerSideProps` 类型:
+关于 [`getStaticProps`](/docs/basic-features/data-fetching#getstaticprops-static-generation)、 [`getStaticPaths`](/docs/basic-features/data-fetching#getstaticpaths-static-generation) 和 [`getServerSideProps`](/docs/basic-features/data-fetching#getserversideprops-server-side-rendering)，你可以分别使用 `GetStaticProps`、`GetStaticPaths` 和 `GetServerSideProps` 类型:
 
 ```ts
 import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next'
@@ -33,7 +32,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
 
 ## API Routes
 
-以下是如何将内置类型用于 API Routes 的示例：
+以下是如何将内置类型用于 [API routes](/docs/api-routes/introduction) 的示例：
 
 ```ts
 import { NextApiRequest, NextApiResponse } from 'next'
@@ -80,6 +79,6 @@ declare module 'remark-html' {
 
 就是这样! 你的应用程序现在使用 TypeScript 了。
 
-> 了解更多在 Next.js 中使用 TypeScript，查看<Link href="/docs/[[...slug]]" as="/docs/basic-features/typescript"><a>我们的文档</a></Link>。
+> 了解更多在 Next.js 中使用 TypeScript，查看[我们的 TypeScript 文档](/docs/basic-features/typescript)。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

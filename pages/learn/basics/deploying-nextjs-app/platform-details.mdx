@@ -1,6 +1,5 @@
 import Layout from '../../../../components/learn/Layout'
 import Image from '../../../../components/image'
-import Link from 'next/link'
 import PlatformLink from '../../../../components/name/platform-link'
 import PlatformCdnLink from '../../../../components/name/platform-cdn-link'
 import PlatformText from '../../../../components/name/platform-text'
@@ -14,18 +13,22 @@ export const meta = {
   subtitle: `Next.js 和 ${PLATFORM_NAME}`
 }
 
+<p>
 <PlatformLink /> 由 Next.js 的创建者制作，并为 Next.js 提供一流的支持。当你将 Next.js 应用程序部署到 <PlatformLink /> 时，默认情况下出现以下情况:
+</p>
 
-- 使用静态生成和资产 (JS、CSS、图像、字体等)的页面将自动从速度非常快的 <PlatformCdnLink /> 提供。
-- 使用服务器端呈现和 API routes 的页面将自动成为孤立的<PlatformLink href="/docs/v2/serverless-functions/introduction">无服务器功能</PlatformLink>。这允许页面渲染和 API 请求无限扩展。
+- 使用[静态生成](/docs/basic-features/pages#static-generation-recommended)和资产 (JS、CSS、图像、字体等)的页面将自动从速度非常快的 <PlatformCdnLink /> 提供。
+- 使用[服务端渲染](/docs/basic-features/pages#server-side-rendering)和 [API routes](/docs/api-routes/introduction) 的页面将自动成为孤立的<PlatformLink href="/docs/v2/serverless-functions/introduction">无服务器功能</PlatformLink>。这允许页面渲染和 API 请求无限扩展。
 
+<p>
 <PlatformText /> 有更多的特性，比如:
+</p>
 
-- **自定义域名:** 一旦部署到 <PlatformText /> 上，你就可以为 Next.js 应用程序分配一个自定义域名。在这里看看<PlatformLink href="/docs/v2/custom-domains">我们的文档</PlatformLink>。
-- **环境变量:** 你还可以在 <PlatformText /> 上设置环境变量。在这里看看<PlatformLink href="/docs/v2/build-step#environment-variables">我们的文档</PlatformLink>。然后，你可以在 Next.js 应用程序中<Link href="/docs/[[...slug]]" as="/docs/api-reference/next.config.js/environment-variables"><a>使用这些环境变量</a></Link>。
+- **自定义域名:** 一旦部署到 <PlatformText /> 上，你就可以为 Next.js 应用程序分配一个自定义域名。在这里看看 <PlatformLink href="/docs/v2/custom-domains">我们的文档</PlatformLink>。
+- **环境变量:** 你还可以在 <PlatformText /> 上设置环境变量。在这里看看<PlatformLink href="/docs/v2/build-step#environment-variables">我们的文档</PlatformLink>。然后，你可以在 Next.js 应用程序中[使用这些环境变量](/docs/basic-features/environment-variables#loading-environment-variables)。
 - **自动 HTTPS:** HTTPS 是默认启用的(包括自定义域)，不需要额外的配置。我们自动续费 SSL 证书。
 
-阅读 <PlatformLink href="/docs">我们的文档</PlatformLink> 了解更多关于 <PlatformText /> 平台的信息。
+阅读 <PlatformLink href="/docs"><PlatformText /> 文档</PlatformLink> 了解更多关于 <PlatformText /> 平台的信息。
 
 ### 每个推送预览部署
 

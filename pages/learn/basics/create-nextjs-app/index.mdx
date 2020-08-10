@@ -1,6 +1,5 @@
 import Layout from '../../../../components/learn/Layout'
 import Logo from '../../../../components/logo'
-import Link from 'next/link'
 
 export const meta = {
   title: '创建 Next.js 应用程序',
@@ -27,13 +26,13 @@ export const meta = {
 
 Next.js 具有同类框架中最佳的“开发人员体验”和许多内置功能。列举其中一些如下:
 
-- 直观的、基于页面的路由系统（并支持动态路由）
-- 预渲染。支持在页面级设置静态生成 (SSG) 和服务器端渲染 (SSR)
+- 直观的、[基于页面](/docs/basic-features/pages)的路由系统（并支持[动态路由](/docs/routing/dynamic-routes)）
+- [预渲染](/docs/basic-features/pages#pre-rendering)。支持在页面级设置[静态生成](/docs/basic-features/pages#static-generation-recommended) (SSG) 和[服务器端渲染](/docs/basic-features/pages#server-side-rendering) (SSR)
 - 自动代码拆分，提升页面加载速度
-- 具有优化的预取功能的客户端路由
-- 内置 CSS 和 Sass 的支持，并支持任何 CSS-in-JS 库
-- 开发环境支持热模块替换
-- API 路由可使用 Serverless Functions 构建 API 端点
+- 具有优化的预取功能的[客户端路由](/docs/routing/introduction#linking-between-pages)
+- [内置 CSS](/docs/basic-features/built-in-css-support) 和 [Sass](/docs/basic-features/built-in-css-support#sass-support) 的支持，并支持任何 [CSS-in-JS](/docs/basic-features/built-in-css-support#css-in-js) 库
+- 开发环境支持[快速刷新](/docs/basic-features/fast-refresh)
+- [API routes](/docs/api-routes/introduction) 可使用 Serverless Functions 构建 API 端点
 - 完全可扩展
 
 Next.js 被用于数以万计的的网站和 Web 应用程序，其中包括许多世界上最大的品牌。
@@ -50,6 +49,7 @@ Next.js 被用于数以万计的的网站和 Web 应用程序，其中包括许�
 
 > 本教程假定你具有 JavaScript 和 React 的基础知识。如果你从未编写过 React 代码，则应首先阅读[官方的 React 教程](https://reactjs.org/tutorial/tutorial.html) first.
 >
-> 如果你想看的是 Next.js 文档, <Link href="/docs/[[...slug]]" as="/docs/getting-started"><a>单击此处</a></Link>.
+
+如果你正在寻找文档，[请访问Next.js文档](/docs/getting-started)。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

@@ -1,6 +1,5 @@
 import Layout from '../../../../components/learn/Layout'
 import Image from '../../../../components/image'
-import Link from 'next/link'
 
 export const meta = {
   title: '预渲染和数据获取',
@@ -10,10 +9,10 @@ export const meta = {
   subtitle: '两种形式的预渲染'
 }
 
-Next.js 有两种预呈现形式: **静态生成** and **服务器端渲染**。不同之处在于它 **什么时机** 生成了每一页的 HTML。
+Next.js 有两种预渲染形式: [**静态生成**](/docs/basic-features/pages#static-generation-recommended) 和 [**服务器端渲染**](/docs/basic-features/pages#server-side-rendering)。不同之处在于它 **什么时机** 生成了每一页的 HTML。
 
-- **静态生成** 是在**编译环节**预生成 HTML 然后在每个请求上_重复使用_的预渲染方法。
-- **服务器端渲染** 在**每个请求**时生成 HTML 的预渲染方法。
+- [**静态生成**](/docs/basic-features/pages#static-generation-recommended) 是在**编译环节**预生成 HTML 然后在每个请求上_重复使用_的预渲染方法。
+- [**服务器端渲染**](/docs/basic-features/pages#server-side-rendering) 在**每个请求**时生成 HTML 的预渲染方法。
 
 <Image
   shadow
@@ -32,11 +31,11 @@ Next.js 有两种预呈现形式: **静态生成** and **服务器端渲染**。
   height={800 / 2}
 />
 
-> 在开发模式下(当你运行 `npm run dev` 或 `yarn dev`)，每个请求都预渲染每一页——甚至对于使用静态生成的页面也是如此。
+> 在开发模式下(当你运行 `npm run dev` 或 `yarn dev`)，每个请求都[预渲染](/docs/basic-features/pages#pre-rendering)每一页——甚至对于使用静态生成的页面也是如此。
 
 ### 每页标准
 
-重要的是，Next.js 允许你**选择**每一页使用的预渲染形式。你可以为大多数页面使用静态生成并为其他页面使用服务器端呈现来创建一个“混合的” Next.js 应用程序。
+重要的是，Next.js 允许你**选择**每一页使用的预渲染形式。你可以为大多数页面使用[静态生成](/docs/basic-features/pages#static-generation-recommended)并为其他页面使用[服务端渲染](/docs/basic-features/pages#server-side-rendering)来创建一个“混合的” Next.js 应用程序。
 
 <Image
   shadow
@@ -47,25 +46,25 @@ Next.js 有两种预呈现形式: **静态生成** and **服务器端渲染**。
   height={902 / 2}
 />
 
-### 何时使用静态生成 v.s. 服务器端渲染
+### 何时使用[静态生成](/docs/basic-features/pages#static-generation-recommended) v.s. [服务端渲染](/docs/basic-features/pages#server-side-rendering)
 
-我们建议使用**静态生成**(带数据和不带数据)，因为你的页面可以构建一次，由 CDN 提供服务，这使得它比让服务器在每个请求上呈现页面要快得多。
+我们建议使用[**静态生成**](/docs/basic-features/pages#static-generation-recommended)(带数据和不带数据)，因为你的页面可以构建一次，由 CDN 提供服务，这使得它比让服务器在每个请求上渲染页面要快得多。
 
-你可以对许多类型的页面使用静态生成，包括：
+你可以对许多类型的页面使用[静态生成](/docs/basic-features/pages#static-generation-recommended)，包括：
 
 - 地推页面
 - 博客文章
 - 电子商贸产品目录
 - 协助和文件
 
-你应该问问自己：“我能在用户请求这个页面之前预渲染吗？”如果答案是肯定的，那么你应该选择静态生成。
+你应该问问自己：“我能在用户请求这个页面**之前**预渲染吗？”如果答案是肯定的，那么你应该选择[静态生成](/docs/basic-features/pages#static-generation-recommended)。
 
-另一方面，如果你无法在用户请求之前预渲染页面，那么静态生成就**不是**一个好主意。也许你的页面显示频繁更新的数据，页面内容在每个请求上都会改变。
+另一方面，如果你无法在用户请求之前预渲染页面，那么[静态生成](/docs/basic-features/pages#static-generation-recommended)就**不是**一个好主意。也许你的页面显示频繁更新的数据，页面内容在每个请求上都会改变。
 
-在这种情况下，你可以使用**服务器端渲染**.它将会更慢，但预渲染的页面将永远是最新的。或者，你可以跳过预渲染，并使用客户端 JavaScript 来填充数据。
+在这种情况下，你可以使用[**服务器端渲染**](/docs/basic-features/pages#server-side-rendering).它将会更慢，但预渲染的页面将永远是最新的。或者，你可以跳过预渲染，并使用客户端 JavaScript 来填充数据。
 
 ### 我们将专注于静态生成
 
-在本课中，我们将重点讨论静态生成。在下一页中，我们将讨论在**有或没有数据**的情况下静态生成页面。
+在本课中，我们将重点讨论[静态生成](/docs/basic-features/pages#static-generation-recommended)。在下一页中，我们将讨论在**有或没有数据**的情况下静态生成页面。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

@@ -1,5 +1,4 @@
 import Layout from '../../../../components/learn/Layout'
-import Link from 'next/link'
 
 export const meta = {
   title: '预渲染和数据获取',
@@ -13,10 +12,10 @@ export const meta = {
 
 在本课中，你将学会:
 
-- Next.js 的预渲染特性。
-- 预渲染的两种形式:静态生成和服务端渲染。
-- 有和无数据的静态生成。
-- `getStaticProps`以及如何使用它将外部博客数据导入首页。
-- 关于 `getStaticProps` 的一些有用信息。
+- Next.js 的[预渲染](/docs/basic-features/pages#pre-rendering)特性。
+- 预渲染的两种形式:[静态生成](/docs/basic-features/pages#static-generation-recommended)和[服务端渲染](/docs/basic-features/pages#server-side-rendering)。
+- [有数据](/docs/basic-features/pages#static-generation-with-data)和[无数据](/docs/basic-features/pages#static-generation-without-data)的静态生成。
+- [`getStaticProps`](/docs/basic-features/data-fetching#getstaticprops-static-generation) 以及如何使用它将外部博客数据导入首页。
+- 关于 [`getStaticProps`](/docs/basic-features/data-fetching#getstaticprops-static-generation) 的一些有用信息。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

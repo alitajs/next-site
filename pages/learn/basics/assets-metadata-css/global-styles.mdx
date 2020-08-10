@@ -9,9 +9,9 @@ export const meta = {
   subtitle: '全局样式'
 }
 
-CSS Modules 对于组件级样式很有用。但是如果你想加载一些 CSS 来作用于**每一页**，Next.js也支持这种方式。
+[CSS Modules](/docs/basic-features/built-in-css-support#adding-component-level-css) 对于组件级样式很有用。但是如果你想加载一些 CSS 来作用于**每一页**，Next.js也支持这种方式。
 
-要加载全局 CSS 文件，在 `pages` 下**创建一个名为`_app.js`的文件**，加上以下内容：
+要加载全局 CSS 文件，在 `pages` 下**创建一个名为[`_app.js`](/docs/advanced-features/custom-app)的文件**，加上以下内容：
 
 ```jsx
 export default function App({ Component, pageProps }) {
@@ -23,7 +23,7 @@ export default function App({ Component, pageProps }) {
 
 ### 重新启动开发服务器
 
-**重要信息:** 添加 `_app.js` 时，你需要重新启动开发服务器。按 <kbd>Ctrl + c</kbd> 来停止服务器并重新运行:
+**重要信息:** 添加 [`pages/_app.js`](/docs/advanced-features/custom-app) 时，你需要重新启动开发服务器。按 <kbd>Ctrl + c</kbd> 来停止服务器并重新运行:
 
 ```shell
 npm run dev
@@ -31,9 +31,9 @@ npm run dev
 
 ### 添加全局样式
 
-在 Next.js 中，你可以通过从 `_app.js` 导入全局样式文件来添加它们。你**无法**在其他地方导入全局样式。
+在 Next.js 中，你可以通过从 [`pages/_app.js`](/docs/advanced-features/custom-app) 导入[全局样式](/docs/basic-features/built-in-css-support#adding-a-global-stylesheet)文件来添加它们。你**无法**在其他地方导入全局样式。
 
-全局样式不能从外部导入的原因是 `_app.js` 是全局的，它的样式影响页面上的所有元素。
+[全局样式](/docs/basic-features/built-in-css-support#adding-a-global-stylesheet)不能从外部导入的原因是 `pages/_app.js` 是全局的，它的样式影响页面上的所有元素。
 
 如果从主页导航到 `/posts/first-post` 页面，主页的全局样式会无意中影响 `/posts/first-post`。
 
@@ -72,7 +72,7 @@ img {
 }
 ```
 
-最后，从 `_app.js` 导入它:
+最后，从 [`pages/_app.js`](/docs/advanced-features/custom-app) 导入它:
 
 ```jsx
 import '../styles/global.css'
@@ -93,11 +93,11 @@ export default function App({ Component, pageProps }) {
   height={316 / 2}
 />
 
-> **如果它无效**: 请确保在添加`_app.js`时重新启动开发服务器。
+> **如果它无效**: 请确保在添加 `pages/_app.js` 时重新启动开发服务器。
 
 总结一下到目前为止我们所学到的:
 
-- 要使用 CSS Modules，请从任何组件导入一个名为 `*.module.css` 的 CSS 文件。
-- 要使用全局样式，请在 `pages/_app.js` 中导入一个 CSS 文件。
+- 要使用 CSS Modules，请从任何组件导入一个名为 [`*.module.css`](/docs/basic-features/built-in-css-support#adding-component-level-css) 的 CSS 文件。
+- 要使用全局样式，请在 [`pages/_app.js`](/docs/advanced-features/custom-app) 中导入一个 CSS 文件。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

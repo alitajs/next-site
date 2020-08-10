@@ -9,7 +9,7 @@ export const meta = {
   subtitle: '使用外部数据生成页面路径'
 }
 
-在上一课中，我们讨论了 **页面内容** 取决于外部数据的情况。我们使用 `getStaticProps` 来获取所需的数据以渲染首页。
+在上一课中，我们讨论了 **页面内容** 取决于外部数据的情况。我们使用 [`getStaticProps`](/docs/basic-features/data-fetching#getstaticprops-static-generation) 来获取所需的数据以渲染首页。
 
 在本课中，我们将讨论每个 **页面路径**取决于外部数据的情况。Next.js 允许你以静态方式生成使用外部数据生成页面路径的页面。这就是 Next.js 的**动态路由**。
 
@@ -24,7 +24,7 @@ export const meta = {
 
 ### 如何静态生成动态路由的页面
 
-在我们的例子中，我们希望为博客文章创建动态页面:
+在我们的例子中，我们希望为博客文章创建[动态路由](/docs/routing/dynamic-routes):
 
 - 我们希望每个帖子都有访问路径 `/posts/<id>`，其中 `<id>` 是顶层 `posts` 目录下的 markdown 文件的名称。
 - 因为我们有 `ssg-ssr.md` 和 `pre-rendering.md`，所以我们希望访问路径是 `/posts/ssg-ssr` 和 `/posts/pre-rendering`。
@@ -33,7 +33,7 @@ export const meta = {
 
 我们可以通过采取以下步骤来做到这一点。**你还不需要做这些改变** — 我们将在下一页全部完成。
 
-首先，我们将在 `pages/posts` 目录下创建一个名为**`[id].js`**的页面。在 Next.js 中，以 `[` 开头且以 `]` 结尾的页面就是动态页面。
+首先，我们将在 `pages/posts` 目录下创建一个名为 **`[id].js`** 的页面。在 Next.js 中，以 `[` 开头且以 `]` 结尾的页面就是[动态路由](/docs/routing/dynamic-routes)。
 
 在 `pages/posts/[id].js` 中，我们将编写代码来渲染一个文章页面 — 就像我们创建的其他页面一样。
 
@@ -45,7 +45,7 @@ export default function Post() {
 }
 ```
 
-现在，这里是新的: 我们将从这个页面导出一个异步函数 `getStaticPaths` 。在这个函数中，我们需要返回一个 `id` **可能值的列表**。
+现在，这里是新的: 我们将从这个页面导出一个异步函数 [`getStaticPaths`](/docs/basic-features/data-fetching#getstaticpaths-static-generation) 。在这个函数中，我们需要返回一个 `id` **可能值的列表**。
 
 ```jsx
 import Layout from '../../components/layout'
@@ -59,7 +59,7 @@ export async function getStaticPaths() {
 }
 ```
 
-最后，我们需要重新实现 `getStaticProps` - 这次，获取具有给定 `id` 的博客文章所需的数据。`getStaticProps` 被赋予 `params` 属性，其中包含 `id`。
+最后，我们需要重新实现 [`getStaticProps`](/docs/basic-features/data-fetching#getstaticprops-static-generation) - 这次，获取具有给定 `id` 的博客文章所需的数据。[`getStaticProps`](/docs/basic-features/data-fetching#getstaticprops-static-generation) 被赋予 `params` 属性，其中包含 `id`。
 
 ```jsx
 import Layout from '../../components/layout'

@@ -60,25 +60,28 @@ function AutoComplete({
     },
     [containerRef, isMobile]
   );
-  const focusSearch = useCallback(event => {
-    if (event.keyCode === 191) {
-      //ignore input text
-      const el = document.activeElement;
-      if (
-        el.contentEditable === 'true' ||
-        el.tagName == 'INPUT' ||
-        el.tagName == 'TEXTAREA' ||
-        el.tagName == 'SELECT'
-      )
-        return;
-      // focus input on pressing the slash key
-      textInput.current.focus();
-      event.preventDefault();
-    } else if (event.key === 'Escape') {
-      document.activeElement.blur();
-      event.preventDefault();
-    }
-  }, [textInput.current]);
+  const focusSearch = useCallback(
+    event => {
+      if (event.keyCode === 191) {
+        //ignore input text
+        const el = document.activeElement;
+        if (
+          el.contentEditable === 'true' ||
+          el.tagName == 'INPUT' ||
+          el.tagName == 'TEXTAREA' ||
+          el.tagName == 'SELECT'
+        )
+          return;
+        // focus input on pressing the slash key
+        textInput.current.focus();
+        event.preventDefault();
+      } else if (event.key === 'Escape') {
+        document.activeElement.blur();
+        event.preventDefault();
+      }
+    },
+    [textInput.current]
+  );
 
   useEffect(() => {
     document.addEventListener('keydown', focusSearch, false);

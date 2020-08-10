@@ -572,7 +572,7 @@ export const mapping = {
     link: 'https://www.nike.com/help',
     src: '/static/images/showcases/nike.jpg',
     srcFallback: true,
-    alexa: 480,
+    alexa: 364,
     internalUrl: 'nike'
   },
   eaze: {

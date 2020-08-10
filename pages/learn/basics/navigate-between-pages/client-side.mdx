@@ -1,6 +1,5 @@
 import Layout from '../../../../components/learn/Layout'
 import Image from '../../../../components/image'
-import Link from 'next/link'
 
 export const meta = {
   title: '页面间导航',
@@ -11,7 +10,7 @@ export const meta = {
 
 ## 客户端导航
 
-在同一个 Next.js 应用程序中，`Link` 组件在两个页面之间使用了**客户端导航**。
+在同一个 Next.js 应用程序中，[`Link`](/docs/api-reference/next/link) 组件在两个页面之间使用了**客户端导航**。
 
 客户端导航意味着页面转换_使用 JavaScript_进行，这比浏览器的默认导航更快。
 
@@ -36,21 +35,21 @@ export const meta = {
 
 ### 代码分割和预取
 
-Next.js 自动执行代码拆分，因此每个页面只加载该页面所需的内容。这意味着当网页呈现时，其他网页的代码最初并没有被提供。
+Next.js 自动执行代码拆分，因此每个页面只加载该页面所需的内容。这意味着当网页渲染时，其他网页的代码最初并没有被提供。
 
 这样可以确保即使添加了数百个页面，主页也能快速加载。
 
 只有为请求的页面加载代码也意味着页面变得孤立。如果某个页面抛出了错误，那么应用程序的其余页面仍然可以运行。
 
-此外，在 Next.js 的生产版本中，每当 `Link` 组件出现在浏览器的视图中时，Next.js 就会自动在后台**预取**链接页面的代码。当你单击链接时，目标页面的代码可能已经加载完成，可以很快的完成页面切换！
+此外，在 Next.js 的生产版本中，每当 [`Link`](/docs/api-reference/next/link) 组件出现在浏览器的视图中时，Next.js 就会自动在后台**预取**链接页面的代码。当你单击链接时，目标页面的代码可能已经加载完成，可以很快的完成页面切换！
 
 ### 摘要
 
 Next.js 通过代码拆分、客户端导航和预取(生产环境中)来自动优化应用程序以获得最佳性能。
 
-你可以在`pages`目录下创建路径文件，并使用内置的 `Link` 组件。不需要路由库。
+你可以在 [`pages`](/docs/basic-features/pages) 目录下创建路径文件，并使用内置的 [`Link`](/docs/api-reference/next/link) 组件。不需要路由库。
 
-你可以在<Link href="/docs/[[...slug]]" as="/docs/api-reference/next/link"><a>API参考文档</a></Link>以及<Link href="/docs/[[...slug]]" as="/docs/routing/introduction"><a>路由文档</a></Link>中了解更多关于“Link”组件的信息。
+您可以[在API参考中了解更多关于 `next/link`](/docs/api-reference/next/link) 的 `Link` 组件，以及[路由文档](/docs/routing/introduction)中的一般路由。
 
 > **备注:** 如果你需要链接到 Next.js 应用程序<em>外部的</em>页面，只需使用一个不带 `Link` 的 `<a>` 标签。
 >
