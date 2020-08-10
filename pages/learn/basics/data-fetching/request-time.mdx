@@ -36,7 +36,7 @@ export async function getServerSideProps(context) {
 }
 ```
 
-因为 [`getServerSideProps`](/docs/basic-features/data-fetching#getserversideprops-server-side-rendering) 是在请求时调用的，所以它的参数(`context`)包含请求特定的参数。你可以在<Link href="/docs/[[...slug]]" as="/docs/basic-features/data-fetching#getserversideprops-server-side-rendering"><a>我们的文档</a></Link>中了解更多信息。
+因为 [`getServerSideProps`](/docs/basic-features/data-fetching#getserversideprops-server-side-rendering) 是在请求时调用的，所以它的参数(`context`)包含请求特定的参数。你可以在[我们的文档](/docs/basic-features/data-fetching#getserversideprops-server-side-rendering)中了解更多信息。
 
 只有当你需要预渲染一个必须在请求时获取数据的页面时，你才应该使用 [`getServerSideProps`](/docs/basic-features/data-fetching#getserversideprops-server-side-rendering)。到第一个字节的时间(TTFB)会比 [`getStaticProps`](/docs/basic-features/data-fetching#getstaticprops-static-generation) 慢，因为服务器必须计算每个请求的结果，而且如果没有额外的配置，结果不能被CDN缓存。
 
