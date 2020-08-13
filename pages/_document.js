@@ -99,7 +99,11 @@ class NextSite extends Document {
           <AmpWrap
             nonAmp={
               <>
-              <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279176967'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1279176967%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
+              {/* <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279176967'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1279176967%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script> */}
+                <script
+                  async
+                  src='https://s9.cnzz.com/z_stat.php%3Fid%3D1279176967%26online%3D1%26show%3Dline'
+                />
                 {/* <script
                   async
                   src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
@@ -117,6 +121,7 @@ class NextSite extends Document {
               </>
             }
           />
+          <span id='cnzz_stat_icon_1279176967' />
         </body>
       </Html>
     );
