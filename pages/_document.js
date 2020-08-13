@@ -46,7 +46,7 @@ class NextSite extends Document {
           <meta name="msapplication-config" content="/static/favicon/browserconfig.xml" />
           <meta name="theme-color" content="#000" />
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-
+          <meta name="keywords" content="Next.js,React,Next.js中文,Next.js中文翻译,Next.js中文官网,nextjs 最新文档">
           {/* <AmpWrap
             ampOnly={
               <script
