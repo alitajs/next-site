@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { SkipNavContent } from '@reach/skip-nav';
 import { RecordsProvider } from '../../lib/learn/records';
 import { useIsMobile } from '../media-query';
@@ -14,9 +15,15 @@ import Lesson from './Lesson';
 import Markdown, { H2 } from './Markdown';
 import FeedbackContext from '../feedback-context';
 import { ORG_NAME } from '../../lib/constants';
+import { GITHUB_URL, DOCS_REPO_NAME } from '../../lib/github/constants';
 
 const Layout = ({ meta, children }) => {
   const isMobile = useIsMobile();
+  const { pathname } = useRouter();
+  // https://github.com/alitajs/next-site-cn/edit/master/pages/learn/basics/api-routes/index.mdx
+  const editUrl = `${GITHUB_URL}/${DOCS_REPO_NAME}/edit/master/pages/${pathname}${
+    pathname.split('/').length === 4 ? '/index' : ''
+  }.mdx`;
 
   return (
     <FeedbackContext.Provider value={{ label: 'next-learn' }}>
@@ -46,6 +53,11 @@ const Layout = ({ meta, children }) => {
                   </Lesson>
                   <hr />
                   <FooterFeedback learn />
+                  <footer>
+                    <a href={editUrl} target="_blank" rel="noopener noreferrer">
+                      在 GitHub 上编辑这个页面
+                    </a>
+                  </footer>
                 </div>
               </RecordsProvider>
             </div>
@@ -91,6 +103,15 @@ const Layout = ({ meta, children }) => {
                 .navigation {
                   display: none;
                 }
+              }
+              footer {
+                display: flex;
+                font-size: 0.875rem;
+                justify-content: flex-end;
+                border-top: 1px solid #eaeaea;
+                padding: 1.25rem 0;
+                margin-top: 2rem;
+                margin-bottom: 5rem;
               }
             `}</style>
           </Container>

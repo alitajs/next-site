@@ -83,7 +83,7 @@ function DocsPage({ route, html, prevRoute, nextRoute }) {
           </Link>
         ) : (
           <a href={editUrl} target="_blank" rel="noopener noreferrer">
-            Edit this page on GitHub
+            在 GitHub 上编辑这个页面
           </a>
         )}
       </footer>
