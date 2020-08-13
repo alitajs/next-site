@@ -2,7 +2,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { useAmp } from 'next/amp';
 
-import { GA_TRACKING_ID } from '../lib/analytics';
+// import { GA_TRACKING_ID } from '../lib/analytics';
 
 function AmpWrap({ ampOnly, nonAmp }) {
   const isAmp = useAmp();
@@ -13,7 +13,7 @@ function AmpWrap({ ampOnly, nonAmp }) {
 class NextSite extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html lang="zh-CN">
         <Head>
           <link
             rel="preload"
@@ -46,7 +46,7 @@ class NextSite extends Document {
           <meta name="msapplication-config" content="/static/favicon/browserconfig.xml" />
           <meta name="theme-color" content="#000" />
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-          <meta name="keywords" content="Next.js,React,Next.js中文,Next.js中文翻译,Next.js中文官网,nextjs 最新文档">
+          <meta name="keywords" content="Next.js,React,Next.js中文,Next.js中文翻译,Next.js中文官网,nextjs 最新文档" />
           {/* <AmpWrap
             ampOnly={
               <script
