@@ -102,7 +102,7 @@ class NextSite extends Document {
               {/* <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279176967'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1279176967%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script> */}
                 <script
                   async
-                  src='https://s9.cnzz.com/z_stat.php%3Fid%3D1279176967%26online%3D1%26show%3Dline'
+                  src='https://s9.cnzz.com/z_stat.php?id=1279176967&online=1&show=line'
                 />
                 {/* <script
                   async
