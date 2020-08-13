@@ -47,7 +47,7 @@ class NextSite extends Document {
           <meta name="theme-color" content="#000" />
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
 
-          <AmpWrap
+          {/* <AmpWrap
             ampOnly={
               <script
                 async
@@ -65,12 +65,12 @@ class NextSite extends Document {
                 src="https://cdn.ampproject.org/v0/amp-form-0.1.js"
               />
             }
-          />
+          /> */}
         </Head>
         <body>
           <Main />
           <NextScript />
-          <AmpWrap
+          {/* <AmpWrap
             ampOnly={
               <amp-analytics type="googleanalytics" id="analytics1" data-credentials="include">
                 <script
@@ -95,15 +95,16 @@ class NextSite extends Document {
                 />
               </amp-analytics>
             }
-          />
+          /> */}
           <AmpWrap
             nonAmp={
               <>
-                <script
+              <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279176967'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1279176967%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
+                {/* <script
                   async
                   src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-                />
-                <script
+                /> */}
+                {/* <script
                   dangerouslySetInnerHTML={{
                     __html: `
                     window.dataLayer = window.dataLayer || [];
@@ -112,7 +113,7 @@ class NextSite extends Document {
                     gtag('config', '${GA_TRACKING_ID}');
                   `
                   }}
-                />
+                /> */}
               </>
             }
           />
